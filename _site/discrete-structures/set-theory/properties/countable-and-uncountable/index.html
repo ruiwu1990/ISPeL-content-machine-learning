@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Countable and Uncountable Sets</title>
+  <meta name="description" content="ISPeL is an interactive system for personalization of learning. It uses topic-based authoring.">
+
+  <!---   <link rel="stylesheet" href="/ISPeL-content-machine-learning/css/tufte.css" --->
+  <link rel="stylesheet" href="../../../../css/tufte.css">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75587219-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+
+  <link rel="canonical" href="http://localhost:7000/ISPeL-content-machine-learning/discrete-structures/set-theory/properties/countable-and-uncountable/">
+  <link rel="alternate" type="application/rss+xml" title="ISPeL-content-machine-learning" href="http://localhost:7000/ISPeL-content-machine-learning/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+
+
+<header>
+    <nav class="group">
+    <a href="../../../../">Machine Learning</a>
+    <a href="http://ispel.cs.ecu.edu/" _target="blank">ISPeL</a>
+    <a href="http://seng5005.cs.ecu.edu/" _target="blank">Fall 2020</a>
+    <a href="https://github.com/vngudivada/ISPeL-content-machine-learning.git" _target="blank">GitHub</a>
+    </nav>
+</header>
+
+    <article class="group">
+      
+
+<h1>Countable and uncountable sets</h1>
+<p class="subtitle"></p>
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+        e: "\\epsilon",
+        xti: "x^{(i)}",
+        yti: "y^{(i)}",
+        bfy: "{\\bf y}",
+        bfx: "{\\bf x}",
+        bfg: "{\\bf g}",
+        bfbeta: "{\\bf \\beta}",
+        tp: "\\tilde p",
+        pt: "p_\\theta",
+        E: "{\\mathbb{E}}",
+        Ind: "{\\mathbb{I}}",
+        KL: "{\\mathbb{KL}}",
+        Re: "{\\mathbb{R}}",
+        Dc: "{\\mathcal{D}}",
+        Tc: "{\\mathcal{T}}",
+        Xc: "{\\mathcal{X}}",
+        note: ["\\textcolor{blue}{[NOTE: #1]}",1]
+      }
+    }
+  });
+</script>
+
+
+<p>The size of a set is referred to as the set’s cardinality, denoted by \(\vert S\vert\). If there are a finite number of elements in the set, the size of the set is the same as the number of elements in the set.</p>
+
+<p><strong>Example 1:</strong>
+Let \(n\) be the largest named number, the googolplex = \(10^{(10^{100})}.\)  To make the reference easier we will write googolplex as ggp in this example.  The set \(Y\) will be the set of numbers \(y\) where \(y = 2*x\) where \(x\) is in the set \(X\) and \(y\) is less than or equal to one ggp.  Even though the size of the set \(Y\) is huge, \(Y\) has a finite number of elements in it.  How big is \(Y?\) What is the cardinality of \(Y?\).</p>
+
+<p>Define a map from an element \(x\) in \(X = {1, 2, 3, ..., ggp}\) to an element \(y\) in the set \(Y\) with the mapping \(x \rightarrow 2*x = y.\)  This mapping is a mathematical network connecting the two sets so that every source has one and only one destination.  This can only happen if the source and destination sets are the same size.  We know that there are a finite number of elements in our set \(X,\) where the cardinality of \(C\) is \(\vert C\vert  = 10^{(10^{100})}.\) Even though these two sets are not the same, our mapping proves that \(A\) is also a finite set with the same cardinality.</p>
+
+<p>In the previous example, we demonstrated that a set \(S\) is finite with cardinality \(n\) if there is a one-to-one mapping, every \(x\) is mapped to a unique \(y\) and every \(y\) is mapped to by a unique \(x,\) taking each element in the set \({1,  2, 3, ..., n}\) onto the set \(S.\)  By requiring that the mapping is one-to-one and onto \(S\), we are specifying that every element \(x\) in \(S\) is the destination object of exactly one counting number in the source set. We then say that the set \(S\) is countable.</p>
+
+<p>A set \(S\) is called countably infintite when the source set for such a mapping needs to be the universal set of all counting numbers, denoted \(N =\{1, 2, 3,...\},\) in order for every destination element \(x\) in a set \(S\) to have a source mapped onto it.  The cardinality of a countlably infinite set \(S\) is defined to be \(\vert S \vert  = \infty.\)  Remember that \(\infty\) is not a number, but the idea of growing without bound.  This is why the definition of cardinality of a set is carefully stated in terms of the size of the set not the number of elements in the set.</p>
+
+<p>The collection of all finite sets and Countably infinite sets are define the set of Countable sets.</p>
+
+<p><strong>Example 2:</strong>
+The following common sets are countable. To prove that one of these sets is countable requires a proof that constructs the one-to-one, onto mapping from either a finite subset of \(N\) or from \(N\) to the set. When reading set notation, the symbol \(x \in S\) is used to signal that \(x\) is an element of \(S,\) and a vertical bar \(\vert\) is read “such that” or “so that.”</p>
+
+<p>  The Empty set   \(\emptyset\)</p>
+
+<p>  The set of integers modulo positive integer n   \(Z_{n} = \{0, 1, 2, ..., n\}\)</p>
+
+<p>  The set of all integers   \(Z = \{...,-3, -2, -1, 0, 1, 2, 3, ...\}\)</p>
+
+<p>  The set of all positive integers   \(Z^+ = \{1, 2, 3, ...\}\)</p>
+
+<p>  The set of all negative integers   \(Z^- = \{-1, -2, -3, ...\}\)</p>
+
+<p>  The set of natural numbers   \(N = \{0, 1, 2, 3, ...\}\)</p>
+
+<p>  The set of rational numbers   \(Q = \{ \frac{x}{y} \text{ such that } x \in  Z \text{ and } y \in Z - \{ 0\}\}\)</p>
+
+<p>  The set of all even integers   \(E = \{x \vert \text { there exists a } y \in Z \text{ and } x = 2y\}.\)</p>
+
+<p>  The set of Gaussian integers   \(Z[i] = \{x + yi \text{ so that } x, y \in Z\},\) here \(i = \sqrt{-1}\)</p>
+
+<p>For a set \(S\) not among the Countable sets, there does not exist a one-to-one mapping from the infinite set \(N\) onto all of \(S.\)  In other words, if we started counting the elements of \(S,\) we would run out of counting numbers before running out of elements in \(S\) to count. The set of all sets that are not in the Countable set are called Infinte sets.   We can also say that the complement of the Countable set is the Infinite set.   The cardinality of an infinite set is defined to be \(\infty.\)</p>
+
+<p><strong>Example 3:</strong>
+The following common sets are infinte, not countable.</p>
+
+<p>  The set of all reals   \(R\)</p>
+
+<p>  The set of all irrational numbers   \(I\)</p>
+
+<p>  The set of all complex numbers   \(C = \{x + yi \vert x,y \in R\}\) or using a one-to-one onto mapping that preserves the behavior of \(C\) we can also represent \(C\) as the set \(\{(x,y) \vert  x,y  \in R\}.\)</p>
+
+<p>Since a direct proof that one of the sets \(S\) given in Example 3 is infinite would require a sequence of true statemens showing that of all possible one-to-one mappings from \(N\) to \(S\) none of them are onto \(S,\) a proof that begins by assuming that there is a such a mapping and ends with the consequential truth assumption of a statement that is known to be false can be more successful.  This method of proof is referred to as “proof by contradiction.”</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><a href="../../../../">Index</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../cardinality">Prev</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../complement">Next</a></td>
+    </tr>
+  </tbody>
+</table>
+
+
+    </article>
+    <footer>
+<hr class="slender">
+<div class="credits">
+This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll" target="_blank">Tufte theme</a>. &copy; 2020
+</div>
+</footer>
+  </body>
+</html>

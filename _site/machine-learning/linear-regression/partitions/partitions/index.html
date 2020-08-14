@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Set partitions</title>
+  <meta name="description" content="ISPeL is an interactive system for personalization of learning. It uses topic-based authoring.">
+
+  <!---   <link rel="stylesheet" href="/ISPeL-content-machine-learning/css/tufte.css" --->
+  <link rel="stylesheet" href="../../../../css/tufte.css">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75587219-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+
+  <link rel="canonical" href="http://localhost:7000/ISPeL-content-machine-learning/machine-learning/linear-regression/partitions/partitions/">
+  <link rel="alternate" type="application/rss+xml" title="ISPeL-content-machine-learning" href="http://localhost:7000/ISPeL-content-machine-learning/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+
+
+<header>
+    <nav class="group">
+    <a href="../../../../">Machine Learning</a>
+    <a href="http://ispel.cs.ecu.edu/" _target="blank">ISPeL</a>
+    <a href="http://seng5005.cs.ecu.edu/" _target="blank">Fall 2020</a>
+    <a href="https://github.com/vngudivada/ISPeL-content-machine-learning.git" _target="blank">GitHub</a>
+    </nav>
+</header>
+
+    <article class="group">
+      
+
+<h1>Set partitions</h1>
+<p class="subtitle"></p>
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+        e: "\\epsilon",
+        xti: "x^{(i)}",
+        yti: "y^{(i)}",
+        bfy: "{\\bf y}",
+        bfx: "{\\bf x}",
+        bfg: "{\\bf g}",
+        bfbeta: "{\\bf \\beta}",
+        tp: "\\tilde p",
+        pt: "p_\\theta",
+        E: "{\\mathbb{E}}",
+        Ind: "{\\mathbb{I}}",
+        KL: "{\\mathbb{KL}}",
+        Re: "{\\mathbb{R}}",
+        Dc: "{\\mathcal{D}}",
+        Tc: "{\\mathcal{T}}",
+        Xc: "{\\mathcal{X}}",
+        note: ["\\textcolor{blue}{[NOTE: #1]}",1]
+      }
+    }
+  });
+</script>
+
+
+<p>When finding the union of two sets \(A\) and \(B,\) it is necessary to check that the new set does not contain any repeated instances. For example, \(A = \{1, 2, 3\}\) and \(B = \{2, 3, 4\}\) the resulting set after union is the set</p>
+
+\[A \cup B = \{1, 2, 3, 2, 3, 4\} - \{2, 3\} = \{1, 2, 3, 4\}\]
+
+<p>This is because sets are unordered collections of unique elements.  The set of elements that the two sets have in common, \(A \cap B,\) must be identified to remove multiple instances of these elements in the union.</p>
+
+<p>We say that two sets that do not share any elements in common are mutually exclusive, or pairwise disjoint. In our above example, the sets \(A\) and \(B\) are not disjoint.</p>
+
+<p>By definition, disjoint sets are sets that share no common elements. It is straight forward to prove the following statement.</p>
+
+<p>Statement: The intersection of disjoint sets is the Empty set, \(\emptyset.\)</p>
+
+<p>Proof: Let \(A\) and \(B\) be two disjoint sets.  Assume that the intersecion of \(A\) and \(B\) is not the Emptyset. Then, there is at least one element in \(A \cap B.\) Let \(x\) be such an element.  Since \(x\) is in \(A \cap B,\) it follows that  \(x\) is in \(A\) and \(x\) is in \(B\) by the defintion of set intersection.  The truth of the previous statement would imply that \(A\) and \(B\) are not disjoint sets.</p>
+
+<p>The assumption of the truth of the statement that \(A\) and \(B\) is not the Emptyset can only result in the statement that \(A\) and \(B\) are disjoint being false.  Therefore, the only true sequence of statements starting with \(A\) and \(B\) are disjoint sets implies the intersection of \(A\) and \(B\) is the Emptyset is also true.  \(\blacksquare\)</p>
+
+<p>The Powerset of a set \(S\) is the collection of all possible subsets of \(S\).  In the module for Powersets, the size of the Powerset of set \(S,\) \(\mathcal{P}(S)\) is shown to grow exponentially as the size \(n\) of set \(S\) increases.  To quickly illustrate we take a set of size, cardinality, 2 and find it’s Powerset.  Let \(S = \{0, 1\}.\) Then the Powerset of \(S\) is \(\mathcal{P}(S)= \{ \{ \}, \{ 0\}, \{ 1\}, \{ 0,1\}\}.\)  Starting with a set \(S\) of cardinality \(\vert S \vert = n = 2,\) \(\mathcal{P}(S)\) has size \(2^{n} = 4.\)  We 
+There are sets in \(\mathcal{P}(S)\) that are not pairwise disjoint.  That is, there are pairs of sets that have elements in common.  One example is the proper subset \(\{0\}\) and the set \(S = \{0 , 1\}.\) Notice that the intersection of these two sets is non-empty, \(\{0\} \cap \{ 0, 1\} = \{0\}.\)  While the subsets of \(S\) in the Powerset of \(S\) ‘‘cover” \(S,\) they do so in a way that creates an overlapping of sets.</p>
+
+<p><label for="power" class="margin-toggle">⊕</label>
+<input type="checkbox" id="power" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/assets/img/powerset.svg" alt="The set $$S = \{0,1\}$$ is covered by it's Powerset with the elements of the Powerset represented by the ellipse, the two circles and the rectangle" /><br />
+    The set \(S = \{0,1\}\) is covered by it’s Powerset with the elements of the Powerset represented by the ellipse, the two circles and the rectangle
+</span>
+<!--- <img src="../../../../assets/img/powerset.svg" alt="Drawing" style="width: 333px;" align="center;"> ---></p>
+
+<p>In some cases, it is useful to partition a set into non-empty disjoint sets that cover the original set.  In the case of our set \(S,\) a partition of \(S\) would be \(\{ \{0\}, \{1\}\}\), and it turns out that this is the only collection of subset whose union is \(S.\) One may try to argue that \(\{ \{0,1\} \}\) is a collection of non-empty subsets of \(S\) that forms a partion of \(S.\) But, there is a piece of the definition of a partition of a set that is false.  The union of the sets in the partition is equal to the set, and set union is a binary operation meaning that it takes in as input two sets.  It takes at least two to partition.<br />
+<br /></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><a href="../../../../">Index</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../power-set">Prev</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../relations">Next</a></td>
+    </tr>
+  </tbody>
+</table>
+
+
+    </article>
+    <footer>
+<hr class="slender">
+<div class="credits">
+This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll" target="_blank">Tufte theme</a>. &copy; 2020
+</div>
+</footer>
+  </body>
+</html>

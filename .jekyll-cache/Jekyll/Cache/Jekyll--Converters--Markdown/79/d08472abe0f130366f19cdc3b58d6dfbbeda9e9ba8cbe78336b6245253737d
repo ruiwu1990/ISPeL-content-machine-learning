@@ -1,0 +1,88 @@
+I"�<p>The symmetric difference between two sets \(A\) and \(B\), denoted \(A \bigtriangleup B,\) is the collection of elements \(x\) of \(A\) or \(y\) of \(B\) so that \(x\) is not in \(B\) nor \(y\) is not in \(A\). 
+\(A \bigtriangleup B = \{x \text{ so that } x \in (A \cup B) - (A \cap B)\}\)</p>
+
+<p><strong>Example 1:</strong>
+ Let \(A\) = {1, 2, 3, 4, 5} and \(B\) = {5, 6, 7, 8, 9}.  Then we notice that the union of the sets \(A\) and \(B\) would be the collection of positive integers from 1 to 9.  There is one element that is in common to both the sets, the element 5.  Thus, \(A \bigtriangleup B = \{1, 2, 3, 4, 6, 7, 8, 9\}.\)
+The symmetric difference of sets \(A\) and \(B\) is illustrated graphically using the Venn Diagram below:
+ <label for="set-symm-diff" class="margin-toggle">⊕</label>
+<input type="checkbox" id="set-symm-diff" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/assets/img/F13.png" alt="The intersection of three sets $$A,$$ $$B,$$ and $$C.$$  The extension of the operation intersection applies to a countably infinite number of sets. " /><br />
+    The intersection of three sets \(A,\) \(B,\) and \(C.\)  The extension of the operation intersection applies to a countably infinite number of sets. 
+</span>
+<!--- <img src="../../../../assets/img/F13.png" alt="Drawing" style="width: 333px;" align="center;"> ---></p>
+
+<p>Another way of phrasing the symmetric difference of sets \(A\) and \(B\) is to say \(A \bigtriangleup B\) is the union of elements that are unique to each of \(A\) and \(B.\)  The shaded area in the Venn diagram below represents the symmetric difference of \(A\) and \(B\):</p>
+
+<p><label for="set-symm-diff2" class="margin-toggle">⊕</label>
+<input type="checkbox" id="set-symm-diff2" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/assets/img/F16.png" alt="The intersection of three sets $$A,$$ $$B,$$ and $$C.$$  The extension of the operation intersection applies to a countably infinite number of sets. " /><br />
+    The intersection of three sets \(A,\) \(B,\) and \(C.\)  The extension of the operation intersection applies to a countably infinite number of sets. 
+</span>
+<!--- <img src="../../../../assets/img/F16.png" alt="Drawing" style="width: 333px;" align="center;"> ---></p>
+
+<p>Using our set notation:</p>
+
+<p>\(A \bigtriangleup B = \{x \vert (x \in A\) and \(x \notin B)\) or \((x \notin A\) and \(x \in B)\}\)</p>
+
+<p>Equivalently:</p>
+
+\[A \bigtriangleup B = (A-B) \cup (B-A)\]
+
+<p>\(A \bigtriangleup B = (A \cup B) - (A \cap B)\), where \(\bigtriangleup\)</p>
+
+<p>A different way to view symmetric difference \(\bigtriangleup\) is in terms of the <em>exclusive OR</em> operation, which is denoted as \(XOR\) or \(\oplus\).</p>
+
+\[A \bigtriangleup B = \{ x \vert (x \in A) \oplus (x \in B) \}\]
+
+<p>\(XOR,\) \(\oplus,\) is a logical binary operation which output values {True, False}. It is the case that \(x \oplus y\) is true only when the input terms \(x\) and \(y\) differ as shown in the truth table below:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">\(x\)</th>
+      <th style="text-align: center">\(y\)</th>
+      <th style="text-align: center">\(x \oplus y\)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">F (False)</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">F (False)</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">F (False)</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">F (False)</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">T (True)</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">T (True)</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">T (True)</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">F (False)</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">T (True)</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">T (True)</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">T (True)</code></td>
+      <td style="text-align: center"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><br /></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><a href="../../../../">Discrete Structures</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../set-intersection">Prev</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../cartesian-product">Next</a></td>
+    </tr>
+  </tbody>
+</table>
+:ET

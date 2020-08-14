@@ -1,0 +1,73 @@
+I"�<ul>
+  <li>Definition: In a p-dimensional space, a hyperplane is a flat affine subspace of hyperplane dimension p − 1.</li>
+  <li>For instance, in two dimensions, a hyperplane is a flat subspace.</li>
+</ul>
+
+\[\beta _0+ \beta _1X_1+\beta_2X_2=0\]
+
+<ul>
+  <li>For p-dimensions:</li>
+</ul>
+
+\[\beta _0+ \beta _1X_1+\beta_2X_2+...+ \beta _pX_p=0\]
+
+<ul>
+  <li>If we have a point X (X1, X2, X3, …, Xp):</li>
+</ul>
+
+\[\beta _0+ \beta _1X_1+\beta_2X_2+...+ \beta _pX_p&gt;0\]
+
+<ul>
+  <li>This means X lies to one side of the hyperplane. On the other hand, if:</li>
+</ul>
+
+\[\beta _0+ \beta _1X_1+\beta_2X_2+...+ \beta _pX_p&lt;0\]
+
+<ul>
+  <li>then X lies on the other side of the hyperplane.</li>
+  <li>We can think of the hyperplane as dividing p-dimensional space into two halves.</li>
+  <li>Questions: we can use hyperplane for regression, classification, or clustering?</li>
+</ul>
+
+<p>.<font color="red">Challenge Question</font>: how do you build a hyperplane?</p>
+
+<h1 id="hyperplane--how">Hyperplane – How?</h1>
+<ul>
+  <li>Question: write a python (or other languages) function</li>
+  <li>Input: training data n points,</li>
+</ul>
+
+\[x_1 = \left(\begin{array}{c}x_{11} \\\vdots\\x_{1_p} \\\end{array} \right) ,...,x_n=\left(\begin{array}{c}x_{n_1} \\\vdots\\x_{np} \\\end{array} \right)y_1,...,y_n \epsilon\big\{-1,1\big\}\]
+
+<ul>
+  <li>Output: β0, β1, …, βp</li>
+</ul>
+
+\[\beta _0+ \beta _1X_1+\beta_2X_2+...+ \beta _pX_p=0\]
+
+<ul>
+  <li>Rule: separate training data based on their classes, a few misclassifications are allowed</li>
+</ul>
+
+<h3 id="there-may-be-multiple-solutions">There may be multiple solutions</h3>
+<ul>
+  <li>Which one to choose?
+<img src="attachment:image.png" alt="image.png" /></li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><a href="../../../">Index</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="/index.md">Prev</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../mod">Next</a></td>
+    </tr>
+  </tbody>
+</table>
+:ET

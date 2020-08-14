@@ -1,0 +1,33 @@
+I"�<h3 id="here-are-k-means-algorithm-steps">Here are K-means algorithm steps:</h3>
+
+<p>Step 1: Choose a K: it represents the number of centroids. Hard to decide… especially for high dimensional data. You will learn it in your homework 2.</p>
+
+<p>Step 2: Randomly selected centroids positions</p>
+
+<p>Step 3: Calculate distances between each data point with K centroids and decide cluster response (closer)</p>
+
+<p>Step 4: Calculate the mean value of each cluster, use the mean value as the new centroid</p>
+
+<p>Step 5: repeat step 3 and 4 until you have repeated N (maybe 100) times or centroids do not change anymore.</p>
+
+<p><img src="algo1.png" alt="" /></p>
+
+<p><img src="algo2.png" alt="" /></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><a href="../../../">Index</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../k_means">Prev</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../elbow">Next</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+:ET

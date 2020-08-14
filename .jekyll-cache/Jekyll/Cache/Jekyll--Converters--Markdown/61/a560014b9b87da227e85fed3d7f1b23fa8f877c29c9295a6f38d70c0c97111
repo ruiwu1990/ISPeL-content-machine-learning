@@ -1,0 +1,221 @@
+I"u<p>There are a number of binary operations defined on sets.  There are properties of these operations that imply the truth of statements.  These implied true statements are called identities.</p>
+
+<p>The following outlines some of the known identites first by operation and then the statements that involve more than one operation. Some of the identites were already introduced in the sections for the operation. In each of the following, let \(A, B\) and \(C\) be sets. The Universal set is \(U,\) while the Empty set is \(\emptyset.\)  Remember, a statement is not true if there exists one example for which the statement is not true.  You cannot prove the truth of a statement by showing the statement holds for one example.</p>
+
+<p><em>Set Union:</em></p>
+
+<ol>
+  <li>
+    <p>identity law, \(A \cup U = U\)</p>
+  </li>
+  <li>
+    <p>domination law, \(A \cup \emptyset = A\)</p>
+  </li>
+  <li>
+    <p>idempotent law, \(A \cup A = A\)</p>
+  </li>
+  <li>
+    <p>complement law, \(A \cup A^{c} = U\)</p>
+  </li>
+  <li>
+    <p>commutative law, \(A \cup B = B\cup A\)</p>
+  </li>
+  <li>
+    <p>associative law, \(( A \cup B  )\cup C = A\cup ( B \cup C )\)</p>
+  </li>
+</ol>
+
+<p><em>Set Intersection:</em></p>
+
+<ol>
+  <li>
+    <p>identity law, \(A \cap U = A\)</p>
+  </li>
+  <li>
+    <p>domination law, \(A \cap \emptyset = \emptyset\)</p>
+  </li>
+  <li>
+    <p>idempotent law, \(A \cap A = A\)</p>
+  </li>
+  <li>
+    <p>complement law, \(A \cap A^{c} = \emptyset\)</p>
+  </li>
+  <li>
+    <p>commutative law, \(A \cap B = B \cap A\)</p>
+  </li>
+  <li>
+    <p>associative law, \(( A \cap B  )\cap C = A \cap ( B \cap C )\)</p>
+  </li>
+</ol>
+
+<p><em>Set Symmetric Difference:</em></p>
+
+<p>The symmetric difference of a set with the Universal set is the Emptyset:</p>
+
+\[A \Delta U = \emptyset\]
+
+<p>The symmetric difference of a set with the Emptyset returns the set:</p>
+
+\[A \Delta \emptyset = A\]
+
+<p>The symmetric difference of a set with itself is the original set:</p>
+
+\[A \Delta A = \emptyset\]
+
+<p>The symmetric difference of a set with with the set’s complement is the Emptyset:</p>
+
+\[A \Delta A^{c} = A\]
+
+<p>Symmetric difference is not commutative:</p>
+
+\[A \Delta B \neq B \Delta A\]
+
+<p>The associative law holds for set symmetric difference:</p>
+
+\[( A \Delta B  )\Delta C = A \Delta ( B \Delta C )\]
+
+<p><em>Cartesian Product:</em></p>
+
+<ol>
+  <li>
+\[A \times \emptyset = \emptyset A= \emptyset\]
+  </li>
+  <li>
+\[A \times ( B \cup C ) = ( A \times B  ) \cup  ( A \times C  )\]
+  </li>
+  <li>
+\[A \times ( B \cap C  ) = ( A \times B ) \cap  ( A \times C  )\]
+  </li>
+  <li>
+\[A \times ( B \times C  ) =  ( A \times B  ) \times C\]
+  </li>
+</ol>
+
+<p><em>Absorption Laws regarding Set Union and Intersection:</em></p>
+
+<ol>
+  <li>
+\[A \cap (A \cup B) = A\]
+  </li>
+  <li>
+\[A \cup (A \cap B) = A\]
+  </li>
+</ol>
+
+<p><em>Distributive Laws regarding Set Union and Intersection:</em></p>
+
+<ol>
+  <li>
+\[A \cap (B \cup C) = (A \cap B) \cup (A \cap C)\]
+  </li>
+  <li>
+\[A \cup (B \cap C) = (A \cup B) \cap (A \cup C)\]
+  </li>
+</ol>
+
+<p><em>Intersection distributes over Symmetric Set Difference:</em></p>
+
+<ol>
+  <li>
+\[A\cap \left ( B\Delta C \right )=\left ( A\cap B \right )\Delta \left ( A\cap C \right )\]
+  </li>
+</ol>
+
+<p><em>Intersection written in terms of Set Difference</em></p>
+
+<ol>
+  <li>
+\[A \cap B = A - (A - B)\]
+  </li>
+</ol>
+
+<p><em>The Complement distributes over Set Union, Set Intersection and Set Difference and Set Symmetric Difference:</em></p>
+<ol>
+  <li>
+\[U^{c} = \emptyset\]
+  </li>
+  <li>
+\[(\emptyset)^{c} = U\]
+  </li>
+  <li>
+\[(A \cap B)^{c} = A^{c} \cap B^{c}\]
+  </li>
+  <li>
+\[(A \cup B)^{c} = A^{c} \cup B^{c}\]
+  </li>
+  <li>
+\[(A^{c})^{c} = A\]
+  </li>
+  <li>
+\[A \Delta B = A^{c} \Delta B^{^{c}}\]
+  </li>
+  <li>
+\[\emptyset^{^{c}} = U\]
+  </li>
+  <li>
+\[U^{c}=\emptyset\]
+  </li>
+</ol>
+
+<p><em>DeMorgan’s Laws:</em></p>
+
+<ol>
+  <li>
+\[(A \cap B)^{c} = A^{c} \cap B^{c}\]
+  </li>
+  <li>
+\[(A \cup B)^{c} = A^{c} \cup B^{c}\]
+  </li>
+</ol>
+
+<p><em>Distributive laws:</em></p>
+
+<ol>
+  <li>
+\[A\cap \left ( B\cup C \right )=\left ( A\cap B \right )\cup \left ( A\cap C \right )\]
+  </li>
+</ol>
+
+<p>It is a very good idea to experiment with a statement’s validity with concrete examples before trying to prove the statement.  You just might get lucky and find either a hint to the sequence of statements that would provide a proof or a counter-example to the statement.  For example, while not an acceptable form of proof for the statement, \(\left ( A\cap B\right )^{c}=A^{c}\cup B^{^{c}},\)</p>
+
+<p>there is value in noticing that the Venn Diagram for the left hand side and right hand side of the statment do not disprove the statement.  It is a very good idea to experiment with a statement’s validity with concrete examples before trying to prove the statement.  You just might get lucky and find either a hint to the sequence of statements that would provide a proof or a counter-example to the statement.</p>
+
+<p><label for="deMorg" class="margin-toggle">⊕</label>
+<input type="checkbox" id="deMorg" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/assets/img/F3.png" alt="Venn Diagram to conceptualize idea behind the Distributive Law, that set intersection distributes over set union. " /><br />
+    Venn Diagram to conceptualize idea behind the Distributive Law, that set intersection distributes over set union. 
+</span>
+<!--- <img src="../../../../assets/img/F3.png" alt="Drawing" style="width: 333px;" align="center;"> --->
+<!---  <img src="../../../../assets/img/F3.png" alt="Drawing" style="width: 333px;" align="center;"> ---></p>
+
+<p>Let \(A, B\) and \(C\) be arbitrary finite sets.</p>
+
+<p>We can generalise De Morgan’s laws to any number of sets
+\(\left ( \bigcup_{n} S_{n}\right )^{_{c}}=\bigcap_{n}S_{n}^{c}\)
+\(\left ( \bigcap_{n} S_{n}\right )^{_{c}}=\bigcup_{n}S_{n}^{c}\)
+where \(S_n, n=1,2,3,...,n\) are arbitrary sets.</p>
+
+<p>A proof of DeMorgan’s laws \(( A \cap B )^{c} = A^{c}\cup B^{^{c}}\).</p>
+
+<p>To prove that \(( A \cap B )^{c} \subseteq A^{c}\cup B^{^{c}},\) let \(x \in ( A \cap B  )^{c}.\)
+Then \(x \notin  ( A \cap B  ).\) This implies that either \($ x \notin A \text{ or } x\notin B.\) We then have that \(x \in A^{c}\cup B^{c}.\)
+Now let \(x \in  A^{c}\cup B^{^{c}}.\) Then \(x \in A^{c } \text{ or } x \in B^{c}\) which means that \(x \in A^{c}\cup B^{c}
+\blacksquare\)</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><a href="../../../">Index</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../operations/cartesian-product">Prev</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../partitions/power-set">Next</a></td>
+    </tr>
+  </tbody>
+</table>
+
+:ET

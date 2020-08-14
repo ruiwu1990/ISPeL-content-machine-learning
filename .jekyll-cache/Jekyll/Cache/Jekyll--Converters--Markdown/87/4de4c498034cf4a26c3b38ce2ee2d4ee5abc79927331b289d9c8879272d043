@@ -1,0 +1,45 @@
+I"�<ul>
+  <li>
+    <p>Used for classification models.</p>
+  </li>
+  <li>
+    <p>A confusion matrix is a summary of prediction results on a classification problem.</p>
+  </li>
+  <li>
+    <p>The number of correct and incorrect predictions are summarized with count values and broken down by each class. This is the key to the confusion matrix.</p>
+  </li>
+  <li>
+    <p>The confusion matrix shows the ways in which your classification model is confused when it makes predictions.</p>
+  </li>
+  <li>
+    <p>It gives us insight not only into the errors being made by a classifier but more importantly the types (to be learned) of errors that are being made.</p>
+  </li>
+</ul>
+
+<p><img src="confusion1.png" alt="" /></p>
+
+<font color="green">Example:</font>
+
+<p>An example of 2-class classification problem</p>
+
+<p>Class 1 : Positive</p>
+
+<p>Class 2 : Negative</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><a href="../../../">Index</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../knn-steps">Prev</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../classification">Next</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+:ET

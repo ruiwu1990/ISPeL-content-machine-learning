@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Examples of Sets</title>
+  <meta name="description" content="ISPeL is an interactive system for personalization of learning. It uses topic-based authoring.">
+
+  <!---   <link rel="stylesheet" href="/ISPeL-content-machine-learning/css/tufte.css" --->
+  <link rel="stylesheet" href="../../../css/tufte.css">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75587219-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+
+  <link rel="canonical" href="http://localhost:7000/ISPeL-content-machine-learning/discrete-structures/set-theory/examples/">
+  <link rel="alternate" type="application/rss+xml" title="ISPeL-content-machine-learning" href="http://localhost:7000/ISPeL-content-machine-learning/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+
+
+<header>
+    <nav class="group">
+    <a href="../../../">Machine Learning</a>
+    <a href="http://ispel.cs.ecu.edu/" _target="blank">ISPeL</a>
+    <a href="http://seng5005.cs.ecu.edu/" _target="blank">Fall 2020</a>
+    <a href="https://github.com/vngudivada/ISPeL-content-machine-learning.git" _target="blank">GitHub</a>
+    </nav>
+</header>
+
+    <article class="group">
+      
+
+<h1>Examples of sets</h1>
+<p class="subtitle"></p>
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+        e: "\\epsilon",
+        xti: "x^{(i)}",
+        yti: "y^{(i)}",
+        bfy: "{\\bf y}",
+        bfx: "{\\bf x}",
+        bfg: "{\\bf g}",
+        bfbeta: "{\\bf \\beta}",
+        tp: "\\tilde p",
+        pt: "p_\\theta",
+        E: "{\\mathbb{E}}",
+        Ind: "{\\mathbb{I}}",
+        KL: "{\\mathbb{KL}}",
+        Re: "{\\mathbb{R}}",
+        Dc: "{\\mathcal{D}}",
+        Tc: "{\\mathcal{T}}",
+        Xc: "{\\mathcal{X}}",
+        note: ["\\textcolor{blue}{[NOTE: #1]}",1]
+      }
+    }
+  });
+</script>
+
+
+<p>We demonstrated two ways to create a set: enclosing a comma seperated list of the elements in curly brackts and constructing a well-defined rule that determines if an element is in the set.</p>
+
+<p>When listing out the elements for a set, the types of elements is explicit.  Here are several sets with their standard notation.</p>
+
+<p><strong>Example 1</strong></p>
+
+<p><em>The set of all integers</em> \(Z = \{...,-3, -2, -1, 0, 1, 2, 3, ...\}\)<br /></p>
+
+<p><em>The set of all positive integers</em>  \(Z^+ = \{1, 2, 3, ...\}\)<br /></p>
+
+<p><em>The set of all negative integers</em>  \(Z^- = \{-1, -2, -3, ...\}\)<br /></p>
+
+<p><em>The set of natural numbers</em> \(N = \{0, 1, 2, 3, ...\}\)<br /></p>
+
+<p>Notice that there is some overlap between the above sets, as if we could build say \(Z^+\) from \(N\) by just adding on the element “0.”  We will definitely want to take advantage of the idea of building one set from other sets later when we look at the union of two sets.  The idea of creating a new set by removing some of the elements is also hinted at here.  We could transform the set \(Z\) into the set \(N\) by taking the set difference of the super set \(Z\) and the smaller, subset \(Z^-\) to leave only the natural numbers \(N.\)</p>
+
+<p>The next example illustrates the use of a well-defined rule to construct a set.</p>
+
+<p><strong>Example 2</strong></p>
+
+<p><em>Let our rule be:</em></p>
+
+<p><em>The number \(q\) is in the set \(Q\) if and only if \(q\) can be written as the quotient x divided by y, where x and y are both in the set \(Z,\) and y does not equal 0.</em></p>
+
+<p>One element in the set defined by this rule is \(q = 2,\) since we could let \(x = 2,\) \(y = 1\) so that both \(x\) and \(y\) are in \(Z,\) \(q = x/y = 2/1\), and \(y\) is not 0.  In this way, every integer is in \(Q.\) The set \(Q\) also contains the values: \(1/2,\) \(2/3,\)  \(-4/9\) and \(34567/10000 = 3.4567.\)  The set \(Q\) is the set of all values with decimal values that are finite or have a repeating decimal representation.  The set \(Q\) is known as the set of all Rational numbers.</p>
+
+<p>A similar set to \(Q\) is the set of all Gaussian Integers, \(Z[i].\)  In Example 3, the definition builds the set \(Z[i]\) by using two copies of \(Z.\)</p>
+
+<p><strong>Example 3</strong>
+<em>Let our rule be:</em></p>
+
+<p><em>The set</em> \(Z[i]\) <em>consists of all numbers \(z\) so that \(z\) is of the form  \(x + yi\), where \(x\) and \(y\) are both in the set \(Z\)</em></p>
+
+<p>The crafting of a set from other sets as in Example 3 is very useful, and this method deserves some dedicated notation. An ordered n-tuple of elements (\(x\)<sub>\(1\)</sub>, \(x\)<sub>\(2\)</sub>,…, \(x\)<sub>\(n\)</sub>) where \(x\)<sub>\(i\)</sub> is an element of set \(S\)<sub>i</sub>. In both \(Q\) and \(Z[i]\) ordered pairs of elements \((x,y)\) with \(x,y\) in \(Z\) are used in the definition of sets \(Q\) and \(Z[i].\)  This technique is used frequently in Mathematics and Computer Science.</p>
+
+<p>All of the sets in the previous Examples are countably finite. This means that we could come up with ways to match all the elements in each of the sets exactly to the set of natural numbers, \(N.\) This is not always possible for every set.</p>
+
+<p><strong>Example 4</strong>
+<em>The following are well known sets that each contain an infinite number of elements. 	The third set, the set of Complex numbers, is defined using two copies of the infinte set</em> \(R.\)*</p>
+
+<p><em>The set of all reals</em> \(R\)</p>
+
+<p><em>The set of all irrational numbers</em> \(I\)</p>
+
+<p><em>The set of all complex numbers</em> \(C = \{x + yi\) where x,y are in \(R\} = \{(x,y)\) where \(x, y\) are in \(R\}\)</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><a href="../../../">Index</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../">Prev</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../universalset">Next</a></td>
+    </tr>
+  </tbody>
+</table>
+
+
+    </article>
+    <footer>
+<hr class="slender">
+<div class="credits">
+This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll" target="_blank">Tufte theme</a>. &copy; 2020
+</div>
+</footer>
+  </body>
+</html>

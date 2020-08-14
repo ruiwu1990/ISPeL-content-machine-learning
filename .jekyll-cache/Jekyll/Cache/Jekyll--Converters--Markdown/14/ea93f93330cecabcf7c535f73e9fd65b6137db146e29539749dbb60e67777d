@@ -1,0 +1,125 @@
+I"<p><span class="newthought">This Collection</span> of learning materials is constructed to provide a flexible network of theory and examples for Discrete Structures as part of <a href="https://ppse.ecu.edu/learningresearch">ISPeL</a>, an Interactive System for Personalized Learning.<label for="note-pgm" class="margin-toggle sidenote-number"></label><input type="checkbox" id="note-pgm" class="margin-toggle" /><span class="sidenote">The ISPeL System Project is funded by the <a href="https://www.nsf.gov">NSF</a> as part of <a href="https://ppse.ecu.edu/">PPSE</a>, Programmers to Professional Software Engineers Program, at <a href="https://www.ecu.edu/">ECU</a> .</span></p>
+
+<p>The site is designed to be a reference for essential definitions, concepts, examples and practice problems in an environment that allows each learner to personalize their experience within a non-course-centric curriculum.  To the extent possible, prerequisites for topics have been integrated within the topic’s development.  Your collaboration is welcomed with the aim to make this site a valuable learning resource. <label for="mn-construction" class="margin-toggle sidenote-number"></label><input type="checkbox" id="mn-construction" class="margin-toggle" /><span class="sidenote">The notes are still <strong>under construction</strong> and are developed with the intention of providing an open resource for both educators and learners.  The content is not without typos, and the authors have done their best to present quality information. If you see areas for improvement, please let us know or submit a pull request with your fixes to our <a href="https://github.com/vngudivada/ISPeL-content-discrete-structures/tree/development">GitHub repository</a>.</span></p>
+
+<p>Each module outlined in the Overview of Machine Learning below begins with an Introduction.   The authors’ recommend that new learners begin with the study of the preliminaries presented in an Introduction section before investigating other concepts in the module. <label for="note-pgm" class="margin-toggle sidenote-number"></label><input type="checkbox" id="note-pgm" class="margin-toggle" /><span class="sidenote">The materials presented are based on the ontology constructed by <a href="http://www.cs.ecu.edu/wu/">Dr. Rui Wu</a>,  <a href="">Grayson Blankenship-undergrad</a> and other research members of the ISPeL System Project Team funded by the <a href="https://www.nsf.gov">NSF</a> as part of the <a href="https://ppse.ecu.edu/">PPSE</a></span></p>
+
+<h2> <a href="machine-learning">Overview of Machine Learning</a> </h2>
+
+<p><a href="machine-learning/">click</a></p>
+
+<h2 id="machine-learning-basics">Machine Learning Basics</h2>
+
+<ol>
+  <li>
+    <p><a href="machine-learning/introduction/">Introduction:</a> Definition,</p>
+  </li>
+  <li>
+    <p><a href="discrete-structures/set-theory/properties/set-equality">Properties of Sets</a> Equality of sets. Cardinality of a set. Countable and Uncountable (Countably infinite) sets. Set complement.</p>
+  </li>
+  <li>
+    <p><a href="discrete-structures/set-theory/operations/set-union">Operations on Sets</a> Union, Difference, and the Intersection of sets. Set Symmetric Difference and Cartesian Product.</p>
+  </li>
+  <li>
+    <p><a href="discrete-structures/set-theory/derivedidentities">Identities and DeMorgan’s Laws</a></p>
+  </li>
+  <li>
+    <p><a href="discrete-structures/set-theory/partitions/power-set">Partitions and Relations</a> The Power set of a set. Definition of a partition of a set, a relation on a set.</p>
+  </li>
+  <li>
+    <p><a href="discrete-structures/set-theory/partitions/mod">Modular Arithmetic, Sets</a> Defining modular arithmetic in terms of sets.</p>
+  </li>
+</ol>
+
+<h2 id="functions">Functions</h2>
+
+<ol>
+  <li>
+    <p><a href="discrete-structures/functions">Introduction</a> Well-defined function is defined and the notation of a function is givens. Domain, Range, Image of a function.</p>
+  </li>
+  <li>
+    <p><a href="discrete-structures/functions/examples/">Examples of Functions</a> The identity function, exponential and logarithmic functions, ceiling and floor function, step functions, trig functions.</p>
+  </li>
+  <li>
+    <p><a href="discrete-structures/functions/operations/add-sub">Operations on Functions</a> Addition, subtraction, multiplication, division and composition of functions. Inverse functions.</p>
+  </li>
+  <li>
+    <p><a href="discrete-structures/functions/permutations/">Permutations</a> Permutations of a set illustrated as functions.</p>
+  </li>
+  <li>
+    <p><a href="discrete-structures/functions/classification/">Classification of Functions</a> Injections, surjections, bijections, homomorphisms.</p>
+  </li>
+  <li>
+    <p><a href="discrete-structures/functions/mod/">Modular Arithmetic, Functions</a> Defining modular arithmetic in terms of functions.</p>
+  </li>
+</ol>
+
+<h2 id="counting-methods">Counting Methods</h2>
+
+<ol>
+  <li>
+    <p><a href="discrete-structures/counting-methods">Introduction</a> Counting methods are introduced, motivated with binomials and data mining examples.</p>
+  </li>
+  <li>
+    <p><a href="discrete-structures/counting-methods/combinations/">Combinations</a> Counting the possible outcomes of m items taken n at a time, \(nCm,\) where order does not matter.</p>
+  </li>
+  <li>
+    <p><a href="discrete-structures/counting-methods/permutations/">Permutations</a> Counting the possible outcomes of m items taken n at a time, \(nPm,\) where order matters.</p>
+  </li>
+  <li>
+    <p><a href="discrete-structures/counting-methods/mod/">Modular Arithmetic, Permutations</a> Defining modular arithmetic in terms of counting methods.</p>
+  </li>
+</ol>
+
+<h2 id="probability">Probability</h2>
+
+<ol>
+  <li>
+    <p><a href="discrete-structures/probability/">Introduction</a> Probability is explained, sample space is defined with examples.  Populations and samples.</p>
+  </li>
+  <li>
+    <p><a href="discrete-structures/probability/random-var/">Random Variables</a> Definition of a random variable and data types: discrete and continuous random variables. Parameters versus statistics.</p>
+  </li>
+  <li>
+    <p><a href="discrete-structures/probability/distributions/">Distributions</a> Gaussian, binomial, exponential distributions. Histograms, Bar graphs. Density functions and Probability Mass functions.</p>
+  </li>
+  <li>
+    <p><a href="discrete-structures/probability/mod/">Modular Arithmetics, Probability</a> Tying in topics of probability in with application to Modular arithmetic.</p>
+  </li>
+</ol>
+
+<h2 id="proof-techniques">Proof Techniques</h2>
+
+<ol>
+  <li>
+    <p><a href="discrete-structures/proofs">Introduction</a> Motivation for proofs is given.</p>
+  </li>
+  <li>
+    <p><a href="discrete-structures/proofs/statements/">Statements</a> Differentiation between types of sentence patterns is established.</p>
+  </li>
+  <li>
+    <p><a href="discrete-structures/proofs/translation/">Translation of Statements and Symbolic Logic</a> Universal and existential quantifiers.  Implications and biconditional logic statements. Truth tables, Confusion Matrices.</p>
+  </li>
+  <li>
+    <p><a href="discrete-structures/proofs/types/">Types of Proofs</a> Direct, indirect, inductive proofs. Proof by contradiction and the contrapositive. Counter-examples</p>
+  </li>
+  <li>
+    <p><a href="discrete-structures/proofs/mod/">Modular Arithmetic, Proofs</a> Proving statements involving modular arithmetic.</p>
+  </li>
+</ol>
+
+<h2 id="groups">Groups</h2>
+
+<ol>
+  <li>
+    <p><a href="discrete-structures/groups/">Introduction</a> Groups are defined with examples provided. Group of n-by-n matrices with matrix addition and multiplication. Vector spaces.</p>
+  </li>
+  <li>
+    <p><a href="discrete-structures/groups/subgroups/">Subgroups</a> Definiton of a subgroup with examples.</p>
+  </li>
+  <li>
+    <p><a href="discrete-structures/groups/mod/">Modular Arithmetics, Groups</a> The group \(Z_p\) where \(p\) is a prime.</p>
+  </li>
+</ol>
+
+:ET
