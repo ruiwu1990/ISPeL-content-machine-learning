@@ -30,43 +30,22 @@ Figure Credit: https://www.quora.com/How-is-the-k-nearest-neighbor-algorithm-dif
 
 Based on: <https://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/>
 
+### Group Activity
+- Sample Code: <https://github.com/ruiwu1990/CSCI_4120/tree/master/KNN>
+- Finish the TODO section
 
-
-
-- KNN is supervised learning
-- KNN can be a classification technique and also used for regression.
-- Sklearn:
-    - KNeighborsClassifier: classification
-    - KNeighborsRegressor: regression
-
-![](knn2.png)
-
-### Here are some challenges:
-- How to calculate the similarity (e.g., friends): distances between each data point, Euclidean distance.
-- How to choose K: if we need to classify students into groups, then how to decide the number of K. ATTENSION: K represents how many neighbors you want to consider for the response; K does not mean number of groups.
-
-![](knn3.png)
-
-
-# KNN Advantages vs Disadvantages
-
-#### Advantages:
-- You do not need to make assumptions about data (i.e., linear vs nonlinear, normal distribution…)
-- KNN is simple compared with other algorithm.
-- Usually, KNN performs not bad
-- KNN is robust to noisy training data, a few noise data points will not impact results a lot.
-…
-
-#### Disadvantages:
-- You need to determine K.
-- KNN is computationally expensive. It requires many calculations—distances.
-- KNN requires a lot of memory.
-- KNN needs to use all training data.
-…
-
-
-### KNN: K changes
-
-![](knn4.png) 
+### Homwork 1: Group Homework
+- Group Homework
+- Rewrite KNN sample code using KNeighborsClassifier.
+* Repeat KNN Step 1-5, for at least five times and calculate average accuracy to be your result.
+* If you ise the latest version of scikit-learn, you need to program with Python>=3.5.
+* Use the same dataset: "iris data"
+- Draw a line chart: Use a "for loop" to change k from 1 to 10 and check your model accuracy.
+- README.MD file
+* Team member names and email addresses
+* Quick Start
+* Which K (from 1 to 10) works the best?
+* insert a line chart
+- Due Semtember XX
 
 ||[Index](../../../)||| [Prev](../../)|||[Next](k-part2)|||
