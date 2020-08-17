@@ -14,82 +14,10 @@ A learner can proceed as they are inclined within the module to create their own
 
 
 Machine Learning available topics: 
-1. [Introduction](introduction/what-is-machine-learning/)
-2. [K_Means](k_means/)
-3. [KNN](knn/)
-4. [Statistical Learning](statistical-learning/)
-5. [Linear Regression](linear-regression/)
-6. [Evaluation](evaluation/)
-7. [Hyperplane](test-hyper/)
+1. [1_intro_part2](1_intro_part2/)
+2. [2_KNN_vs_K_Means](2_KNN_vs_K_Means/1/)
 
 
-## Introduction 
-
-Intro needed.
-
-1. [What is Machine Learning?](introduction/what-is-machine-learning/)
-
-2. [Supervised Learning](introduction/supervised-learning/) 
-
-3. [Unsupervised Learning](introduction/unsupervised-learning/)
-
-
-## K_Means
-
-intro needed.
-
-1. [Introduction](functions/intro/)
-
-2. [Properties of Functions](functions/properties/)
-
-3. [Permutations](functions/permutations/)
-
-4. [Operations on Functions](functions/operations/)
-
-5. [Modular Arithmetic](functions/mod/)
-
-
-## KNN
-
-intro needed.
-
-1. [Introduction](set-theory/intro/) 
-
-2. [Properties of Sets](set-theory/properties/)
-
-3. [Operations on Sets](set-theory/operations/) 
-
-4. [Partitions and Relations](set-theory/partitions/)
-
-5. [Modular Arithmetic](set-theory/mod/)
-
-## Statistical Learning
-
-1. [Introduction](counting-methods/intro/)
-
-2. [Combinations](counting-methods/combinations/)
-
-3. [Permutations](counting-methods/permutations/)
-
-
-## Linear Regression
-
-1. [Introduction](probability/intro/)
-
-2. [Random Variables](probability/random-var/)
-
-3. [Outcome Space](probability/outcome-space/)
-
-
-
-## Evaluation
-
-
-1. [Introduction](groups/intro/)
-
-2. [Axioms of a Group](groups/axioms/)
-
-2. [Examples of Groups](groups/examples/)
 
 
 |||[Machine Learning](../)|||

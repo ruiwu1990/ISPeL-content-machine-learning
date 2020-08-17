@@ -39,9 +39,13 @@ Is there an ideal $$f(X)$$? In particular, what is a good value for $$f(X)$$ at 
 
 $$f(4) = E(Y|X = 4)$$
 
-$$E(Y|X = 4)$$ means expected value (average) of $$Y$$ given $$X = 4$$.
- 
- This ideal $$f(x) = E(Y|X = x)$$ is called the regression function
+E(Y|X = 4) means expected value average of Y given X = 4.
+
+This ideal f(x) = E(Y|X = x) is called the regression function
 
 
-|||[Index](../../)||| [Prev](../)||| [Next](bias-variance-tradeoff)
+
+
+
+
+|||[Index](../../)||| [Prev](../)||| [Next](part2)|||
