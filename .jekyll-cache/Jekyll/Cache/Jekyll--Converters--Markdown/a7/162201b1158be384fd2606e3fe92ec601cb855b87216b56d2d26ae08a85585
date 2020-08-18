@@ -1,0 +1,108 @@
+I"P<ul>
+  <li>KNN is supervised learning</li>
+  <li>KNN can be a classification technique and also used for regression.</li>
+  <li>Sklearn:
+    <ul>
+      <li>KNeighborsClassifier: classification</li>
+      <li>KNeighborsRegressor: regression</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="knn2.png" alt="" /></p>
+
+<p>Figure Credit: <a href="https://www.mathworks.com/matlabcentral/fileexchange/63621-knn-classifier">https://www.mathworks.com/matlabcentral/fileexchange/63621-knn-classifier</a></p>
+
+<h3 id="here-are-some-challenges">Here are some challenges:</h3>
+<ul>
+  <li>How to calculate the similarity (e.g., friends): distances between each data point, Euclidean distance.</li>
+  <li>How to choose K: if we need to classify students into groups, then how to decide the number of K. ATTENSION: K represents how many neighbors you want to consider for the response; K does not mean number of groups.</li>
+</ul>
+
+<p><img src="knn3.png" alt="" /></p>
+
+<p>Figure Credit: <a href="https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-supports-knn-classification-and-regression/">https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-supports-knn-classification-and-regression/</a></p>
+
+<h3 id="knn-how">KNN: How</h3>
+<ul>
+  <li>The KNN algorithm is belongs to the family of instance-based, competitive learning and lazy learning algorithms.</li>
+  <li>Instance-based algorithms are those algorithms that model the problem using data instances (or rows) in order to make predictive decisions. The KNN algorithm is an extreme form of instance-based methods because all training observations are retained as part of the model, i.e. without data, your KNN model does not exist.</li>
+  <li>It is a competitive learning algorithm, because it internally uses competition between model elements (data instances) in order to make a predictive decision. The objective similarity measure between data instances causes each data instance to compete to “win” or be most similar to a given unseen data instance and contribute to a prediction.</li>
+  <li>Lazy learning refers to the fact that the algorithm does not build a model until the time that a prediction is required. It is lazy because it only does work at the last second. This has the benefit of only including data relevant to the unseen data, called a localized model. A disadvantage is that it can be computationally expensive to repeat the same or similar searches over larger training datasets.</li>
+  <li>Finally, KNN is powerful because it does not assume anything about the data, other than a distance measure can be calculated consistently between any two instances. As such, it is called non-parametric or non-linear as it does not assume a functional form.</li>
+</ul>
+
+<h1 id="knn-advantages-vs-disadvantages">KNN Advantages vs Disadvantages</h1>
+
+<h4 id="advantages">Advantages:</h4>
+<ul>
+  <li>You do not need to make assumptions about data (i.e., linear vs nonlinear, normal distribution…)</li>
+  <li>KNN is simple compared with other algorithm.</li>
+  <li>Usually, KNN performs not bad</li>
+  <li>KNN is robust to noisy training data, a few noise data points will not impact results a lot.
+…</li>
+</ul>
+
+<h4 id="disadvantages">Disadvantages:</h4>
+<ul>
+  <li>You need to determine K.</li>
+  <li>KNN is computationally expensive. It requires many calculations—distances.</li>
+  <li>KNN requires a lot of memory.</li>
+  <li>KNN needs to use all training data.
+…</li>
+</ul>
+
+<p><img src="knn2.png" alt="" />
+Figure Credit: <a href="https://www.mathworks.com/matlabcentral/fileexchange/63621-knn-classifier">https://www.mathworks.com/matlabcentral/fileexchange/63621-knn-classifier</a></p>
+
+<h3 id="knn-k-changes">KNN: K changes</h3>
+
+<p><img src="knn4.png" alt="" /></p>
+<ul>
+  <li>K-means clustering aims to partition n observations into k clusters in which each observation belongs to the cluster with the nearest mean.</li>
+  <li>If you want to separate different car models into 4 categories based on horsepower, engine displacement, and MPG, you can use K-means.</li>
+  <li>KNN is unsupervised learning and a clustering algorithm (involves the grouping of data points).</li>
+  <li>K represents # of centroids.
+<img src="k-means.png" alt="" /></li>
+</ul>
+
+<p>Figure Credit: https://blogs.oracle.com/bigdata/k-means-clustering-machine-learning</p>
+
+<h4 id="an-example">An Example</h4>
+<p><img src="k-means2.png" alt="" /></p>
+
+<p>Example is based on: https://www.youtube.com/watch?v=4b5d3muPQmA</p>
+
+<h3 id="k-means-advantages-vs-disadvantages">K-Means: Advantages vs Disadvantages</h3>
+<h4 id="advantages-1">Advantages:</h4>
+<ul>
+  <li>Easy to implement.</li>
+  <li>K-means model dynamically updated: centroid can be updated if new dataset is added.</li>
+</ul>
+
+<h4 id="disadvantages-1">Disadvantages:</h4>
+<ul>
+  <li>Hard to guess K</li>
+  <li>Initial centroid can impact results</li>
+  <li>K-means is time consuming. Need to calculate distances between new centroid in every loop.</li>
+  <li>K-means method may not find out the global best solution. It sometimes returns local optimum.</li>
+  <li>K-means is limited to linear cluster boundaries.</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><a href="../../">Index</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../">Prev</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="k-means-algo">Next</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+:ET
