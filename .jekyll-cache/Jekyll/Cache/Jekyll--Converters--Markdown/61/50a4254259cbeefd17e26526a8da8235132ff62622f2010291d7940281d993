@@ -1,0 +1,67 @@
+I"8<ul>
+  <li>Correlation can be used to represent relationships between variables.
+    <ul>
+      <li>Positive Correlation: both variables change in the same direction.</li>
+      <li>Neutral Correlation: No relationship in the change of the variables.</li>
+      <li>Negative Correlation: variables change in opposite directions.</li>
+    </ul>
+  </li>
+  <li>Pearson’s Correlation vs Spearman’s Correlation
+    <ul>
+      <li>The Pearson correlation coefficient (named for Karl Pearson) can be used to summarize the strength of the linear relationship between two data samples.</li>
+      <li>Spearman’s correlation coefficient (named for Charles Spearman) can be used to summarize the strength between the two data samples, if two variables may be related by a nonlinear relationship or two variables being considered may have a non-Gaussian distribution.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="covariance-vs-correlation">Covariance vs Correlation</h3>
+<ul>
+  <li>Covariance is nothing but a measure of correlation. On the contrary, correlation refers to the scaled form of covariance.</li>
+  <li>The value of correlation takes place between -1 and +1. Conversely, the value of covariance lies between -∞ and +∞.</li>
+  <li>Covariance is affected by the change in scale, i.e. if all the value of one variable is multiplied by a constant and all the value of another variable are multiplied, by a similar or different constant, then the covariance is changed. As against this, correlation is not influenced by the change in scale.</li>
+  <li>Correlation is dimensionless, i.e. it is a unit-free measure of the relationship between variables. Unlike covariance, where the value is obtained by the product of the units of the two variables.</li>
+</ul>
+
+<p>ADD EQUATIONS HERE</p>
+
+<p><img src="lin2.png" alt="" /></p>
+
+<h3 id="homework-3-group-homework">Homework 3: Group Homework</h3>
+<ul>
+  <li>group Homework</li>
+  <li>Complete “regression to the Mean” Exercise 1 and 2</li>
+  <li>Try to use python 2, or the sample code with have weird issues.</li>
+  <li>README.MD
+    <ul>
+      <li>Team member names and email addresses</li>
+      <li>2 result graphs from exercise 1 and 2</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="correlation-sample-code">Correlation Sample Code</h3>
+<ul>
+  <li>Correlation_sample_code</li>
+  <li>Plt.title: use pad to define padding away from your figure</li>
+  <li>Df.corr can calculate correlation matrix between all columns</li>
+  <li>Matshow can show correlation value comparison within a matrix.</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><a href="../../">Index</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../../">Prev</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="lin-reg3/">Next</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+:ET

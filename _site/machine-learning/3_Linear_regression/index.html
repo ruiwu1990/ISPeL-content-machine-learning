@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>KNN</title>
+  <title>Linear Regression</title>
   <meta name="description" content="ISPeL is an interactive system for personalization of learning. It uses topic-based authoring.">
 
   <!---   <link rel="stylesheet" href="/ISPeL-content-machine-learning/css/tufte.css" --->
@@ -22,7 +22,7 @@
   ga('send', 'pageview');
   </script>
 
-  <link rel="canonical" href="http://localhost:7000/ISPeL-content-machine-learning/machine-learning/2_KNN_vs_K_Means/">
+  <link rel="canonical" href="http://localhost:7000/ISPeL-content-machine-learning/machine-learning/3_Linear_regression/">
   <link rel="alternate" type="application/rss+xml" title="ISPeL-content-machine-learning" href="http://localhost:7000/ISPeL-content-machine-learning/feed.xml" />
 </head>
 
@@ -42,7 +42,7 @@
     <article class="group">
       
 
-<h1>Knn</h1>
+<h1>Linear regression</h1>
 <p class="subtitle"></p>
 
 
@@ -73,72 +73,70 @@
 </script>
 
 
-<h3 id="first-machine-learning-model-knn">First Machine Learning Model: KNN</h3>
+<h3 id="simple-linear-regression-using-a-single-predictor-x">Simple linear regression using a single predictor X.</h3>
 
 <ul>
-  <li>The idea is similar data records will be closer with each other. Like friends, if most of your friends like playing video games, then you may also enjoy playing video games.</li>
-  <li>The model for KNN is the entire training dataset. When a prediction is required for an unseen data instance, the KNN algorithm will search through the training dataset for the k-most similar (distance) instances. The prediction attribute of the most similar instances is summarized (averaged) and returned as the prediction for the unseen instance.</li>
-  <li>KNN is supervised or unsupervised?</li>
+  <li>We assume a model</li>
 </ul>
 
-<p><img src="knn1.png" alt="" /></p>
+\[Y = \beta_0 + (\beta_1)X + \epsilon\]
 
-<p>Figure Credit: https://www.quora.com/How-is-the-k-nearest-neighbor-algorithm-different-from-k-means-clustering</p>
-
-<h3 id="how-to-enable-python-3-in-the-notebook">How to enable Python 3 in the notebook</h3>
 <ul>
-  <li>python3 -m pip install ipykernel</li>
-  <li>python3 -m ipykernel install -user</li>
-  <li>Create a Jupyter-notebook using Python3</li>
+  <li>where \beta_0 and \beta_1 are two unknown constants that represent the intercept and slope, also known as coefficients or parameters, and \(\epsilon\) is the error term.</li>
+  <li>
+    <p>Given some \(\hat(\beta_0)\) and \(\hat(\beta_1)\) for the  model cofficients, we predict future sale using  \(\hat(y) = \hat(\beta_0) + \hat(\beta_1),\)</p>
+  </li>
+  <li>where \(\hat(y) indicates a prediction of\)Y\(on the basis of\)X=x$$</li>
+  <li>The hat symbol denotes an estimated value.</li>
 </ul>
 
-<h3 id="knn-steps">KNN Steps</h3>
+<p>=====================
+Estimation of parameter by least squares
+=====================</p>
+
 <ul>
-  <li>If we want to implement a KNN algorithm from scratch. Here are the steps:</li>
-  <li>Load data</li>
-  <li>Check similarity, i.e. distances between eash pair of data points</li>
-  <li>Find neighbors, i.e. which data point is the k-th closest neighbor</li>
-  <li>Return K closest neighbors</li>
-  <li>Check accuracy</li>
-  <li>It is Programming time!
-– <a href="https://www.quora.com/How-is-the-k-nearest-neighbor-algorithm-different-from-k-means-clustering">https://www.quora.com/How-is-the-k-nearest-neighbor-algorithm-different-from-k-means-clustering</a></li>
+  <li>
+    <p>Linear regression is a simple approach to supervised learning. It assumes that the dependence of Y on \(X_1,X_2,...X_p\) is linear.</p>
+  </li>
+  <li>
+    <p>True regression functions are never linear!</p>
+  </li>
+  <li>
+    <p>Although it may seem overly simplistic, linear regression is extremely useful both conceptually and practically.</p>
+  </li>
 </ul>
 
-<p>Based on: <a href="https://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/">https://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/</a></p>
-
-<h3 id="group-activity">Group Activity</h3>
+<h2 id="linear-regression-for-the-advertising-data">Linear regression for the advertising data</h2>
+<h4 id="consider-the-advertising-data-shown">Consider the advertising data shown…</h4>
+<p><img src="linreg1.png" alt="" /></p>
+<h4 id="questions-we-might-ask">Questions we might ask:</h4>
 <ul>
-  <li>Sample Code: <a href="https://github.com/ruiwu1990/CSCI_4120/tree/master/KNN">https://github.com/ruiwu1990/CSCI_4120/tree/master/KNN</a></li>
-  <li>Finish the TODO section</li>
+  <li>Is there a relationship between advertising budget and sales?</li>
+  <li>How strong is the relationship between advertising budget and sales?</li>
+  <li>Which media contributes to sales?</li>
+  <li>How accurately can we predict future sales?</li>
+  <li>Is the relationship linear?</li>
+  <li>Is there synergy among the advertising media?</li>
 </ul>
 
-<h3 id="homwork-1-group-homework">Homwork 1: Group Homework</h3>
+<h3 id="group-activcity-5-linear-regression-from-scratch">Group Activcity 5: Linear Regression from Scratch</h3>
 <ul>
-  <li>Group Homework</li>
-  <li>Rewrite KNN sample code using KNeighborsClassifier.</li>
-  <li>Repeat KNN Step 1-5, for at least five times and calculate average accuracy to be your result.</li>
-  <li>If you ise the latest version of scikit-learn, you need to program with Python&gt;=3.5.</li>
-  <li>Use the same dataset: “iris data”</li>
-  <li>Draw a line chart: Use a “for loop” to change k from 1 to 10 and check your model accuracy.</li>
-  <li>README.MD file</li>
-  <li>Team member names and email addresses</li>
-  <li>Quick Start</li>
-  <li>Which K (from 1 to 10) works the best?</li>
-  <li>insert a line chart</li>
-  <li>Due Semtember XX</li>
+  <li>Group Activity 5:<a href="https://github.com/ruiwu1990/CSCI_4120/tree/master/HW_linear_regression">https://github.com/ruiwu1990/CSCI_4120/tree/master/HW_linear_regression</a></li>
+  <li>Finish to do section, you will have the linear regression implemtation from scratch.</li>
 </ul>
 
 <table>
   <tbody>
     <tr>
       <td> </td>
-      <td><a href="../../../">Index</a></td>
+      <td> </td>
+      <td><a href="../../">Index</a></td>
       <td> </td>
       <td> </td>
       <td><a href="../../">Prev</a></td>
       <td> </td>
       <td> </td>
-      <td><a href="k-part2">Next</a></td>
+      <td><a href="lin-reg2/">Next</a></td>
       <td> </td>
       <td> </td>
     </tr>

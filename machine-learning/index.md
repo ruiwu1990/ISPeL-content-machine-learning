@@ -16,6 +16,7 @@ A learner can proceed as they are inclined within the module to create their own
 Machine Learning available topics: 
 1. [1_intro_part2](1_intro_part2/)
 2. [2_KNN_vs_K_Means](2_KNN_vs_K_Means/)
+3. [3_Linear_regression](3_Linear_regression/)
 
 
 

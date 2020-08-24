@@ -1,4 +1,4 @@
-I"Þ<p><span class="newthought">Machine Learning</span></p>
+I" <p><span class="newthought">Machine Learning</span></p>
 
 <p>Relevant topics and the dependencies between topics have been identified. The prerequisites for topics have been integrated into the layout of the material so that learners can personalize their path of study within each topic.</p>
 
@@ -10,6 +10,7 @@
 <ol>
   <li><a href="1_intro_part2/">1_intro_part2</a></li>
   <li><a href="2_KNN_vs_K_Means/">2_KNN_vs_K_Means</a></li>
+  <li><a href="3_Linear_regression/">3_Linear_regression</a></li>
 </ol>
 
 <table>

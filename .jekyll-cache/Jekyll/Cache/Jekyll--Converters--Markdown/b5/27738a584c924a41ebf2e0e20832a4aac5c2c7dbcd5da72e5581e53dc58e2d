@@ -1,0 +1,64 @@
+I"H<h2 id="here-our-model-is">Here our model is</h2>
+
+\[Y=\beta_0+\beta_1X_{1}+\beta_2X_{2}+...+\beta_pX_{p}+ \epsilon,\]
+
+<p>-We interpret \(\beta_j\) as the average effect on Y of a one unit increase in \(X_j\), holding all other predictors fixed. In the advertising example, the model becomes</p>
+
+\[sales=\beta_0+\beta_1*TV+\beta_2*radio+\beta_3*newspaper+\epsilon.\]
+
+<h2 id="the-ideal-scenario-is-when-the-predictors-are-uncorrelated">The ideal scenario is when the <span style="background-color: #FFF00">predictors are uncorrelated</span></h2>
+<p>A <font color="green">balanced design</font>:</p>
+<ul>
+  <li>Each coefficient can be estimated and tested separately.</li>
+  <li>Interpretations such as <font color="green">"a unit change in $X_j$ is associated with a $$\beta_j$$ change in Y, while all other variables stay fixed"</font>, are possible.</li>
+</ul>
+
+<h2 id="correlations-amongst-predictors-cause-problems"><span style="background-color: #FFF00">Correlations amongst predictors</span> cause problems:</h2>
+<ul>
+  <li>The variance of all coefficients tends to increase, sometimes dramatically</li>
+  <li>Interpretations become hazardous - when $X_j$ changes, everthing else changes.</li>
+  <li>In other words, Y should be <font color="red">highly correlated</font> with predictors (X), but predictors (X) should be <font color="red">uncorrelated</font>.</li>
+  <li>Statistical explanation–mutual information: <a href="https://www.youtube.com/watch?v=U9h1xkNELvY">https://www.youtube.com/watch?v=U9h1xkNELvY</a></li>
+</ul>
+
+\[Y=\beta_0+\beta_1X_{1}+\beta_2X_{2}+...+\beta_pX_{p}+ \epsilon,\]
+
+<h2 id="estimation-and-prediction-for-multiple-regression">Estimation and Prediction for Multiple Regression</h2>
+<ul>
+  <li>Given estimates $\hat{\beta_0},\hat{\beta_1},…\hat{\beta_p}$, we can make predictions using the formula</li>
+</ul>
+
+\[\hat{y}=\hat{\beta_0}+\hat{\beta_1}{x_1}+\hat{\beta_2}{x_2}+...+\hat{\beta_p}{x_p}\]
+
+<ul>
+  <li>We estimate \({\beta_0},{\beta_1},...{\beta_p}\) as the values that minimize the sum of squared residuals</li>
+</ul>
+
+\[RSS =  \Sigma _{i=1}^n(y_1-\hat{y}_i)^2\]
+
+\[=\Sigma _{i=1}^n(y_i-\hat{\beta_0}-\hat{\beta_1}{x_{i1}}-\hat{\beta_2}{x_{i2}}-...-\hat{\beta_p}{x_{ip}})^2\]
+
+<ul>
+  <li>This is done using standard statistical software. The values $<span style="background-color: #FFF00">\hat{\beta_0},\hat{\beta_1},…\hat{\beta_p}$</span> that minimize RSS are the multiple <span style="background-color: #FFF00">least squares regression coefficient estimates.</span></li>
+</ul>
+
+<p><img src="mlr.png" alt="" /></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><a href="../../">Index</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../../">Prev</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="">Next</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+:ET

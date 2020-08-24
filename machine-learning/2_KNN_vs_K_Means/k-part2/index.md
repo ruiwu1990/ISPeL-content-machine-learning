@@ -75,4 +75,4 @@ Example is based on: https://www.youtube.com/watch?v=4b5d3muPQmA
 - K-means method may not find out the global best solution. It sometimes returns local optimum.
 - K-means is limited to linear cluster boundaries.
 
-||[Index](../../)||| [Prev](../)|||[Next](k-means-algo)|||
+||[Index](../../)||| [Prev](../)|||[Next](k-part3)|||

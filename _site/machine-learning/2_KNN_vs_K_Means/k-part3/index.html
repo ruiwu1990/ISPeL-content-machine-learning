@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>KNN</title>
+  <title>Matplotlib</title>
   <meta name="description" content="ISPeL is an interactive system for personalization of learning. It uses topic-based authoring.">
 
   <!---   <link rel="stylesheet" href="/ISPeL-content-machine-learning/css/tufte.css" --->
-  <link rel="stylesheet" href="../../css/tufte.css">
+  <link rel="stylesheet" href="../../../css/tufte.css">
 
   <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -22,7 +22,7 @@
   ga('send', 'pageview');
   </script>
 
-  <link rel="canonical" href="http://localhost:7000/ISPeL-content-machine-learning/machine-learning/2_KNN_vs_K_Means/">
+  <link rel="canonical" href="http://localhost:7000/ISPeL-content-machine-learning/machine-learning/2_KNN_vs_K_Means/k-part3/">
   <link rel="alternate" type="application/rss+xml" title="ISPeL-content-machine-learning" href="http://localhost:7000/ISPeL-content-machine-learning/feed.xml" />
 </head>
 
@@ -32,7 +32,7 @@
 
 <header>
     <nav class="group">
-    <a href="../../">Machine Learning</a>
+    <a href="../../../">Machine Learning</a>
     <a href="http://ispel.cs.ecu.edu/" _target="blank">ISPeL</a>
     <a href="http://seng5005.cs.ecu.edu/" _target="blank">Fall 2020</a>
     <a href="https://github.com/vngudivada/ISPeL-content-machine-learning.git" _target="blank">GitHub</a>
@@ -42,7 +42,7 @@
     <article class="group">
       
 
-<h1>Knn</h1>
+<h1>Matplotlib</h1>
 <p class="subtitle"></p>
 
 
@@ -73,59 +73,58 @@
 </script>
 
 
-<h3 id="first-machine-learning-model-knn">First Machine Learning Model: KNN</h3>
-
+<h3 id="a-very-helpful-book">A Very Helpful Book</h3>
 <ul>
-  <li>The idea is similar data records will be closer with each other. Like friends, if most of your friends like playing video games, then you may also enjoy playing video games.</li>
-  <li>The model for KNN is the entire training dataset. When a prediction is required for an unseen data instance, the KNN algorithm will search through the training dataset for the k-most similar (distance) instances. The prediction attribute of the most similar instances is summarized (averaged) and returned as the prediction for the unseen instance.</li>
-  <li>KNN is supervised or unsupervised?</li>
+  <li>Available online: <a href="https://jakevdp.github.io/PythonDataScienceHandbook/">https://jakevdp.github.io/PythonDataScienceHandbook/</a></li>
+  <li>Many useful sample. We will use some in this class.</li>
 </ul>
 
-<p><img src="knn1.png" alt="" /></p>
+<p><img src="mpl.png" alt="" /></p>
 
-<p>Figure Credit: https://www.quora.com/How-is-the-k-nearest-neighbor-algorithm-different-from-k-means-clustering</p>
-
-<h3 id="how-to-enable-python-3-in-the-notebook">How to enable Python 3 in the notebook</h3>
+<h3 id="matplotlib">Matplotlib</h3>
 <ul>
-  <li>python3 -m pip install ipykernel</li>
-  <li>python3 -m ipykernel install -user</li>
-  <li>Create a Jupyter-notebook using Python3</li>
+  <li>Matplotlib: the most popular python plot library in my opinion</li>
+  <li>Data visualization library built on NumPy arrays and designed to work with the broader SciPy.</li>
+  <li>version 0.1 was released in 2003.</li>
+  <li>Sample Code: Introduction-To-Matplotlib.ipynb.</li>
 </ul>
 
-<h3 id="knn-steps">KNN Steps</h3>
+<p><img src="mpl2.png" alt="" /></p>
+
+<h3 id="matplotlib-sample-code">Matplotlib Sample Code</h3>
 <ul>
-  <li>If we want to implement a KNN algorithm from scratch. Here are the steps:</li>
-  <li>Load data</li>
-  <li>Check similarity, i.e. distances between eash pair of data points</li>
-  <li>Find neighbors, i.e. which data point is the k-th closest neighbor</li>
-  <li>Return K closest neighbors</li>
-  <li>Check accuracy</li>
-  <li>It is Programming time!
-– <a href="https://www.quora.com/How-is-the-k-nearest-neighbor-algorithm-different-from-k-means-clustering">https://www.quora.com/How-is-the-k-nearest-neighbor-algorithm-different-from-k-means-clustering</a></li>
+  <li>Python import libraries with a short name:</li>
+  <li>Import matplotlib as mpl</li>
+  <li>Magic function: show(), display visualization results not in Jupiter notebook, you can also do it in a terminal or iPython.</li>
+  <li>show() should be used only once per Python session. For example, if you execute “python plot.py” in a terminal, you should only have show() executed in the plot.py file once.</li>
+  <li>“%matplotlib inline” will lead to static images of your plot embedded in the notebook</li>
+  <li>plot(x,y,’-’) function, solid line</li>
+  <li>subplot(x,y,z): rows, columns, panel number</li>
 </ul>
 
-<p>Based on: <a href="https://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/">https://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/</a></p>
-
-<h3 id="group-activity">Group Activity</h3>
+<h3 id="how-to-draw-simple-line-plots">How to Draw Simple Line Plots</h3>
 <ul>
-  <li>Sample Code: <a href="https://github.com/ruiwu1990/CSCI_4120/tree/master/KNN">https://github.com/ruiwu1990/CSCI_4120/tree/master/KNN</a></li>
+  <li>Let’s learn basics about simple line plots</li>
+  <li>Sample Code: Simple-Line-Plots.ipynb</li>
+  <li>seaborn-whitegrid: grid graph</li>
+  <li>Basic steps:</li>
+  <li>Initialization: create a figure and axes.</li>
+  <li>Define x-axis data and y-axis data</li>
+  <li>Set labels</li>
+  <li>Plot(): if you do not define still, color parameters, matplotlib will use default values</li>
+  <li>About colors: names, short color code (e.g. r,g,b), gray scale, hex code, RGB values, HTML names (<a href="https://www.w3schools.com/colors/colors_names.asp">https://www.w3schools.com/colors/colors_names.asp</a>)</li>
+  <li>Line style:</li>
+  <li>String: solid, dashed…</li>
+  <li>Code: ‘-’, ‘–’ …</li>
+  <li>Combined style with color: -g (solid green), –r (dashed red)</li>
+  <li>Set the range: xlim(-1, 11) from -1 to 11, you can even reverse the range</li>
+</ul>
+
+<h3 id="group-activity-plot-1">Group Activity Plot 1</h3>
+<ul>
   <li>Finish the TODO section</li>
-</ul>
-
-<h3 id="homwork-1-group-homework">Homwork 1: Group Homework</h3>
-<ul>
-  <li>Group Homework</li>
-  <li>Rewrite KNN sample code using KNeighborsClassifier.</li>
-  <li>Repeat KNN Step 1-5, for at least five times and calculate average accuracy to be your result.</li>
-  <li>If you ise the latest version of scikit-learn, you need to program with Python&gt;=3.5.</li>
-  <li>Use the same dataset: “iris data”</li>
-  <li>Draw a line chart: Use a “for loop” to change k from 1 to 10 and check your model accuracy.</li>
-  <li>README.MD file</li>
-  <li>Team member names and email addresses</li>
-  <li>Quick Start</li>
-  <li>Which K (from 1 to 10) works the best?</li>
-  <li>insert a line chart</li>
-  <li>Due Semtember XX</li>
+  <li>Your graph should be similar to this:
+<img src="mpl3.png" alt="" /></li>
 </ul>
 
 <table>
