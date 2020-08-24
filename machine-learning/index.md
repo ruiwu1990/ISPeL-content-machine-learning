@@ -14,9 +14,14 @@ A learner can proceed as they are inclined within the module to create their own
 
 
 Machine Learning available topics: 
+<<<<<<< HEAD
 1. [1_intro_part2](1_intro_part2/)
 2. [2_KNN_vs_K_Means](2_KNN_vs_K_Means/)
 3. [3_Linear_regression](3_Linear_regression/)
+=======
+1. [Statistical learning](1_intro_part2/)
+2. [KNN VS K_Means](2_KNN_vs_K_Means/)
+>>>>>>> 9de8e7a1ae12ed273f2fd71e56cf2d852e1cc5b7
 
 
 

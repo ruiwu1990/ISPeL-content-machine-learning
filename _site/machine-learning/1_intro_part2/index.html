@@ -78,17 +78,18 @@
 <p><img src="linreg1.png" alt="" /></p>
 
 <ul>
-  <li>Shown are Sales vs TV, Radio and Newspaper, with a blue linear-regression line fit separatly to each.</li>
+  <li>Problem: estimate sales based on TV, Radio, or Newspaper ad fees</li>
+  <li>Shown are <span style="background-color: #FFFF00">Sales</span> vs <span style="background-color: #FFFF00">TV</span>, <span style="background-color: #FFFF00">Radio</span> and <span style="background-color: #FFFF00">Newspaper</span>, with a blue linear-regression line fit separatly to each.</li>
   <li>Can we Predict Sales using these three?</li>
   <li>Perhaps we can do better using a model</li>
 </ul>
 
-<p>Sales = f(TV, Radio, Newspaper)</p>
+\[Sales \approx f(TV, Radio, Newspaper)\]
 
 <h3 id="notation">Notation</h3>
 
 <ul>
-  <li>Here Sales is a response or target that we wish to predict. We generically refer to the response as Y .</li>
+  <li>Here Sales is a <span style="background-color: #FFFF00">response or target</span> that we wish to predict. We generically refer to the response as Y .</li>
   <li>TV is a feature, or input, or predictor; we name it X1.</li>
   <li>Likewise name Radio as X2, and so on.</li>
   <li>We can refer to the input vector collectively as</li>
@@ -106,12 +107,13 @@
   <li>where \(\epsilon\) captures measurement errors and other discrepancies.</li>
 </ul>
 
-<h3 id="what-is-fx-good-for">What is f(X) good for?</h3>
+<h3 id="how-to-implement-fx">How to implement f(X)?</h3>
 
 <ul>
   <li>With a good \(f\) we can make predictions of \(Y\) at new points \(X = x\).</li>
-  <li>We can understand which components of \(X = (X_1, X_2,...,X_p)\) are important in explaining \(\)Y$$ , and which are irrelevant. e.g. Seniority and Years of Education have a big impact on Income, but Marital Status typically does not.</li>
+  <li>We can understand which components of \(X = (X_1, X_2,...,X_p)\) are important in explaining \(Y\) , and which are irrelevant. e.g. Seniority and Years of Education have a big impact on Income, but Marital Status typically does not.</li>
   <li>Depending on the complexity of \(f\), we may be able to understand how each component \(X_j\) of \(X\) aﬀects \(Y\).</li>
+  <li>The following scatter plot shows a connection between y and x (not pure random).</li>
 </ul>
 
 <p><img src="linreg2.png" alt="" /></p>
@@ -120,23 +122,17 @@
 
 \[f(4) = E(Y|X = 4)\]
 
-<table>
-  <tbody>
-    <tr>
-      <td>E(Y</td>
-      <td>X = 4) means expected value average of Y given X = 4.</td>
-    </tr>
-  </tbody>
-</table>
+<ul>
+  <li>The following means expected value average of \(Y\) given \(X = 4\).</li>
+</ul>
 
-<table>
-  <tbody>
-    <tr>
-      <td>This ideal f(x) = E(Y</td>
-      <td>X = x) is called the regression function</td>
-    </tr>
-  </tbody>
-</table>
+\[E(Y|X = 4)\]
+
+<ul>
+  <li>The following is called the regression function:</li>
+</ul>
+
+\[f(x) = E(Y|X = x)\]
 
 <table>
   <tbody>
