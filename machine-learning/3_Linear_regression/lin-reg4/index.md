@@ -30,12 +30,12 @@ low bias, low variance:      150, 153, 151, 148, 152, 152, 153, 151, 149, 1
 ![](bv1.png)
                
 
-Figure Credit: <https://medium.com/ml-research-lab/ensemble-learning-relation-with-bias-and-variance-431cdc0a3fc9>
+- Figure Credit: <https://medium.com/ml-research-lab/ensemble-learning-relation-with-bias-and-variance-431cdc0a3fc9>
 
 ##### The best model we can have is when variance and bias^2 lines cross.
 
 ![](bv2.png)
 
-Figure Credit: <https://medium.com/ml-research-lab/ensemble-learning-relation-with-bias-and-variance-431cdc0a3fc9>
+- Figure Credit: <https://medium.com/ml-research-lab/ensemble-learning-relation-with-bias-and-variance-431cdc0a3fc9>
 
 |||[Index](../../../)||| [Prev](../regularization/)||| [Next](../metrics-for-evaluation/)

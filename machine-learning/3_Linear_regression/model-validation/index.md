@@ -17,10 +17,14 @@ title: Model Validation
 - Accuracy_score: calculate classification accuracy rate, works for multiple classes
 - Cross_val_score: automatically split data following cross validation ideas.
 
+Source Code: <https://colab.research.google.com/github/ruiwu1990/CSCI_4120/blob/master/Evaluation/Model%20Validation.ipynb>
+
 ## Group Activity 6
 - Leave One Out: it is still <font color=red>cross validation</font>. Each time, only one element is left for test, i.e. validation set size is always one.
 - Leave-one-out cross-validation is approximately <font color=red>unbiased</font>, because the difference in size between the training set used in each fold and the entire dataset is only a single pattern. 
 - It tends to have a <font color=red>high</font> variance (so you would get very different estimates if you repeated the estimate with different initial samples of data from the same distribution).
+
+Source Code: <https://colab.research.google.com/github/ruiwu1990/CSCI_4120/blob/master/Evaluation/Model%20Validation.ipynb>
 
 ![](folds.png)
 

@@ -47,4 +47,6 @@ title: Matplotlib
 - Your graph should be similar to this:
 ![](mpl3.png)
 
+- Source Code: <https://colab.research.google.com/github/ruiwu1990/CSCI_4120/blob/master/Matplotlib/Group%20Activity%20Plot%201.ipynb>
+
 ||[Index](../../../)||| [Prev](../k-part2/)|||[Next](../k-part4/)|||

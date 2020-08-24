@@ -31,7 +31,7 @@ Figure Credit: https://www.quora.com/How-is-the-k-nearest-neighbor-algorithm-dif
 Based on: <https://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/>
 
 ### Group Activity
-- Sample Code: <https://github.com/ruiwu1990/CSCI_4120/tree/master/KNN>
+- Sample Code: <https://colab.research.google.com/github/ruiwu1990/CSCI_4120/blob/master/KNN/knn.ipynb>
 - Finish the TODO section
 
 ### Homwork 1: Group Homework

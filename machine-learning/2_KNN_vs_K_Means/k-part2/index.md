@@ -64,11 +64,11 @@ Figure Credit: https://blogs.oracle.com/bigdata/k-means-clustering-machine-learn
 Example is based on: https://www.youtube.com/watch?v=4b5d3muPQmA
 
 ### K-Means: Advantages vs Disadvantages
-#### Advantages:
+### Advantages:
 - Easy to implement.
 - K-means model dynamically updated: centroid can be updated if new dataset is added.
 
-#### Disadvantages:
+### Disadvantages:
 - Hard to guess K
 - Initial centroid can impact results
 - K-means is time consuming. Need to calculate distances between new centroid in every loop.

@@ -1,0 +1,72 @@
+I"�<h3 id="first-machine-learning-model-knn">First Machine Learning Model: KNN</h3>
+
+<ul>
+  <li>The idea is similar data records will be closer with each other. Like friends, if most of your friends like playing video games, then you may also enjoy playing video games.</li>
+  <li>The model for KNN is the entire training dataset. When a prediction is required for an unseen data instance, the KNN algorithm will search through the training dataset for the k-most similar (distance) instances. The prediction attribute of the most similar instances is summarized (averaged) and returned as the prediction for the unseen instance.</li>
+  <li>KNN is supervised or unsupervised?</li>
+</ul>
+
+<p><img src="knn1.png" alt="" /></p>
+
+<p>Figure Credit: https://www.quora.com/How-is-the-k-nearest-neighbor-algorithm-different-from-k-means-clustering</p>
+
+<h3 id="how-to-enable-python-3-in-the-notebook">How to enable Python 3 in the notebook</h3>
+<ul>
+  <li>python3 -m pip install ipykernel</li>
+  <li>python3 -m ipykernel install -user</li>
+  <li>Create a Jupyter-notebook using Python3</li>
+</ul>
+
+<h3 id="knn-steps">KNN Steps</h3>
+<ul>
+  <li>If we want to implement a KNN algorithm from scratch. Here are the steps:</li>
+  <li>Load data</li>
+  <li>Check similarity, i.e. distances between eash pair of data points</li>
+  <li>Find neighbors, i.e. which data point is the k-th closest neighbor</li>
+  <li>Return K closest neighbors</li>
+  <li>Check accuracy</li>
+  <li>It is Programming time!
+– <a href="https://www.quora.com/How-is-the-k-nearest-neighbor-algorithm-different-from-k-means-clustering">https://www.quora.com/How-is-the-k-nearest-neighbor-algorithm-different-from-k-means-clustering</a></li>
+</ul>
+
+<p>Based on: <a href="https://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/">https://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/</a></p>
+
+<h3 id="group-activity">Group Activity</h3>
+<ul>
+  <li>Sample Code: <a href="https://colab.research.google.com/github/ruiwu1990/CSCI_4120/blob/master/KNN/knn.ipynb">https://colab.research.google.com/github/ruiwu1990/CSCI_4120/blob/master/KNN/knn.ipynb</a></li>
+  <li>Finish the TODO section</li>
+</ul>
+
+<h3 id="homwork-1-group-homework">Homwork 1: Group Homework</h3>
+<ul>
+  <li>Group Homework</li>
+  <li>Rewrite KNN sample code using KNeighborsClassifier.</li>
+  <li>Repeat KNN Step 1-5, for at least five times and calculate average accuracy to be your result.</li>
+  <li>If you ise the latest version of scikit-learn, you need to program with Python&gt;=3.5.</li>
+  <li>Use the same dataset: “iris data”</li>
+  <li>Draw a line chart: Use a “for loop” to change k from 1 to 10 and check your model accuracy.</li>
+  <li>README.MD file</li>
+  <li>Team member names and email addresses</li>
+  <li>Quick Start</li>
+  <li>Which K (from 1 to 10) works the best?</li>
+  <li>insert a line chart</li>
+  <li>Due Semtember XX</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><a href="../../../">Index</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../">Prev</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="k-part2">Next</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+:ET

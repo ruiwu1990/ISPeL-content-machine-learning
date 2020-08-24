@@ -33,14 +33,14 @@ False Positive Rate (FPR) (Specificity): False Positive Rate corresponds to the 
 
 $$FalsePositiveRate=\frac{FalsePositive}{FalsePositive+TrueNegative}$$
 
-Based on: <https://towardsdatascience.com/metrics-to-evaluate-your-machine-learning-algorithm-f10ba6e38234>
+- Based on: <https://towardsdatascience.com/metrics-to-evaluate-your-machine-learning-algorithm-f10ba6e38234>
 
 - FPR and TPR both have values in the range [0, 1]. FPR and TPR bot hare computed at threshold values such as (0.00, 0.02, 0.04, …., 1.00) and a graph is drawn. Area Under Curve (<font color=red>AUC</font>) is the area under the curve of plot FPR vs TPR at different points in <font color=red>[0, 1]</font>.
 ![](ROC.png)
 
-Figure Credit: <https://towardsdatascience.com/metrics-to-evaluate-your-machine-learning-algorithm-f10ba6e38234>
+- Figure Credit: <https://towardsdatascience.com/metrics-to-evaluate-your-machine-learning-algorithm-f10ba6e38234>
 
-- The font color=red>greater</font> the value of AUC, the font color=red>better</font> is the performance of our model.
+- The <font color=red>greater</font> the value of AUC, the <font color=red>better</font> is the performance of our model.
 Each curve is for one class. You may have multiple curves.
 
 ## ROC Example
@@ -60,5 +60,7 @@ Each curve is for one class. You may have multiple curves.
   * Y label: True Positive Rate
   * Title: Receiver operating characteristic example
   * Legend position: lower right
+  
+- Source Code:<https://colab.research.google.com/github/ruiwu1990/CSCI_4120/blob/master/Evaluation/ROC.ipynb>
 
 ||| [Index](../../)||| [Prev](../lin-reg4/)||| [Next](../metrics-for-evaluation-2/)|||

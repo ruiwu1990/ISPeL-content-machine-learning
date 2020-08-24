@@ -1,0 +1,74 @@
+I"<h2 id="what-about-non-linear-relationships">What about non-linear relationships?</h2>
+<ul>
+  <li>Trick: transform data according to basis functions</li>
+  <li>Polynomial basis function:</li>
+  <li>Gaussian basis function: a sum of Gaussian bases. Does not directly supported by sklearn but we will write one by ourselves.</li>
+</ul>
+
+<p><img src="nonlin.png" alt="" /></p>
+
+\[y = a_0 + a_1x_1 +a_2x_2+a_3x_3+...\]
+
+<h2 id="linear-regression-sample-code">Linear Regression Sample Code</h2>
+<ul>
+  <li>Linear-Regression</li>
+  <li>x[:, np.newaxis] =&gt; make it as <font color="red">column vector</font> by inserting an axis along second dimension</li>
+  <li>np.linspace(0, 10, 1000): generate 1000 numbers between 0 and 10</li>
+  <li>numpy.random.rand(n,m): randomly generate numbers between <font color="red">[0,1)</font> to fill n*m matrix</li>
+  <li>How you define a function’s coefficient: y = 0.5 + np.dot(X, [1.5, -2., 1.]) =&gt; [1.5, -2., 1.] is the coefficient for x1, x2, and x3.</li>
+  <li>fit_transform: Generate polynomial and interaction features: [a, b], the degree-2 polynomial features are [\(1, a, b, a^2, ab, b^2\)].</li>
+  <li>N degree polynomial means the highest degree of term x.</li>
+  <li>make_pipeline: Construct a Pipeline from the given estimators. In the example, we define the <font color="red">basis function</font> and <font color="red">regression method</font>.</li>
+</ul>
+
+<h2 id="overfitting-vs-underfitting">Overfitting vs Underfitting</h2>
+<ul>
+  <li>Overfitting is the production of an analysis that corresponds too closely or exactly to a particular set of data (training) and may therefore fail to fit additional data or predict future observations (testing) reliably. (wiki)</li>
+  <li>Underfitting occurs when a statistical model cannot adequately capture the underlying structure of the data. An underfitted model is a model where some parameters or terms that would appear in a correctly specified model are missing. (wiki)</li>
+</ul>
+
+<p><img src="linreg3.png" alt="" />
+Source: Ding, D., Zhang, M., Pan, X., Yang, M. and He, X., 2019. Modeling Extreme Events in Time Series Prediction. KDD (knowledge discovery and data mining) 2019.</p>
+
+<h2 id="overfitting">Overfitting</h2>
+<ul>
+  <li>Overfitting issue: a model works very well for <font color="red">training data</font></li>
+</ul>
+
+<p><img src="overfitting1.png" alt="" /></p>
+
+\[\Theta _0+ \Theta _1x + \Theta _2x^2\]
+
+\[\Theta _0+ \Theta _1x + \Theta _2x^2+ \Theta _3x^3+ \Theta _4x^4\]
+
+<ul>
+  <li>
+    <p>Figure credit: https://www.youtube.com/watch?v=KvtGD37Rm5I</p>
+  </li>
+  <li>Objective function: In order to find the optimal solution, we need some way of measuring the quality of any solution.</li>
+  <li>Possible solutions: besides minimize RSS score, we should also penalize ϴ3 and ϴ4.
+    <ul>
+      <li>Objective function = min(RSS + 1000* ϴ3 + 1000* ϴ4)</li>
+      <li>Therefore, if ϴ3 or ϴ4 is too big, it will be penalized=&gt; ϴ3 ≈ 0, ϴ4 ≈ 0</li>
+    </ul>
+  </li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><a href="../../">Index</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../mlr/">Prev</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../regularization/">Next</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+:ET

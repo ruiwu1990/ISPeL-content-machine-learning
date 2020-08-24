@@ -29,7 +29,7 @@ $$P= \alpha  \Sigma _{n=1}^{N} |  \Theta _n |$$
 
 ![](regularization.png)
 
-Figure Credit: <https://en.wikipedia.org/wiki/Overfitting>
+- Figure Credit: <https://en.wikipedia.org/wiki/Overfitting>
 
 $$\Theta_0 + \Theta_1x + \Theta_2x^2 + \Theta_3x^3 + \Theta_4x^4$$
 
@@ -42,5 +42,5 @@ $$\Theta_0 + \Theta_1x + \Theta_2x^2 + \Theta_3x^3 + \Theta_4x^4$$
 - Regularization
 - In your opinion, what are the key factors that can impact bicycle traffic?
 - Based on the example, we will find out answers.
-
+- Source Code:<https://colab.research.google.com/github/ruiwu1990/CSCI_4120/blob/master/Linear_regression/Regularization.ipynb>
 ||| [Index](../../)||| [Prev](../lin-reg3/)||| [Next](../lin-reg4/)|||

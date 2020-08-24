@@ -16,7 +16,9 @@ title: Correlation
 - Covariance is affected by the change in scale, i.e. if all the value of one variable is multiplied by a constant and all the value of another variable are multiplied, by a similar or different constant, then the covariance is changed. As against this, correlation is not influenced by the change in scale.
 - Correlation is dimensionless, i.e. it is a unit-free measure of the relationship between variables. Unlike covariance, where the value is obtained by the product of the units of the two variables.
 
-ADD EQUATIONS HERE
+$$cov_{xy} =  \sigma _{xy} = E[X- \mu _Y)]$$
+
+$$corr_{xy} =   \rho  _{xy} = E[X- \mu _Y)]/( \sigma _X \sigma _Y)$$
 
 ![](lin 2.png)
 
@@ -33,5 +35,8 @@ ADD EQUATIONS HERE
 - Plt.title: use pad to define padding away from your figure
 - Df.corr can calculate correlation matrix between all columns
 - Matshow can show correlation value comparison within a matrix.
+
+- Sample Code:<https://colab.research.google.com/github/ruiwu1990/CSCI_4120/blob/master/Linear_regression/Correlation_sample_code.ipynb>
+
 
 ||| [Index](../../)||| [Prev](../)||| [Next](../mlr/)|||

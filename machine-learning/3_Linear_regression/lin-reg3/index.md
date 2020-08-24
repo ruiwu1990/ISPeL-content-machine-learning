@@ -38,7 +38,7 @@ $$\Theta _0+ \Theta _1x + \Theta _2x^2$$
 
 $$\Theta _0+ \Theta _1x + \Theta _2x^2+ \Theta _3x^3+ \Theta _4x^4$$
 
-Figure credit: https://www.youtube.com/watch?v=KvtGD37Rm5I
+- Figure credit: https://www.youtube.com/watch?v=KvtGD37Rm5I
 
 - Objective function: In order to find the optimal solution, we need some way of measuring the quality of any solution.
 - Possible solutions: besides minimize RSS score, we should also penalize ϴ3 and ϴ4.

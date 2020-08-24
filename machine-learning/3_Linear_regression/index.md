@@ -42,7 +42,7 @@ $$RSS = (y_1- \hat{ \beta }_0 +  \hat{ \beta }_ix_1)^2+(y_2 - \hat{ \beta }_0 + 
 - Is there synergy among the advertising media?
 
 ### Group Activcity 5: Linear Regression from Scratch
-- Group Activity 5:<https://github.com/ruiwu1990/CSCI_4120/tree/master/HW_linear_regression>
+- Group Activity 5: <https://colab.research.google.com/github/ruiwu1990/CSCI_4120/blob/master/HW_linear_regression/HW_1.ipynb>
 - Finish to do section, you will have the linear regression implemtation from scratch.
 
 ||| [Index](../../)||| [Prev](../)||| [Next](lin-reg2/)|||

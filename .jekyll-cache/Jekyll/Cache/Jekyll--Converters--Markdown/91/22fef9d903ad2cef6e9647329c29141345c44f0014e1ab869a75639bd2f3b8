@@ -1,0 +1,74 @@
+I"7<h3 id="a-very-helpful-book">A Very Helpful Book</h3>
+<ul>
+  <li>Available online: <a href="https://jakevdp.github.io/PythonDataScienceHandbook/">https://jakevdp.github.io/PythonDataScienceHandbook/</a></li>
+  <li>Many useful sample. We will use some in this class.</li>
+</ul>
+
+<p><img src="mpl.png" alt="" /></p>
+
+<h3 id="matplotlib">Matplotlib</h3>
+<ul>
+  <li>Matplotlib: the most popular python plot library in my opinion</li>
+  <li>Data visualization library built on NumPy arrays and designed to work with the broader SciPy.</li>
+  <li>version 0.1 was released in 2003.</li>
+  <li>Sample Code: Introduction-To-Matplotlib.ipynb.</li>
+</ul>
+
+<p><img src="mpl2.png" alt="" /></p>
+
+<h3 id="matplotlib-sample-code">Matplotlib Sample Code</h3>
+<ul>
+  <li>Python import libraries with a short name:</li>
+  <li>Import matplotlib as mpl</li>
+  <li>Magic function: show(), display visualization results not in Jupiter notebook, you can also do it in a terminal or iPython.</li>
+  <li>show() should be used only once per Python session. For example, if you execute “python plot.py” in a terminal, you should only have show() executed in the plot.py file once.</li>
+  <li>“%matplotlib inline” will lead to static images of your plot embedded in the notebook</li>
+  <li>plot(x,y,’-’) function, solid line</li>
+  <li>subplot(x,y,z): rows, columns, panel number</li>
+</ul>
+
+<h3 id="how-to-draw-simple-line-plots">How to Draw Simple Line Plots</h3>
+<ul>
+  <li>Let’s learn basics about simple line plots</li>
+  <li>Sample Code: Simple-Line-Plots.ipynb</li>
+  <li>seaborn-whitegrid: grid graph</li>
+  <li>Basic steps:</li>
+  <li>Initialization: create a figure and axes.</li>
+  <li>Define x-axis data and y-axis data</li>
+  <li>Set labels</li>
+  <li>Plot(): if you do not define still, color parameters, matplotlib will use default values</li>
+  <li>About colors: names, short color code (e.g. r,g,b), gray scale, hex code, RGB values, HTML names (<a href="https://www.w3schools.com/colors/colors_names.asp">https://www.w3schools.com/colors/colors_names.asp</a>)</li>
+  <li>Line style:</li>
+  <li>String: solid, dashed…</li>
+  <li>Code: ‘-’, ‘–’ …</li>
+  <li>Combined style with color: -g (solid green), –r (dashed red)</li>
+  <li>Set the range: xlim(-1, 11) from -1 to 11, you can even reverse the range</li>
+</ul>
+
+<h3 id="group-activity-plot-1">Group Activity Plot 1</h3>
+<ul>
+  <li>Finish the TODO section</li>
+  <li>
+    <p>Your graph should be similar to this:
+<img src="mpl3.png" alt="" /></p>
+  </li>
+  <li>Source Code: <a href="https://colab.research.google.com/github/ruiwu1990/CSCI_4120/blob/master/Matplotlib/Group%20Activity%20Plot%201.ipynb">https://colab.research.google.com/github/ruiwu1990/CSCI_4120/blob/master/Matplotlib/Group%20Activity%20Plot%201.ipynb</a></li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><a href="../../../">Index</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../k-part2/">Prev</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../k-part4/">Next</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+:ET

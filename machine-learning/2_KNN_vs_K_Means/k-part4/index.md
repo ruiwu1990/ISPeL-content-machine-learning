@@ -1,6 +1,6 @@
 ---
 layout: post
-title: K-Means: What
+title: K-Means-What
 ---
 
 ### Group Activity Plot 2
@@ -30,7 +30,18 @@ Figure Credit: <https://blogs.oracle.com/bigdata/k-means-clustering-machine-lear
 
 ### Homework 1: Group Homework
 
-cont. here!
+- Group Homework
+- Rewrite KNN sample code using KNeighborsClassifier.
+  * <font color=red>Repeat KNN Step 1 – 5, for at least five times and calculate average accuracy to be your result.</font>
+  * If you use the latest version of scikit-learn, you need to program with Python >= 3.5.
+  * Use the same dataset: “iris.data”
+- Draw a line chart: Use a “for loop” to change k from 1 to 10 and check your model accuracy.
+- README.MD file
+  * Team member names and email addresses
+  * Quick Start
+  * Which K (from 1 to 10) works the best?
+  * Insert a line chart
+- If your best K keeps changing, try to repeat 100 times. If it is still not stable, maybe data size is not large enough. Open Question, like research.
 
 #### An Example
 ![](k-means2.png)
