@@ -1,0 +1,34 @@
+I"B<ul>
+  <li>Holdout sets for validation: hold back some subset of the training data and this part is called holdout set. Then we use this part data for test.
+    <ul>
+      <li>What are the possible disadvantages?</li>
+    </ul>
+  </li>
+  <li>Cross-validation: sometimes called rotation estimation or out-of-sample testing, is any of various similar model validation techniques for <font color="red">assessing</font> how the results of a statistical analysis will generalize to an independent data set.</li>
+</ul>
+
+<p><img src="fold.png" alt="" /></p>
+
+<ul>
+  <li>K-fold cross validation: k is the number of number of sections/folds.</li>
+  <li>K-fold cross validation is very useful for model performance estimation and model parameter tuning (HW4).</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><a href="../../">Index</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../../">Prev</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="lin-reg2/">Next</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+:ET

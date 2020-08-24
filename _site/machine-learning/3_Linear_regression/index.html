@@ -76,34 +76,37 @@
 <h3 id="simple-linear-regression-using-a-single-predictor-x">Simple linear regression using a single predictor X.</h3>
 
 <ul>
-  <li>We assume a model</li>
+  <li>We <span style="background-color: #FFFF00">assume a model</span></li>
 </ul>
 
 \[Y = \beta_0 + (\beta_1)X + \epsilon\]
 
 <ul>
-  <li>where \beta_0 and \beta_1 are two unknown constants that represent the intercept and slope, also known as coefficients or parameters, and \(\epsilon\) is the error term.</li>
+  <li>where \beta_0 and \beta_1 are two unknown constants that represent the <span style="background-color: #FFFF00">intercept</span> and <span style="background-color: #FFFF00">slope</span>, also known as <span style="background-color: #FFFF00">coefficients</span> or <span style="background-color: #FFFF00">parameters</span>, and \(\epsilon\) is the error term.</li>
   <li>
     <p>Given some \(\hat(\beta_0)\) and \(\hat(\beta_1)\) for the  model cofficients, we predict future sale using  \(\hat(y) = \hat(\beta_0) + \hat(\beta_1),\)</p>
   </li>
   <li>where \(\hat(y) indicates a prediction of\)Y\(on the basis of\)X=x$$</li>
-  <li>The hat symbol denotes an estimated value.</li>
+  <li>The hat symbol denotes an <span style="background-color: #FFFF00">estimated value</span>.</li>
 </ul>
 
-<p>=====================
-Estimation of parameter by least squares
-=====================</p>
-
+<h2 id="estimation-of-the-parameters-by-least-squares">Estimation of the parameters by least squares</h2>
 <ul>
+  <li>Let \(\hat{y} _i = \hat{ \beta }_0 +  \hat{ \beta }_ix_i\) be the prediction for Y based on the ith value of X. Then \(e_i =y_i - \hat{y}_i\) represents the ith <font color="green">residual</font></li>
+  <li>We define the <span style="background-color: #FFFF00">residual sum of squares</span> (RSS) as
+\(RSS = e_1^2 + e_2^2 +...+ e_n^2,\)
+or equivalently as
+\(RSS = (y_1- \hat{ \beta }_0 +  \hat{ \beta }_ix_1)^2+(y_2 - \hat{ \beta }_0 +  \hat{ \beta }_ix_2)^2+...+(y_n -\hat{ \beta }_0 +  \hat{ \beta }_ix_n)^2\)</li>
+  <li>
+    <p>The least squared approach chooses \(\hat{\beta}_0\) and \(\hat{\beta}_1\) to minimize the RSS. The minimizing values can be shown to be \(\hat{ \beta} _1 = \frac{ \Sigma _{i=1}^n(x_i- \overline{x})(y_i- \overline{y})}{ \Sigma _{i=1}^n(x_i- \overline{x})^2}, \hat{ \beta_0} = y -  \hat{ \beta_1 \overline{x}},\) where \(\overline{y} \equiv \frac{1}{n} \Sigma_{i=1}^ny_i\) and \(\overline{x} \equiv \frac{1}{n} \Sigma_{i=1}^nx_i\) are the <span style="background-color: #FFFF00"> sample means.</span></p>
+  </li>
   <li>
     <p>Linear regression is a simple approach to supervised learning. It assumes that the dependence of Y on \(X_1,X_2,...X_p\) is linear.</p>
   </li>
   <li>
     <p>True regression functions are never linear!</p>
   </li>
-  <li>
-    <p>Although it may seem overly simplistic, linear regression is extremely useful both conceptually and practically.</p>
-  </li>
+  <li>Although it may seem overly simplistic, linear regression is extremely useful both conceptually and practically.</li>
 </ul>
 
 <h2 id="linear-regression-for-the-advertising-data">Linear regression for the advertising data</h2>
@@ -133,7 +136,7 @@ Estimation of parameter by least squares
       <td><a href="../../">Index</a></td>
       <td> </td>
       <td> </td>
-      <td><a href="../../">Prev</a></td>
+      <td><a href="../">Prev</a></td>
       <td> </td>
       <td> </td>
       <td><a href="lin-reg2/">Next</a></td>

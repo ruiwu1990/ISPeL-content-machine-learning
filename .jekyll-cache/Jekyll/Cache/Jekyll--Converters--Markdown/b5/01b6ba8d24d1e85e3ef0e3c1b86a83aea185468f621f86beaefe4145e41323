@@ -1,0 +1,62 @@
+I"�<h2 id="overfitting-issue-solution-regularization">Overfitting issue solution: Regularization</h2>
+<ul>
+  <li>Regularization Key idea:
+    <ul>
+      <li>Simpler model can avoid overfitting</li>
+      <li>For linear regression, “simpler” means smaller values for ϴ0, ϴ1, ϴ2, …, ϴn</li>
+      <li>Objective function = min(RSS + regularization term)</li>
+      <li>RSS is used to minimize error and regularization term is used to ensure a simpler model.
+-Housing:</li>
+      <li>Features: \(x_1,x_2,...,x_100\)</li>
+      <li>Parameters:\(/Theta_0,/Theta_1,/Theta_2,...,/Theta_100\)
+        <h2 id="two-popular-regularization-terms">Two popular regularization terms:</h2>
+      </li>
+    </ul>
+  </li>
+  <li>L2 Regularization, aka Ridge regression</li>
+</ul>
+
+\[P= \alpha  \Sigma _{n=1}^{N} \Theta _n^2\]
+
+<ul>
+  <li>L1 Regularization, aka Lasso regression</li>
+</ul>
+
+\[P= \alpha  \Sigma _{n=1}^{N} |  \Theta _n |\]
+
+<ul>
+  <li>
+    <p>α is usually called regularization parameter and is used to control the tradeoff between ϴ small and RSS is also small. n starts from <font color="red">1 instead of 0</font>.</p>
+  </li>
+  <li>Question: if α is a huge value, what will happen?
+    <ul>
+      <li>Y = ϴ0 =&gt; underfitting occurs when a statistical model cannot adequately capture the underlying structure of the data.</li>
+    </ul>
+  </li>
+  <li>Question: if α is a tiny value, what will happen?
+    <ul>
+      <li>Overfitting issue cannot be avoided.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="regularization.png" alt="" />
+Figure Credit: https://en.wikipedia.org/wiki/Overfitting</p>
+
+<p>$$/Theta_0 + /Theta_1x + /Theta_2x^2 + /Theta_3x^3 + /Theta_4x^4</p>
+
+<h2 id="regularization-sample-code">Regularization Sample Code</h2>
+
+<ul>
+  <li>Regularization</li>
+  <li>How to tune regularization parameter? You will learn it in your HW4.</li>
+</ul>
+
+<h2 id="example-predicting-bicycle-traffic">Example Predicting Bicycle Traffic</h2>
+<ul>
+  <li>Regularization</li>
+  <li>In your opinion, what are the key factors that can impact bicycle traffic?</li>
+  <li>Based on the example, we will find out answers.
+||| <a href="../../">Index</a>||| <a href="../../">Prev</a>||| <a href="lin-reg2/">Next</a>|||</li>
+</ul>
+:ET

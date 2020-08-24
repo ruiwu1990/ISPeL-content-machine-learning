@@ -1,0 +1,48 @@
+I"�<h2 id="overfitting-issue-solution-regularization">Overfitting issue solution: Regularization</h2>
+<ul>
+  <li>Regularization Key idea:
+    <ul>
+      <li>Simpler model can avoid overfitting</li>
+      <li>For linear regression, “simpler” means smaller values for ϴ0, ϴ1, ϴ2, …, ϴn</li>
+      <li>Objective function = min(RSS + regularization term)</li>
+      <li>RSS is used to minimize error and regularization term is used to ensure a simpler model.
+-Housing:</li>
+      <li>Features: \(x_1,x_2,...,x_100\)</li>
+      <li>Parameters:\(/Theta_0,/Theta_1,/Theta_2,...,/Theta_100\)
+        <h2 id="two-popular-regularization-terms">Two popular regularization terms:</h2>
+      </li>
+    </ul>
+  </li>
+  <li>L2 Regularization, aka Ridge regression</li>
+</ul>
+
+\[P= \alpha  \Sigma _{n=1}^{N} \Theta _n^2\]
+
+<ul>
+  <li>L1 Regularization, aka Lasso regression</li>
+</ul>
+
+\[P= \alpha  \Sigma _{n=1}^{N} |  \Theta _n |\]
+
+<ul>
+  <li>α is usually called regularization parameter and is used to control the tradeoff between ϴ small and RSS is also small. n starts from <font color="red">1 instead of 0</font>.</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><a href="../../">Index</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../../">Prev</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="lin-reg2/">Next</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+:ET

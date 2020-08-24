@@ -1,0 +1,28 @@
+I"�<h3 id="what-about-non-linear-relationships">What about non-linear relationships?</h3>
+<ul>
+  <li>Trick: transform data according to basis functions</li>
+  <li>Polynomial basis function:</li>
+  <li>Gaussian basis function: a sum of Gaussian bases. Does not directly supported by sklearn but we will write one by ourselves.
+<img src="nonlin.png" alt="" /></li>
+</ul>
+
+\[y = a_0 + a_1x_1 +a_2x_2+a_3x_3+...\]
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><a href="../../">Index</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../../">Prev</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="lin-reg4/">Next</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+:ET

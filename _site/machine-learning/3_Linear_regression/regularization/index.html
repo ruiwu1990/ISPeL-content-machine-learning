@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Regularization</title>
+  <meta name="description" content="ISPeL is an interactive system for personalization of learning. It uses topic-based authoring.">
+
+  <!---   <link rel="stylesheet" href="/ISPeL-content-machine-learning/css/tufte.css" --->
+  <link rel="stylesheet" href="../../../css/tufte.css">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75587219-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+
+  <link rel="canonical" href="http://localhost:7000/ISPeL-content-machine-learning/machine-learning/3_Linear_regression/regularization/">
+  <link rel="alternate" type="application/rss+xml" title="ISPeL-content-machine-learning" href="http://localhost:7000/ISPeL-content-machine-learning/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+
+
+<header>
+    <nav class="group">
+    <a href="../../../">Machine Learning</a>
+    <a href="http://ispel.cs.ecu.edu/" _target="blank">ISPeL</a>
+    <a href="http://seng5005.cs.ecu.edu/" _target="blank">Fall 2020</a>
+    <a href="https://github.com/vngudivada/ISPeL-content-machine-learning.git" _target="blank">GitHub</a>
+    </nav>
+</header>
+
+    <article class="group">
+      
+
+<h1>Regularization</h1>
+<p class="subtitle"></p>
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+        e: "\\epsilon",
+        xti: "x^{(i)}",
+        yti: "y^{(i)}",
+        bfy: "{\\bf y}",
+        bfx: "{\\bf x}",
+        bfg: "{\\bf g}",
+        bfbeta: "{\\bf \\beta}",
+        tp: "\\tilde p",
+        pt: "p_\\theta",
+        E: "{\\mathbb{E}}",
+        Ind: "{\\mathbb{I}}",
+        KL: "{\\mathbb{KL}}",
+        Re: "{\\mathbb{R}}",
+        Dc: "{\\mathcal{D}}",
+        Tc: "{\\mathcal{T}}",
+        Xc: "{\\mathcal{X}}",
+        note: ["\\textcolor{blue}{[NOTE: #1]}",1]
+      }
+    }
+  });
+</script>
+
+
+<h2 id="overfitting-issue-solution-regularization">Overfitting issue solution: Regularization</h2>
+<ul>
+  <li>Regularization Key idea:
+    <ul>
+      <li>Simpler model can avoid overfitting</li>
+      <li>For linear regression, “simpler” means smaller values for ϴ0, ϴ1, ϴ2, …, ϴn</li>
+      <li>Objective function = min(RSS + regularization term)</li>
+      <li>RSS is used to minimize error and regularization term is used to ensure a simpler model.
+-Housing:</li>
+      <li>Features: \(x_1,x_2,...,x_100\)</li>
+      <li>Parameters:\(\Theta_0,\Theta_1,\Theta_2,...,\Theta_100\)
+        <h2 id="two-popular-regularization-terms">Two popular regularization terms:</h2>
+      </li>
+    </ul>
+  </li>
+  <li>L2 Regularization, aka Ridge regression</li>
+</ul>
+
+\[P= \alpha  \Sigma _{n=1}^{N} \Theta _n^2\]
+
+<ul>
+  <li>L1 Regularization, aka Lasso regression</li>
+</ul>
+
+\[P= \alpha  \Sigma _{n=1}^{N} |  \Theta _n |\]
+
+<ul>
+  <li>
+    <p>α is usually called regularization parameter and is used to control the tradeoff between ϴ small and RSS is also small. n starts from <font color="red">1 instead of 0</font>.</p>
+  </li>
+  <li>Question: if α is a huge value, what will happen?
+    <ul>
+      <li>Y = ϴ0 =&gt; underfitting occurs when a statistical model cannot adequately capture the underlying structure of the data.</li>
+    </ul>
+  </li>
+  <li>Question: if α is a tiny value, what will happen?
+    <ul>
+      <li>Overfitting issue cannot be avoided.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="regularization.png" alt="" /></p>
+
+<p>Figure Credit: <a href="https://en.wikipedia.org/wiki/Overfitting">https://en.wikipedia.org/wiki/Overfitting</a></p>
+
+\[\Theta_0 + \Theta_1x + \Theta_2x^2 + \Theta_3x^3 + \Theta_4x^4\]
+
+<h2 id="regularization-sample-code">Regularization Sample Code</h2>
+
+<ul>
+  <li>Regularization</li>
+  <li>How to tune regularization parameter? You will learn it in your HW4.</li>
+</ul>
+
+<h2 id="example-predicting-bicycle-traffic">Example Predicting Bicycle Traffic</h2>
+<ul>
+  <li>Regularization</li>
+  <li>In your opinion, what are the key factors that can impact bicycle traffic?</li>
+  <li>Based on the example, we will find out answers.</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><a href="../../">Index</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../lin-reg3/">Prev</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../lin-reg4/">Next</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+
+    </article>
+    <footer>
+<hr class="slender">
+<div class="credits">
+This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll" target="_blank">Tufte theme</a>. &copy; 2020
+</div>
+</footer>
+  </body>
+</html>

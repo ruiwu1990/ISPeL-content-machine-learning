@@ -1,0 +1,69 @@
+I"R<h3 id="group-activity-plot-2">Group Activity Plot 2</h3>
+<ul>
+  <li>Finish the TODO section</li>
+  <li>
+    <p>Your graph should be similar to this:
+<img src="gap2.png" alt="" /></p>
+  </li>
+  <li>K-means clustering aims to partition n observations into k clusters in which each observation belongs to the cluster with the nearest mean.</li>
+  <li>If you want to separate different car models into 4 categories based on horsepower, engine displacement, and MPG, you can use K-means.</li>
+  <li>KNN is unsupervised learning and a clustering algorithm (involves the grouping of data points).</li>
+  <li>K represents # of centroids.
+<img src="k-means.png" alt="" /></li>
+</ul>
+
+<p>Figure Credit: <a href="https://blogs.oracle.com/bigdata/k-means-clustering-machine-learning">https://blogs.oracle.com/bigdata/k-means-clustering-machine-learning</a></p>
+
+<h3 id="k-means-how-does-it-work">K-Means: How does it work?</h3>
+<ul>
+  <li>Here are K-means algorithm steps:</li>
+  <li>Step 1: Choose a K: it represents the number of centroids. Hard to decide… especially for high dimensional data. You will learn it in your homework 2.</li>
+  <li>Step 2: Randomly selected centroids positions</li>
+  <li>Step 3: Calculate distances between each data point with K centroids and decide cluster response (closer)</li>
+  <li>Step 4: Calculate the mean value of each cluster, use the mean value as the new centroid</li>
+  <li>Step 5: repeat step 3 and 4 until you have repeated N (maybe 100) times or centroids do not change anymore.</li>
+</ul>
+
+<p><img src="km3.png" alt="" />
+<img src="km4.png" alt="" />
+Figure Credit: <a href="https://blogs.oracle.com/bigdata/k-means-clustering-machine-learning">https://blogs.oracle.com/bigdata/k-means-clustering-machine-learning</a></p>
+
+<h3 id="homework-1-group-homework">Homework 1: Group Homework</h3>
+
+<p>cont. here!</p>
+
+<h4 id="an-example">An Example</h4>
+<p><img src="k-means2.png" alt="" /></p>
+
+<p>Example is based on: https://www.youtube.com/watch?v=4b5d3muPQmA</p>
+
+<h3 id="k-means-advantages-vs-disadvantages">K-Means: Advantages vs Disadvantages</h3>
+<h4 id="advantages">Advantages:</h4>
+<ul>
+  <li>Easy to implement.</li>
+  <li>K-means model dynamically updated: centroid can be updated if new dataset is added.</li>
+</ul>
+
+<h4 id="disadvantages">Disadvantages:</h4>
+<ul>
+  <li>Hard to guess K</li>
+  <li>Initial centroid can impact results</li>
+  <li>K-means is time consuming. Need to calculate distances between new centroid in every loop.</li>
+  <li>K-means method may not find out the global best solution. It sometimes returns local optimum.</li>
+  <li>K-means is limited to linear cluster boundaries.</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><a href="../../../">Index</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../k-part3/">Prev</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+:ET

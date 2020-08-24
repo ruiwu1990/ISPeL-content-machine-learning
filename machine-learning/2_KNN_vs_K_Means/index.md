@@ -48,4 +48,4 @@ Based on: <https://machinelearningmastery.com/tutorial-to-implement-k-nearest-ne
 * insert a line chart
 - Due Semtember XX
 
-||[Index](../../../)||| [Prev](../../)|||[Next](k-part2)|||
+||[Index](../../../)||| [Prev](../)|||[Next](k-part2)|||

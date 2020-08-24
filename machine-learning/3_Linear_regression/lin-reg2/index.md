@@ -34,4 +34,4 @@ ADD EQUATIONS HERE
 - Df.corr can calculate correlation matrix between all columns
 - Matshow can show correlation value comparison within a matrix.
 
-||| [Index](../../)||| [Prev](../../)||| [Next](../mlr/)|||
+||| [Index](../../)||| [Prev](../)||| [Next](../mlr/)|||

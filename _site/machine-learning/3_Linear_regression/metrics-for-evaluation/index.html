@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Metrics for Evaluation</title>
+  <meta name="description" content="ISPeL is an interactive system for personalization of learning. It uses topic-based authoring.">
+
+  <!---   <link rel="stylesheet" href="/ISPeL-content-machine-learning/css/tufte.css" --->
+  <link rel="stylesheet" href="../../../css/tufte.css">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75587219-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+
+  <link rel="canonical" href="http://localhost:7000/ISPeL-content-machine-learning/machine-learning/3_Linear_regression/metrics-for-evaluation/">
+  <link rel="alternate" type="application/rss+xml" title="ISPeL-content-machine-learning" href="http://localhost:7000/ISPeL-content-machine-learning/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+
+
+<header>
+    <nav class="group">
+    <a href="../../../">Machine Learning</a>
+    <a href="http://ispel.cs.ecu.edu/" _target="blank">ISPeL</a>
+    <a href="http://seng5005.cs.ecu.edu/" _target="blank">Fall 2020</a>
+    <a href="https://github.com/vngudivada/ISPeL-content-machine-learning.git" _target="blank">GitHub</a>
+    </nav>
+</header>
+
+    <article class="group">
+      
+
+<h1>Metrics for evaluation</h1>
+<p class="subtitle"></p>
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+        e: "\\epsilon",
+        xti: "x^{(i)}",
+        yti: "y^{(i)}",
+        bfy: "{\\bf y}",
+        bfx: "{\\bf x}",
+        bfg: "{\\bf g}",
+        bfbeta: "{\\bf \\beta}",
+        tp: "\\tilde p",
+        pt: "p_\\theta",
+        E: "{\\mathbb{E}}",
+        Ind: "{\\mathbb{I}}",
+        KL: "{\\mathbb{KL}}",
+        Re: "{\\mathbb{R}}",
+        Dc: "{\\mathcal{D}}",
+        Tc: "{\\mathcal{T}}",
+        Xc: "{\\mathcal{X}}",
+        note: ["\\textcolor{blue}{[NOTE: #1]}",1]
+      }
+    }
+  });
+</script>
+
+
+<ul>
+  <li>What have we learned to evaluate a model so far?
+    <ul>
+      <li>Classification accuracy rate = correct/total</li>
+      <li>Classification: confusion matrix</li>
+      <li>Regression: RSS (usually used only for tuning coefficients)</li>
+    </ul>
+  </li>
+  <li>What will be introduced:
+    <ul>
+      <li>Classification: ROC</li>
+      <li>Regression: R^2</li>
+      <li>Regression: RMSE and MSE</li>
+      <li>Regression: MAE</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="review-classification-terms">Review Classification Terms</h2>
+<ul>
+  <li>Based on: <a href="https://www.geeksforgeeks.org/confusion-matrix-machine-learning/">https://www.geeksforgeeks.org/confusion-matrix-machine-learning/</a></li>
+  <li>Positive (P) : Observation is positive (for example: is an apple).</li>
+  <li>Negative (N) : Observation is not positive (for example: is not an apple).</li>
+  <li>True Positive (TP) : Observation is positive, and is predicted to be positive.</li>
+  <li>False Negative (FN) : Observation is positive, but is predicted negative.</li>
+  <li>True Negative (TN) : Observation is negative, and is predicted to be negative.</li>
+  <li>False Positive (FP) : Observation is negative, but is predicted positive.</li>
+</ul>
+
+<h2 id="metrics-for-evaluation-roc-curve">Metrics for Evaluation: ROC Curve</h2>
+<ul>
+  <li>Classification Receiver Operating Characteristic (ROC) curve</li>
+  <li>For <font color="red">binary</font> classification (True or False)
+    <ul>
+      <li>True Positive Rate (TPR) (Sensitivity): True Positive Rate corresponds to the proportion of <font color="red">positive data</font> points that are correctly considered as positive, with respect to all positive data points.</li>
+    </ul>
+  </li>
+</ul>
+
+\[True PositiveRate=\frac{TruePositive}{FalseNegative+TruePositive}\]
+
+<p>False Positive Rate (FPR) (Specificity): False Positive Rate corresponds to the proportion of <font color="red">negative data</font> points that are mistakenly considered as positive, with respect to all negative data points.</p>
+
+\[FalsePositiveRate=\frac{FalsePositive}{FalsePositive+TrueNegative}\]
+
+<p>Based on: <a href="https://towardsdatascience.com/metrics-to-evaluate-your-machine-learning-algorithm-f10ba6e38234">https://towardsdatascience.com/metrics-to-evaluate-your-machine-learning-algorithm-f10ba6e38234</a></p>
+
+<ul>
+  <li>FPR and TPR both have values in the range [0, 1]. FPR and TPR bot hare computed at threshold values such as (0.00, 0.02, 0.04, …., 1.00) and a graph is drawn. Area Under Curve (<font color="red">AUC</font>) is the area under the curve of plot FPR vs TPR at different points in <font color="red">[0, 1]</font>.
+<img src="ROC.png" alt="" /></li>
+</ul>
+
+<p>Figure Credit: <a href="https://towardsdatascience.com/metrics-to-evaluate-your-machine-learning-algorithm-f10ba6e38234">https://towardsdatascience.com/metrics-to-evaluate-your-machine-learning-algorithm-f10ba6e38234</a></p>
+
+<ul>
+  <li>The font color=red&gt;greater&lt;/font&gt; the value of AUC, the font color=red&gt;better&lt;/font&gt; is the performance of our model.
+Each curve is for one class. You may have multiple curves.</li>
+</ul>
+
+<h2 id="roc-example">ROC Example</h2>
+<h2 id="micro-average-vs-macro-average-in-a-multiclass-classification-problem">Micro Average vs Macro average in a multiclass classification problem:</h2>
+<ul>
+  <li>A macro-average will compute the metric independently for each class and then take the average (hence treating all classes equally)</li>
+  <li>A micro-average will aggregate the contributions of all classes to compute the average metric.</li>
+  <li>In a multi-class classification setup, micro-average is preferable if you suspect there might be class imbalance (i.e you may have many more examples of one class than of other classes).</li>
+  <li>More details at: <a href="https://datascience.stackexchange.com/questions/15989/micro-average-vs-macro-average-performance-in-a-multiclass-classification-settin">https://datascience.stackexchange.com/questions/15989/micro-average-vs-macro-average-performance-in-a-multiclass-classification-settin</a></li>
+</ul>
+
+<h2 id="group-activity-5-roc-curve">Group Activity 5: ROC Curve</h2>
+<ul>
+  <li>Group Activity draw the graph and following these requirements:
+    <ul>
+      <li>X data: fpr[“micro”]</li>
+      <li>Y data: tpr[“micro”]</li>
+      <li>X axis from 0 – 1</li>
+      <li>Y axis from 0 – 1.5</li>
+      <li>X label: False Positive Rate</li>
+      <li>Y label: True Positive Rate</li>
+      <li>Title: Receiver operating characteristic example</li>
+      <li>Legend position: lower right</li>
+    </ul>
+  </li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><a href="../../">Index</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../lin-reg4/">Prev</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../metrics-for-evaluation-2/">Next</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+
+    </article>
+    <footer>
+<hr class="slender">
+<div class="credits">
+This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll" target="_blank">Tufte theme</a>. &copy; 2020
+</div>
+</footer>
+  </body>
+</html>

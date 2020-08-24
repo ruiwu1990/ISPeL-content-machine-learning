@@ -1,0 +1,69 @@
+I"<h3 id="simple-linear-regression-using-a-single-predictor-x">Simple linear regression using a single predictor X.</h3>
+
+<ul>
+  <li>We <span style="background-color: #FFFF00">assume a model</span></li>
+</ul>
+
+\[Y = \beta_0 + (\beta_1)X + \epsilon\]
+
+<ul>
+  <li>where \beta_0 and \beta_1 are two unknown constants that represent the <span style="background-color: #FFFF00">intercept</span> and <span style="background-color: #FFFF00">slope</span>, also known as <span style="background-color: #FFFF00">coefficients</span> or <span style="background-color: #FFFF00">parameters</span>, and \(\epsilon\) is the error term.</li>
+  <li>
+    <p>Given some \(\hat(\beta_0)\) and \(\hat(\beta_1)\) for the  model cofficients, we predict future sale using  \(\hat(y) = \hat(\beta_0) + \hat(\beta_1),\)</p>
+  </li>
+  <li>where \(\hat(y) indicates a prediction of\)Y\(on the basis of\)X=x$$</li>
+  <li>The hat symbol denotes an <span style="background-color: #FFFF00">estimated value</span>.</li>
+</ul>
+
+<h2 id="estimation-of-the-parameters-by-least-squares">Estimation of the parameters by least squares</h2>
+<ul>
+  <li>Let \(\hat{y} _i = \hat{ \beta }_0 +  \hat{ \beta }_ix_i\) be the prediction for Y based on the ith value of X. Then \(e_i =y_i - \hat{y}_i\) represents the ith <font color="green">residual</font></li>
+  <li>
+    <p>We define the</p>
+  </li>
+  <li>
+    <p>Linear regression is a simple approach to supervised learning. It assumes that the dependence of Y on \(X_1,X_2,...X_p\) is linear.</p>
+  </li>
+  <li>
+    <p>True regression functions are never linear!</p>
+  </li>
+  <li>Although it may seem overly simplistic, linear regression is extremely useful both conceptually and practically.</li>
+</ul>
+
+<h2 id="linear-regression-for-the-advertising-data">Linear regression for the advertising data</h2>
+<h4 id="consider-the-advertising-data-shown">Consider the advertising data shown…</h4>
+<p><img src="linreg1.png" alt="" /></p>
+<h4 id="questions-we-might-ask">Questions we might ask:</h4>
+<ul>
+  <li>Is there a relationship between advertising budget and sales?</li>
+  <li>How strong is the relationship between advertising budget and sales?</li>
+  <li>Which media contributes to sales?</li>
+  <li>How accurately can we predict future sales?</li>
+  <li>Is the relationship linear?</li>
+  <li>Is there synergy among the advertising media?</li>
+</ul>
+
+<h3 id="group-activcity-5-linear-regression-from-scratch">Group Activcity 5: Linear Regression from Scratch</h3>
+<ul>
+  <li>Group Activity 5:<a href="https://github.com/ruiwu1990/CSCI_4120/tree/master/HW_linear_regression">https://github.com/ruiwu1990/CSCI_4120/tree/master/HW_linear_regression</a></li>
+  <li>Finish to do section, you will have the linear regression implemtation from scratch.</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><a href="../../">Index</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../">Prev</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="lin-reg2/">Next</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+:ET

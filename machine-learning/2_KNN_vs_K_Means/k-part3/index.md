@@ -47,4 +47,4 @@ title: Matplotlib
 - Your graph should be similar to this:
 ![](mpl3.png)
 
-||[Index](../../../)||| [Prev](../../)|||[Next](k-part2)|||
+||[Index](../../../)||| [Prev](../k-part2/)|||[Next](../k-part4/)|||

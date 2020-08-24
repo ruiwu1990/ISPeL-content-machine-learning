@@ -1,0 +1,35 @@
+I"$<h2 id="solutions-for-overfitting-and-underfitting">Solutions for Overfitting and Underfitting</h2>
+
+<ul>
+  <li>Underfitting: more complex model, e.g., higher degree for polynomial basis function</li>
+  <li>Overfitting: regularization, e.g. L1 and L2</li>
+  <li>However, how to find the balance point?</li>
+</ul>
+
+<p><img src="lin-reg4.png" alt="" />
+Figure credit: <a href="https://ericjacobsononmanagement.blogspot.com/2015/09/find-your-balance-point.html">https://ericjacobsononmanagement.blogspot.com/2015/09/find-your-balance-point.html</a></p>
+
+<h2 id="bias-and-variance-trade-off">Bias and Variance Trade-off</h2>
+<ul>
+  <li>Bias is average of difference between predicted and Actual result. High Bias means We are getting low performance. Distance between true values and predict values.</li>
+  <li>Variance is the expectation of the squared deviation of a random variable from its mean. Predictions made on the same value vary on different realizations of the model.</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><a href="../../">Index</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../../">Prev</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="lin-reg2/">Next</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+:ET

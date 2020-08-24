@@ -1,0 +1,45 @@
+I"º	<ul>
+  <li>Holdout sets for validation: hold back some subset of the training data and this part is called holdout set. Then we use this part data for test.
+    <ul>
+      <li>What are the possible disadvantages?</li>
+    </ul>
+  </li>
+  <li>Cross-validation: sometimes called rotation estimation or out-of-sample testing, is any of various similar model validation techniques for <font color="red">assessing</font> how the results of a statistical analysis will generalize to an independent data set.</li>
+</ul>
+
+<p><img src="fold.png" alt="" /></p>
+
+<ul>
+  <li>K-fold cross validation: k is the number of number of sections/folds.</li>
+  <li>K-fold cross validation is very useful for model performance estimation and model parameter tuning (HW4).</li>
+</ul>
+
+<h2 id="sample-code">Sample Code</h2>
+<ul>
+  <li>Model Validation</li>
+  <li>Accuracy_score: calculate classification accuracy rate, works for multiple classes</li>
+  <li>Cross_val_score: automatically split data following cross validation ideas.</li>
+</ul>
+
+<h2 id="group-activity-6">Group Activity 6</h2>
+<ul>
+  <li>Leave One Out: it is still cross validation. Each time, only one element is left for test, i.e. validation set size is always one.</li>
+  <li>Leave-one-out cross-validation is approximately unbiased, because the difference in size between the training set used in each fold and the entire dataset is only a single pattern.</li>
+  <li>It tends to have a high variance (so you would get very different estimates if you repeated the estimate with different initial samples of data from the same distribution).</li>
+</ul>
+
+<p><img src="fold.png" alt="" /></p>
+
+<p>Based on: <a href="https://stats.stackexchange.com/questions/154830/10-fold-cross-validation-vs-leave-one-out-cross-validation">https://stats.stackexchange.com/questions/154830/10-fold-cross-validation-vs-leave-one-out-cross-validation</a></p>
+
+<h2 id="parameter-tuning">Parameter Tuning</h2>
+<ul>
+  <li>Grid Search:
+    <ul>
+      <li>Grid search is an approach to parameter tuning that will methodically build and evaluate a model for each combination of algorithm parameters specified in a grid.</li>
+      <li>The grid search provided by sklearn.model_selection.GridSearchCV exhaustively generates candidates from a grid of parameter values specified with the param_grid parameter. For instance, the following param_grid:
+||| <a href="../../">Index</a>||| <a href="../../">Prev</a>||| <a href="lin-reg2/">Next</a>|||</li>
+    </ul>
+  </li>
+</ul>
+:ET

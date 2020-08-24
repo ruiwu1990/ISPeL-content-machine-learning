@@ -38,4 +38,4 @@ Relax the deﬁnition and let $$\hat{f}(x)=Ave(Y|X\epsilon N(x))$$ where $$N(x)$
 - <https://github.com/ruiwu1990/CSCI_4120/tree/master/curse_of_demensionality>
 
 
-|||[Index](../../)||| [Prev](../)||| [Next](../part2)
+|||[Index](../../)||| [Prev](../)|||
