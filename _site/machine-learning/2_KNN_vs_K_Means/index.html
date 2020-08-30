@@ -76,8 +76,10 @@
 <h3 id="first-machine-learning-model-knn">First Machine Learning Model: KNN</h3>
 
 <ul>
-  <li>The idea is similar data records will be closer with each other. Like friends, if most of your friends like playing video games, then you may also enjoy playing video games.</li>
-  <li>The model for KNN is the entire training dataset. When a prediction is required for an unseen data instance, the KNN algorithm will search through the training dataset for the k-most similar (distance) instances. The prediction attribute of the most similar instances is summarized (averaged) and returned as the prediction for the unseen instance.</li>
+  <li>The idea is similar data records will be <mark>closer</mark> with each other. Like friends, if most of your friends like playing video games, then you may also enjoy playing video games.</li>
+  <li>The model for KNN is the <mark>entire training dataset</mark>. When a prediction is required for an unseen data instance, the KNN algorithm will search through the training dataset for the k-most similar (distance) instances. The prediction attribute of the most similar instances is summarized (averaged) and returned as the prediction for the unseen instance.</li>
+  <li>E.g., hobbies of the top ten friends you interacted the most (like, reply their posts) in the past week will be used for what you can try during this weekend.</li>
+  <li>Check the figure below…</li>
   <li>KNN is supervised or unsupervised?</li>
 </ul>
 
@@ -85,48 +87,59 @@
 
 <p>Figure Credit: https://www.quora.com/How-is-the-k-nearest-neighbor-algorithm-different-from-k-means-clustering</p>
 
-<h3 id="how-to-enable-python-3-in-the-notebook">How to enable Python 3 in the notebook</h3>
+<h3 id="knn-steps">KNN Steps</h3>
+<p>If we want to implement a KNN algorithm from scratch. Here are the steps:</p>
+<ol>
+  <li>Load data</li>
+  <li>Check similarity, i.e. distances between eash pair of data points, can be euclidean distances (<a href="https://hlab.stanford.edu/brian/making_measurements.html">https://hlab.stanford.edu/brian/making_measurements.html</a>) or other type of distances based on requirements</li>
+  <li>Find neighbors, i.e. which data point is the k-th closest neighbor</li>
+  <li>Return K closest neighbors</li>
+  <li>Check accuracy of your model</li>
+</ol>
+
+<h3 id="it-is-programming-time">It is <mark>Programming time</mark>!</h3>
+<p>How to enable Python 3 in the notebook:</p>
 <ul>
   <li>python3 -m pip install ipykernel</li>
   <li>python3 -m ipykernel install -user</li>
   <li>Create a Jupyter-notebook using Python3</li>
 </ul>
 
-<h3 id="knn-steps">KNN Steps</h3>
+<p>Install dependencies:</p>
 <ul>
-  <li>If we want to implement a KNN algorithm from scratch. Here are the steps:</li>
-  <li>Load data</li>
-  <li>Check similarity, i.e. distances between eash pair of data points</li>
-  <li>Find neighbors, i.e. which data point is the k-th closest neighbor</li>
-  <li>Return K closest neighbors</li>
-  <li>Check accuracy</li>
-  <li>It is Programming time!
-– <a href="https://www.quora.com/How-is-the-k-nearest-neighbor-algorithm-different-from-k-means-clustering">https://www.quora.com/How-is-the-k-nearest-neighbor-algorithm-different-from-k-means-clustering</a></li>
+  <li>sudo pip3 install -r requirements.txt</li>
 </ul>
 
-<p>Based on: <a href="https://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/">https://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/</a></p>
-
 <h3 id="group-activity">Group Activity</h3>
+<p>Based on the tutorial at <a href="https://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/">https://machinelearningmastery.com/tutorial-to-implement-k-nearest-neighbors-in-python-from-scratch/</a></p>
 <ul>
-  <li>Sample Code: <a href="https://colab.research.google.com/github/ruiwu1990/CSCI_4120/blob/master/KNN/knn.ipynb">https://colab.research.google.com/github/ruiwu1990/CSCI_4120/blob/master/KNN/knn.ipynb</a></li>
+  <li><mark>10 minutes</mark></li>
+  <li>Github Sample Code: <a href="https://github.com/ruiwu1990/CSCI_4120/blob/master/KNN/knn.ipynb">https://github.com/ruiwu1990/CSCI_4120/blob/master/KNN/knn.ipynb</a></li>
+  <li>Colab Sample Code: <a href="https://colab.research.google.com/github/ruiwu1990/CSCI_4120/blob/master/KNN/knn.ipynb">https://colab.research.google.com/github/ruiwu1990/CSCI_4120/blob/master/KNN/knn.ipynb</a></li>
   <li>Finish the TODO section</li>
 </ul>
 
 <h3 id="homwork-1-group-homework">Homwork 1: Group Homework</h3>
-<ul>
-  <li>Group Homework</li>
-  <li>Rewrite KNN sample code using KNeighborsClassifier.</li>
-  <li>Repeat KNN Step 1-5, for at least five times and calculate average accuracy to be your result.</li>
-  <li>If you ise the latest version of scikit-learn, you need to program with Python&gt;=3.5.</li>
-  <li>Use the same dataset: “iris data”</li>
-  <li>Draw a line chart: Use a “for loop” to change k from 1 to 10 and check your model accuracy.</li>
-  <li>README.MD file</li>
-  <li>Team member names and email addresses</li>
-  <li>Quick Start</li>
-  <li>Which K (from 1 to 10) works the best?</li>
-  <li>insert a line chart</li>
-  <li>Due Semtember XX</li>
-</ul>
+<ol>
+  <li><mark>Group Homework</mark></li>
+  <li>Rewrite KNN sample code using KNeighborsClassifier.
+    <ul>
+      <li>Repeat KNN Step 1-5, for at least five times and calculate average accuracy to be your result.</li>
+      <li>If you use the latest version of scikit-learn, you need to program with Python&gt;=3.5.</li>
+      <li>Use the same dataset: “iris data”</li>
+    </ul>
+  </li>
+  <li>Draw a line chart (recorded video): Use a “for loop” to change k from 1 to 20 and check your model accuracy.</li>
+  <li>README.MD file
+    <ul>
+      <li>Team member names and email addresses</li>
+      <li>Quick Start about steps and things TA and I need to know to run your code or Jupyter notebook, e.g. dependancies…</li>
+      <li>Which K (from 1 to 20) works the best? If all Ks have similar accuracy, please write down your thoughts about “Why.”</li>
+      <li>insert a line chart</li>
+      <li>Due <mark>September 14</mark></li>
+    </ul>
+  </li>
+</ol>
 
 <table>
   <tbody>

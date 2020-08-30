@@ -39,7 +39,7 @@ title: Matplotlib
 6. Line style:
 * String: solid, dashed…
 * Code: ‘-’, ‘\-\-’ …
-* Combined style with color: -g (solid green), --r (dashed red)
+* Combined style with color: -g (solid green), \-\-r (dashed red)
 * Set the range: xlim(-1, 11) from -1 to 11, you can even reverse the range
 
 ### Group Activity Plot 1

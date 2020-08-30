@@ -8,6 +8,7 @@ title: KNN
 - Sklearn:
     - KNeighborsClassifier: classification
     - KNeighborsRegressor: regression
+- <mark>Question before we continue: advantages and disadvantages?</mark>
 
 ![](knn2.png)
 
@@ -27,6 +28,7 @@ Figure Credit: <https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-s
 - It is a competitive learning algorithm, because it internally uses competition between model elements (data instances) in order to make a predictive decision. The objective similarity measure between data instances causes each data instance to compete to “win” or be most similar to a given unseen data instance and contribute to a prediction.
 - Lazy learning refers to the fact that the algorithm does not build a model until the time that a prediction is required. It is lazy because it only does work at the last second. This has the benefit of only including data relevant to the unseen data, called a localized model. A disadvantage is that it can be computationally expensive to repeat the same or similar searches over larger training datasets.
 - Finally, KNN is powerful because it does not assume anything about the data, other than a distance measure can be calculated consistently between any two instances. As such, it is called non-parametric or non-linear as it does not assume a functional form.
+
 
 # KNN Advantages vs Disadvantages
 
