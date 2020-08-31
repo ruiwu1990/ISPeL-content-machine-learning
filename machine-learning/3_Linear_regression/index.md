@@ -10,9 +10,9 @@ title: Linear Regression
 $$Y = \beta_0 + (\beta_1)X + \epsilon$$
 
 - where \beta_0 and \beta_1 are two unknown constants that represent the <span style="background-color: #FFFF00">intercept</span> and <span style="background-color: #FFFF00">slope</span>, also known as <span style="background-color: #FFFF00">coefficients</span> or <span style="background-color: #FFFF00">parameters</span>, and $$\epsilon$$ is the error term.
-- Given some $$\hat(\beta_0)$$ and $$\hat(\beta_1)$$ for the  model cofficients, we predict future sale using  $$\hat(y) = \hat(\beta_0) + \hat(\beta_1),$$ 
+- Given some $$\hat{\beta_0}$$ and $$\hat{\beta_1}$$ for the  model cofficients, we predict future sale using  $$\hat{y} = \hat{\beta_0} + \hat{\beta_1},$$ 
 
-- where $$\hat(y) indicates a prediction of $$Y$$ on the basis of $$X=x$$
+- where $$\hat{y}$$ indicates a prediction of $$Y$$ on the basis of $$X=x$$
 - The hat symbol denotes an <span style="background-color: #FFFF00">estimated value</span>.
 
 ## Estimation of the parameters by least squares

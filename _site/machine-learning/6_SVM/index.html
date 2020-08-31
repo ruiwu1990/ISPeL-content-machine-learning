@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Hyperplane</title>
+  <meta name="description" content="ISPeL is an interactive system for personalization of learning. It uses topic-based authoring.">
+
+  <!---   <link rel="stylesheet" href="/ISPeL-content-machine-learning/css/tufte.css" --->
+  <link rel="stylesheet" href="../../css/tufte.css">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75587219-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+
+  <link rel="canonical" href="http://localhost:7000/ISPeL-content-machine-learning/machine-learning/6_SVM/">
+  <link rel="alternate" type="application/rss+xml" title="ISPeL-content-machine-learning" href="http://localhost:7000/ISPeL-content-machine-learning/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+
+
+<header>
+    <nav class="group">
+    <a href="../../">Machine Learning</a>
+    <a href="http://ispel.cs.ecu.edu/" _target="blank">ISPeL</a>
+    <a href="http://seng5005.cs.ecu.edu/" _target="blank">Fall 2020</a>
+    <a href="https://github.com/vngudivada/ISPeL-content-machine-learning.git" _target="blank">GitHub</a>
+    </nav>
+</header>
+
+    <article class="group">
+      
+
+<h1>Hyperplane</h1>
+<p class="subtitle"></p>
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+        e: "\\epsilon",
+        xti: "x^{(i)}",
+        yti: "y^{(i)}",
+        bfy: "{\\bf y}",
+        bfx: "{\\bf x}",
+        bfg: "{\\bf g}",
+        bfbeta: "{\\bf \\beta}",
+        tp: "\\tilde p",
+        pt: "p_\\theta",
+        E: "{\\mathbb{E}}",
+        Ind: "{\\mathbb{I}}",
+        KL: "{\\mathbb{KL}}",
+        Re: "{\\mathbb{R}}",
+        Dc: "{\\mathcal{D}}",
+        Tc: "{\\mathcal{T}}",
+        Xc: "{\\mathcal{X}}",
+        note: ["\\textcolor{blue}{[NOTE: #1]}",1]
+      }
+    }
+  });
+</script>
+
+
+<ul>
+  <li>Definition: In a p-dimensional space, a hyperplane is a flat affine subspace of hyperplane dimension p − 1.</li>
+  <li>For instance, in two dimensions, a hyperplane is a flat subspace.</li>
+</ul>
+
+\[\beta _0+ \beta _1X_1+\beta_2X_2=0\]
+
+<ul>
+  <li>For p-dimensions:</li>
+</ul>
+
+\[\beta _0+ \beta _1X_1+\beta_2X_2+...+ \beta _pX_p=0\]
+
+<ul>
+  <li>If we have a point X (X1, X2, X3, …, Xp):</li>
+</ul>
+
+\[\beta _0+ \beta _1X_1+\beta_2X_2+...+ \beta _pX_p&gt;0\]
+
+<ul>
+  <li>This means X lies to one side of the hyperplane. On the other hand, if:</li>
+</ul>
+
+\[\beta _0+ \beta _1X_1+\beta_2X_2+...+ \beta _pX_p&lt;0\]
+
+<ul>
+  <li>then X lies on the other side of the hyperplane.</li>
+  <li>We can think of the hyperplane as dividing p-dimensional space into <font color="red">two halves</font>.</li>
+  <li>Questions: we can use hyperplane for regression, classification, or clustering?</li>
+</ul>
+
+<p><label for="SVM" class="margin-toggle">⊕</label>
+<input type="checkbox" id="SVM" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/6_SVM/hyper.png" alt=" " /><br /></span></p>
+
+<p>&lt;/span&gt;</p>
+
+<ul>
+  <li>Challenge Question: how to build a hyperplane?</li>
+</ul>
+
+<p><label for="SVM" class="margin-toggle">⊕</label>
+<input type="checkbox" id="SVM" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/6_SVM/hyper2.png" alt="There may be multiple solutions. Which one to choose?" /><br />
+    There may be multiple solutions. Which one to choose?
+</span></p>
+
+<p><label for="SVM" class="margin-toggle">⊕</label>
+<input type="checkbox" id="SVM" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/6_SVM/hyper3.png" alt="Maximal margin hyperplane: separating hyperplane that is farthest (perpendicular distance) from the training observations." /><br />
+    Maximal margin hyperplane: separating hyperplane that is farthest (perpendicular distance) from the training observations.
+</span></p>
+
+<p><label for="SVM" class="margin-toggle">⊕</label>
+<input type="checkbox" id="SVM" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/6_SVM/hyper4.png" alt="The maximal margin hyperplane is the separating hyperplane for which the margin is largest—that is, it is the hyperplane that has the farthest minimum distance to the training observations." /><br />
+    The maximal margin hyperplane is the separating hyperplane for which the margin is largest—that is, it is the hyperplane that has the farthest minimum distance to the training observations.
+</span></p>
+
+<h2 id="hyperplane--how">Hyperplane – How?</h2>
+
+<ul>
+  <li>Question: write a python (or other languages) function</li>
+  <li>Input: training data n points,</li>
+</ul>
+
+\[x_1 = \left(\begin{array}{c}x_{11} \\\vdots\\x_{1_p} \\\end{array} \right) ,...,x_n=\left(\begin{array}{c}x_{n_1} \\\vdots\\x_{np} \\\end{array} \right)y_1,...,y_n \epsilon\big\{-1,1\big\}\]
+
+<ul>
+  <li>Output: β0, β1, …, βp</li>
+</ul>
+
+\[\beta _0+ \beta _1X_1+\beta_2X_2+...+ \beta _pX_p=0\]
+
+<ul>
+  <li>Rule: separate training data based on their classes, a few misclassifications are allowed</li>
+</ul>
+
+<h2 id="hyperplane--maximal-margin-classifier">Hyperplane – Maximal Margin Classifier</h2>
+
+<ul>
+  <li>If we have one solution, then the hyperplane can usually be shifted a tiny bit up or down, or rotated, without coming into contact with any of the observations: multiple solutions.</li>
+  <li>Choose one of these solutions based on <font color="red">margin</font>.</li>
+  <li>
+    <p>Margin: the <font color="red">minimal</font> distance (<font color="red">perpendicular</font> distance) from the observations to the hyperplane.</p>
+  </li>
+  <li>Margin is similar to the idea of “buffer to make errors.”</li>
+  <li>Why this rule? Assumption: We hope that a classifier that has a large margin on the training data will also have a large margin on the test data, and hence will classify the test observations correctly.</li>
+</ul>
+
+<h2 id="maximal-margin-classifier-how">Maximal Margin Classifier: How</h2>
+
+<p><label for="SVM" class="margin-toggle">⊕</label>
+<input type="checkbox" id="SVM" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/6_SVM/hyper6.png" alt="Non-separable Case - Sometimes, it is not possible to be perfect.How to define a hyperplane for this case?" /><br />
+    Non-separable Case - Sometimes, it is not possible to be perfect.How to define a hyperplane for this case?
+</span></p>
+
+<ul>
+  <li>Inputs:</li>
+</ul>
+
+\[x_1 = \left(\begin{array}{c}x_{11} \\\vdots\\x_{1_p} \\\end{array} \right) ,...,x_n=\left(\begin{array}{c}x_{n_1} \\\vdots\\x_{np} \\\end{array} \right)y_1,...,y_n \epsilon\big\{-1,1\big\}\]
+
+\[y_1...,y_n \epsilon {-1,1}\]
+
+<ul>
+  <li>Output: β0, β1, …, βp</li>
+  <li>Based on maximal margin classifier idea, we can turn this into an optimization question:</li>
+</ul>
+
+<p>maximize M</p>
+
+\[\beta _0,\beta_1,...,\beta_p,M\]
+
+<p>subject to</p>
+
+\[\Sigma _{j=1}^p\beta_j^2=1, y_i(\beta_0+\beta_1x_{i1}+\beta_2x_{i2}+...+\beta_px_{ip}) \geq M \forall i=1,...,n.\]
+
+<ul>
+  <li>
+    <p>One can show that with this constraint the perpendicular distance from the ith observation to the hyperplane is given by \(y_i(\beta_0+\beta_1x_{i1}+\beta_2x_{i2}+...+\beta_px_{p})\)</p>
+  </li>
+  <li>M is the margin of our hyperplane, and the optimization problem chooses β0, β1, . . . , βp to maximize M.</li>
+  <li>How to solve the optimization question? <a href="https://en.wikipedia.org/wiki/Convex_optimization">https://en.wikipedia.org/wiki/Convex_optimization</a>. We won’t cover this part in our class. However, I will show you the library to do it for us.</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><a href="../../../">Index</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../">Prev</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="svm2">Next</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+    </article>
+    <footer>
+<hr class="slender">
+<div class="credits">
+This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll" target="_blank">Tufte theme</a>. &copy; 2020
+</div>
+</footer>
+  </body>
+</html>

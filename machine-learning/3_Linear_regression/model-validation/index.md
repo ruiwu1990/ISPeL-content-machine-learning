@@ -24,11 +24,11 @@ Source Code: <https://colab.research.google.com/github/ruiwu1990/CSCI_4120/blob/
 - Leave-one-out cross-validation is approximately <font color=red>unbiased</font>, because the difference in size between the training set used in each fold and the entire dataset is only a single pattern. 
 - It tends to have a <font color=red>high</font> variance (so you would get very different estimates if you repeated the estimate with different initial samples of data from the same distribution).
 
-Source Code: <https://colab.research.google.com/github/ruiwu1990/CSCI_4120/blob/master/Evaluation/Model%20Validation.ipynb>
+- Source Code: <https://colab.research.google.com/github/ruiwu1990/CSCI_4120/blob/master/Evaluation/Model%20Validation.ipynb>
 
 ![](folds.png)
 
-Based on: <https://stats.stackexchange.com/questions/154830/10-fold-cross-validation-vs-leave-one-out-cross-validation>
+- Based on: <https://stats.stackexchange.com/questions/154830/10-fold-cross-validation-vs-leave-one-out-cross-validation>
 
 ## Parameter Tuning
 - Grid Search:

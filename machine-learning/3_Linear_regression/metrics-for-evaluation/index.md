@@ -29,7 +29,7 @@ title: Metrics for Evaluation
 
 $$True PositiveRate=\frac{TruePositive}{FalseNegative+TruePositive}$$
 
-False Positive Rate (FPR) (Specificity): False Positive Rate corresponds to the proportion of <font color=red>negative data</font> points that are mistakenly considered as positive, with respect to all negative data points.
+- False Positive Rate (FPR) (Specificity): False Positive Rate corresponds to the proportion of <font color=red>negative data</font> points that are mistakenly considered as positive, with respect to all negative data points.
 
 $$FalsePositiveRate=\frac{FalsePositive}{FalsePositive+TrueNegative}$$
 
