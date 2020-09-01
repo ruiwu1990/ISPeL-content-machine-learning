@@ -50,4 +50,17 @@ title: Matplotlib
 - Github Source Code: <https://github.com/ruiwu1990/CSCI_4120/blob/master/Matplotlib/Group%20Activity%20Plot%201.ipynb>
 - Colab Source Code: <https://colab.research.google.com/github/ruiwu1990/CSCI_4120/blob/master/Matplotlib/Group%20Activity%20Plot%201.ipynb>
 
+### How to Draw Simple Scatter Plots
+- Let’s learn basics about simple scatter plots
+- Sample Code: Simple-Scatter-Plots.ipynb
+- Two ways to draw a scatter plot:
+	* Plt.plot(x,y,marker=‘o’): you have multiple options for the markers ['o', '.', ',', 'x', '+', 'v', '^', '<', '>', 's', 'd’]; you can also combine a line chart with a scatter plot, e.g. ‘-ok’ dots on a black line
+	* Plt.scatter(x,y,c=color,s=size,cmap=‘viridis’): more powerful, cmap=‘viridis’ mapping data with color; color and size can be used to represent a third dimensional data
+
+### Group Activity Plot 2
+- Finish the TODO section
+- Github Sample Code: <https://github.com/ruiwu1990/CSCI_4120/blob/master/Matplotlib/04.02-Simple-Scatter-Plots.ipynb>
+- Your graph should be similar to this:
+![](gap2.png)
+
 ||[Index](../../../)||| [Prev](../k-part2/)|||[Next](../k-part4/)|||
