@@ -28,7 +28,7 @@ Machine Learning available topics:
 
 
 
-
+|||[Index](file path)||| [Prev](file path)|||[Next](file path)|||
 
 |||[Machine Learning](../)|||
 

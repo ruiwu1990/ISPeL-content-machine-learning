@@ -84,7 +84,7 @@ $$\Sigma _{j=1}^p\beta_j^2=1, y_i(\beta_0+\beta_1x_{i1}+\beta_2x_{i2}+...+\beta_
 * How to solve the optimization question? <https://en.wikipedia.org/wiki/Convex_optimization>. We won’t cover this part in our class. However, I will show you the library to do it for us.
 
 
-||[Index](../../../)||| [Prev](../)|||[Next](svm2)|||
+||[Index](../../)||| [Prev](../)|||[Next](svm2)|||
 
 
 
