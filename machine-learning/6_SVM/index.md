@@ -4,7 +4,7 @@ title: Hyperplane
 ---
 
 * Definition: In a p-dimensional space, a hyperplane is a flat affine subspace of hyperplane dimension p − 1.
-* For instance, in two dimensions, a hyperplane is a flat subspace.
+* For instance, in two dimensions, a hyperplane is a flat subspace. Check this [Figure](#figure1).
 
 $$\beta _0+ \beta _1X_1+\beta_2X_2=0$$
 
@@ -24,11 +24,11 @@ $$\beta _0+ \beta _1X_1+\beta_2X_2+...+ \beta _pX_p<0$$
 * We can think of the hyperplane as dividing p-dimensional space into <font color=red>two halves</font>.
 * Questions: we can use hyperplane for regression, classification, or clustering?
 
-{% include marginfigure.html id="SVM" url="machine-learning/6_SVM/hyper.png" description=" " %}
+{% include marginfigure.html id="SVM" url="machine-learning/6_SVM/hyper.png" description="Here is <a name='figure1'>figure 1</a>" %}
 
 * Challenge Question: how to build a hyperplane?
 
-{% include marginfigure.html id="SVM" url="machine-learning/6_SVM/hyper2.png" description="There may be multiple solutions. Which one to choose?" %}
+{% include marginfigure.html id="SVM" url="machine-learning/6_SVM/hyper2.png" description="There may be <a name='figure2'>multiple solutions</a>. Which one to choose?" %}
 
 {% include marginfigure.html id="SVM" url="machine-learning/6_SVM/hyper3.png" description="Maximal margin hyperplane: separating hyperplane that is farthest (perpendicular distance) from the training observations." %}
 
@@ -50,7 +50,7 @@ $$\beta _0+ \beta _1X_1+\beta_2X_2+...+ \beta _pX_p=0$$
 ## Hyperplane – Maximal Margin Classifier
 
 * If we have one solution, then the hyperplane can usually be shifted a tiny bit up or down, or rotated, without coming into contact with any of the observations: multiple solutions.
-* Choose one of these solutions based on <font color=red>margin</font>.
+* Choose one of [these solutions](#figure2) based on <font color=red>margin</font>.
 * Margin: the <font color=red>minimal</font> distance (<font color=red>perpendicular</font> distance) from the observations to the hyperplane.
 
 
