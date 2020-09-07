@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>K-Means-What</title>
+  <title>K-Means</title>
   <meta name="description" content="ISPeL is an interactive system for personalization of learning. It uses topic-based authoring.">
 
   <!---   <link rel="stylesheet" href="/ISPeL-content-machine-learning/css/tufte.css" --->
@@ -42,7 +42,7 @@
     <article class="group">
       
 
-<h1>K-means-what</h1>
+<h1>K-means</h1>
 <p class="subtitle"></p>
 
 
@@ -74,9 +74,9 @@
 
 
 <ul>
-  <li>K-means clustering aims to partition n observations into k clusters in which each observation belongs to the cluster with the nearest mean.</li>
+  <li>Kmeans clustering aims to partition n observations into k clusters in which each observation belongs to the cluster with the <mark>nearest mean</mark>.</li>
   <li>If you want to separate different car models into 4 categories based on horsepower, engine displacement, and MPG, you can use K-means.</li>
-  <li>KNN is unsupervised learning and a clustering algorithm (involves the grouping of data points).</li>
+  <li><mark>Question: is Kmeans supervised or unsupervised learning?</mark></li>
   <li>K represents # of centroids.
 <img src="k-means.png" alt="" /></li>
 </ul>
@@ -85,22 +85,46 @@
 
 <h3 id="k-means-how-does-it-work">K-Means: How does it work?</h3>
 <ul>
-  <li>Here are K-means algorithm steps:</li>
-  <li>Step 1: Choose a K: it represents the number of centroids. Hard to decide… especially for high dimensional data. You will learn it in your homework 2.</li>
-  <li>Step 2: Randomly selected centroids positions</li>
-  <li>Step 3: Calculate distances between each data point with K centroids and decide cluster response (closer)</li>
-  <li>Step 4: Calculate the mean value of each cluster, use the mean value as the new centroid</li>
-  <li>Step 5: repeat step 3 and 4 until you have repeated N (maybe 100) times or centroids do not change anymore.</li>
+  <li>Here are K-means algorithm steps:
+    <ul>
+      <li>Step 1: Choose a K: it represents the number of centroids. Hard to decide… especially for high dimensional data. You will learn how to do this in your homework 2.</li>
+      <li>Step 2: Randomly selected centroids positions</li>
+      <li>Step 3: Calculate distances between each data point with K centroids and decide cluster response (closer)</li>
+      <li>Step 4: Calculate the mean value of each cluster, use the mean value as the new centroid</li>
+      <li>Step 5: repeat step 3 and 4 until you have repeated N (maybe 100) times or centroids do not change anymore.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Kmeans is unsupervised learning and a clustering algorithm (involves the grouping of data points).</p>
+  </li>
+  <li>The following figure shows how we decide which group a data point belongs to.
+<img src="km3.png" alt="" /></li>
+  <li>The image below is a good cluster result using Kmeans.
+<img src="km4.png" alt="" />
+Figure Credit: <a href="https://blogs.oracle.com/bigdata/k-means-clustering-machine-learning">https://blogs.oracle.com/bigdata/k-means-clustering-machine-learning</a></li>
 </ul>
 
-<p><img src="km3.png" alt="" />
-<img src="km4.png" alt="" />
-Figure Credit: <a href="https://blogs.oracle.com/bigdata/k-means-clustering-machine-learning">https://blogs.oracle.com/bigdata/k-means-clustering-machine-learning</a></p>
-
-<h4 id="an-example">An Example</h4>
-<p><img src="k-means2.png" alt="" /></p>
+<h3 id="an-example">An Example</h3>
+<ul>
+  <li>Let’s tale a closer look at the following 2D example and review the steps.
+<img src="k-means2.png" alt="" /></li>
+  <li>Things can go wrong like the image below:
+<img src="k-means3.png" alt="" /></li>
+  <li><mark>Question: how to avoid this?</mark></li>
+  <li>Same steps for higher dimensional data.</li>
+</ul>
 
 <p>Example is based on: https://www.youtube.com/watch?v=4b5d3muPQmA</p>
+
+<h3 id="group-activity">Group Activity</h3>
+<ul>
+  <li>Group Activity 3: <a href="https://github.com/ruiwu1990/CSCI_4120/tree/master/K-Means">https://github.com/ruiwu1990/CSCI_4120/tree/master/K-Means</a></li>
+  <li>Finish to do section, you will have the K-means implementation from scratch.</li>
+  <li>Seaborn is a Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics.</li>
+  <li>pairwise_distances_argmin: Compute minimum distances between one point and a set of points, similar to finding neighbors function from KNN</li>
+  <li>Kmeans(k, random_state): k how many neighbours, random_state determines random number generatation for centroid initialization</li>
+  <li>How to cluster non-linear data? Map your data into a higher dimension and apply k-means. In sklearn: SpectralClustering.</li>
+</ul>
 
 <h3 id="k-means-advantages-vs-disadvantages">K-Means: Advantages vs Disadvantages</h3>
 <h4 id="advantages">Advantages:</h4>
