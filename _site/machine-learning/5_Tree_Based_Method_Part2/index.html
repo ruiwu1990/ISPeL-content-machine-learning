@@ -73,89 +73,98 @@
 </script>
 
 
-<h2 id="what-is-decision-tree-methods">What is Decision Tree Methods?</h2>
+<h2 id="ensembling">Ensembling</h2>
 
 <ul>
-  <li>In order to make a prediction for a given observation, we typically use the mean or the mode of the training observations in the region to which it belongs. Since the set of splitting rules used to segment the predictor space can be summarized in a tree, these types of approaches are known as decision tree methods.</li>
+  <li>We have learned how to build a decision tree. Now, let’s learn how to build a forest: Ensemble method</li>
+  <li>Ensemble methods combine several decision trees classifiers to produce better predictive performance than a single decision tree classifier. The main principle (assumption) behind the ensemble model is that a group of weak learners come together to form a strong learner, thus increasing the accuracy of the model.</li>
+  <li>
+    <p>Two popular methods: Bagging and Boosting</p>
+  </li>
+  <li>Based on: <a href="https://analyticsindiamag.com/primer-ensemble-learning-bagging-boosting/">https://analyticsindiamag.com/primer-ensemble-learning-bagging-boosting/</a></li>
 </ul>
 
-<p><label for="Tree Based Method" class="margin-toggle">⊕</label>
-<input type="checkbox" id="Tree Based Method" class="margin-toggle" />
-<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/5_Tree_Based_Method_Part1/netflix.png" alt="Netflix Challenge: 1 Million, gradient boosted decision trees. Figure Credit: &lt;https://bits.blogs.nytimes.com/2009/09/21/netflix-awards-1-million-prize-and-starts-a-new-contest/&gt;" /><br />
-    Netflix Challenge: 1 Million, gradient boosted decision trees. Figure Credit: <a href="https://bits.blogs.nytimes.com/2009/09/21/netflix-awards-1-million-prize-and-starts-a-new-contest/">https://bits.blogs.nytimes.com/2009/09/21/netflix-awards-1-million-prize-and-starts-a-new-contest/</a>
-</span></p>
+<h2 id="bootstrap-sample">Bootstrap Sample</h2>
 
-<h2 id="basics-of-decision-trees">Basics of Decision Trees</h2>
 <ul>
-  <li>Decision trees can be applied to both regression and classification problems.</li>
-  <li>Are the trees below for regression or classification:</li>
+  <li>But wait a second, we need to learn what is “bootstrap sample” first.</li>
+  <li>
+    <p>The <font color="red">bootstrap</font> is a fundamental resampling tool in statistics. The basic idea underlying the bootstrap is what we can estimate the true F by the so-called <font color="red">emperical distribution</font> \(\hat{F}\)</p>
+  </li>
+  <li>Given the training data \((x_i,y_i)\), i=1,…n, the empirical distribution function \(\hat{F}\) is simply</li>
 </ul>
 
-<p><img src="tree2.png" alt="" />
-<img src="tree3.png" alt="" /></p>
+<p>\(P_{\hat{F}}((X,Y)=(x,y)) =(\frac{1}{n} if (x,y) = (x_i, y_i) for some i\)
+\(0 otherwise\)</p>
 
 <ul>
-  <li>Tree is used to separate data based on rules.</li>
+  <li>
+    <p>This is just a discrete probability distribution, putting equal weight (1/n) on each of the observed training points</p>
+  </li>
+  <li>Replacement: a same data point can be selected multiple times</li>
+  <li>A <font color="red">bootstrap sample</font> of size m from the training data is</li>
 </ul>
 
-<p><label for="Tree Based Method" class="margin-toggle">⊕</label>
-<input type="checkbox" id="Tree Based Method" class="margin-toggle" />
-<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/5_Tree_Based_Method_Part1/tree4.png" alt="" /><br /></span></p>
-
-<p>&lt;/span&gt;</p>
-
-<p><label for="Tree Based Method" class="margin-toggle">⊕</label>
-<input type="checkbox" id="Tree Based Method" class="margin-toggle" />
-<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/5_Tree_Based_Method_Part1/tree5.png" alt="Rule example: years &lt; 4.5; hits &gt;117.5 and years &gt;= 4.5" /><br />
-    Rule example: years &lt; 4.5; hits &gt;117.5 and years &gt;= 4.5
-</span></p>
-
-<p><label for="Tree Based Method" class="margin-toggle">⊕</label>
-<input type="checkbox" id="Tree Based Method" class="margin-toggle" />
-<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/5_Tree_Based_Method_Part1/tree6.png" alt="Classification Model Building Workflow" /><br />
-    Classification Model Building Workflow
-</span></p>
-
-<p><label for="Tree Based Method" class="margin-toggle">⊕</label>
-<input type="checkbox" id="Tree Based Method" class="margin-toggle" />
-<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/5_Tree_Based_Method_Part1/tree7.png" alt="Examples based on: &lt;https://www.datacamp.com/community/tutorials/decision-trees-R&gt; and &lt;http://jcsites.juniata.edu/faculty/Rhodes/ml/classification.htm&gt; " /><br />
-    Examples based on: <a href="https://www.datacamp.com/community/tutorials/decision-trees-R">https://www.datacamp.com/community/tutorials/decision-trees-R</a> and <a href="http://jcsites.juniata.edu/faculty/Rhodes/ml/classification.htm">http://jcsites.juniata.edu/faculty/Rhodes/ml/classification.htm</a></span></p>
-
-<p>&lt;/span&gt;</p>
+\[(x_i^*,y_i^*), i=1,...m\]
 
 <ul>
-  <li>There are different algorithms to build a decision tree:
+  <li>
+    <p>where each \((x_i^*,y_i^*)\) are drawn from uniformly at random from \((x_1,y_1),...(x_n,y_n)\), <font color="red">with replacement</font></p>
+  </li>
+  <li>
+    <p>This corresponds exactly to m independent draws from \(\hat{F}\). Hence it approximates what we would see if we could sample more data from the true \(F\). We often consider \(m=n\), which is like sampling an entirely new training set.</p>
+  </li>
+</ul>
+
+<p>Based on: <a href="https://www.stat.cmu.edu/~ryantibs/datamining/lectures/24-bag.pdf">https://www.stat.cmu.edu/~ryantibs/datamining/lectures/24-bag.pdf</a></p>
+
+<h2 id="bagging">Bagging</h2>
+
+<p><label for="Tree Based Method" class="margin-toggle">⊕</label>
+<input type="checkbox" id="Tree Based Method" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/5_Tree_Based_Method_Part2/bagging.png" alt="Figure Credit: &lt;https://analyticsindiamag.com/primer-ensemble-learning-bagging-boosting/&gt;" /><br />
+    Figure Credit: <a href="https://analyticsindiamag.com/primer-ensemble-learning-bagging-boosting/">https://analyticsindiamag.com/primer-ensemble-learning-bagging-boosting/</a>
+</span></p>
+
+<ul>
+  <li>Bagging is used when the goal is to <font color="red">reduce the variance</font> of a decision tree classifier. Here the objective is to create several subsets of data from training sample chosen randomly with replacement. Each collection of subset data is used to train their decision trees.</li>
+  <li>
+    <font color="red">White Board demo steps</font>
+  </li>
+  <li>The number of samples in each bag is be less than training dateset and a common ratio is 60%.</li>
+  <li>Possible methods to combine results:
     <ul>
-      <li>Hunt’s Algorithm</li>
-      <li>CART ID3</li>
-      <li>C4.5 SLIQ</li>
-      <li>SPRINT</li>
+      <li>Classification: majority vote</li>
+      <li>Regression: mean value</li>
     </ul>
   </li>
-  <li>I know the procedure is hard to understand, so let’s have a look at an example.</li>
-</ul>
-
-<h2 id="decision-tree-an-example">Decision Tree: An Example</h2>
-<ul>
-  <li>This example “magically” chooses a good one. We will come back to this “magic”.
-<img src="tree9.png" alt="" /></li>
-</ul>
-
-<h2 id="important-things-of-decision-trees"><font color="red">Important</font> Things of Decision Trees</h2>
-<ul>
-  <li>How should training records be split?
+  <li>Note: bagging a good classifier can improve predictive accuracy, but bagging a bad one can seriously degrade predictive accuracy</li>
+  <li>Advantages:
     <ul>
-      <li>Method for specifying test condition</li>
-      <li>depending on attribute types (split data based on features)</li>
-      <li>Measure for evaluating the goodness of a test condition (test if a feature should be used for splitting )</li>
+      <li>Reduces over-fitting of the model.</li>
+      <li>Handles higher dimensionality data very well.</li>
     </ul>
   </li>
-  <li>How should the splitting procedure stop?</li>
-  <li>Stop splitting if all the records belong to the same class or have identical attribute values</li>
-  <li>Early termination (Or overfitting issues)</li>
-  <li>Methods for Expressing Test Conditions</li>
-  <li>Attribute type:nominal, ordinal, continuous</li>
-  <li>Split: binary, multi-way</li>
+  <li>Disadvantages:
+    <ul>
+      <li>Loss of interpretability: final model is a combination of multiple models</li>
+      <li>Computational complexity: multiply the work of classification/regression</li>
+    </ul>
+  </li>
+  <li>Based on: <a href="https://analyticsindiamag.com/primer-ensemble-learning-bagging-boosting/">https://analyticsindiamag.com/primer-ensemble-learning-bagging-boosting/</a> and <a href="https://www.youtube.com/watch?v=2Mg8QD0F1dQ">https://www.youtube.com/watch?v=2Mg8QD0F1dQ</a></li>
+</ul>
+
+<h2 id="sample-code-regression-tree">Sample Code: Regression Tree</h2>
+
+<ul>
+  <li>RandomForestClassifier</li>
+  <li>Plt.errorbar: this function can be used to show confidence or precision in a set of measurements or calculated values.</li>
+</ul>
+
+<h2 id="group-activity-9">Group Activity 9</h2>
+<ul>
+  <li>Train a random forest classifier</li>
+  <li>Find out which features are more important</li>
 </ul>
 
 <table>
@@ -168,7 +177,7 @@
       <td><a href="../">Prev</a></td>
       <td> </td>
       <td> </td>
-      <td><a href="tree2">Next</a></td>
+      <td><a href="part2-2">Next</a></td>
       <td> </td>
       <td> </td>
     </tr>

@@ -3,52 +3,66 @@ layout: post
 title: Tree Based Method
 ---
 
-## What is Decision Tree Methods?
+## Ensembling
 
-* In order to make a prediction for a given observation, we typically use the mean or the mode of the training observations in the region to which it belongs. Since the set of splitting rules used to segment the predictor space can be summarized in a tree, these types of approaches are known as decision tree methods.
+* We have learned how to build a decision tree. Now, let’s learn how to build a forest: Ensemble method
+* Ensemble methods combine several decision trees classifiers to produce better predictive performance than a single decision tree classifier. The main principle (assumption) behind the ensemble model is that a group of weak learners come together to form a strong learner, thus increasing the accuracy of the model.
+* Two popular methods: Bagging and Boosting
 
-{% include marginfigure.html id="Tree Based Method" url="machine-learning/5_Tree_Based_Method_Part1/netflix.png" description="Netflix Challenge: 1 Million, gradient boosted decision trees. Figure Credit: <https://bits.blogs.nytimes.com/2009/09/21/netflix-awards-1-million-prize-and-starts-a-new-contest/>" %}
+* Based on: <https://analyticsindiamag.com/primer-ensemble-learning-bagging-boosting/>
 
-## Basics of Decision Trees
-* Decision trees can be applied to both regression and classification problems.
-* Are the trees below for regression or classification:
+## Bootstrap Sample
 
-![](tree2.png)
-![](tree3.png)
+* But wait a second, we need to learn what is “bootstrap sample” first.
+* The <font color=red>bootstrap</font> is a fundamental resampling tool in statistics. The basic idea underlying the bootstrap is what we can estimate the true F by the so-called <font color=red>emperical distribution</font> $$\hat{F}$$
 
-* Tree is used to separate data based on rules.
+* Given the training data $$(x_i,y_i)$$, i=1,...n, the empirical distribution function $$\hat{F}$$ is simply
 
-{% include marginfigure.html id="Tree Based Method" url="machine-learning/5_Tree_Based_Method_Part1/tree4.png" description="" %}
+$$P_{\hat{F}}((X,Y)=(x,y)) =(\frac{1}{n} if (x,y) = (x_i, y_i) for some i$$
+$$0 otherwise$$ 
 
-{% include marginfigure.html id="Tree Based Method" url="machine-learning/5_Tree_Based_Method_Part1/tree5.png" description="Rule example: years < 4.5; hits >117.5 and years >= 4.5" %}
+* This is just a discrete probability distribution, putting equal weight (1/n) on each of the observed training points
 
-{% include marginfigure.html id="Tree Based Method" url="machine-learning/5_Tree_Based_Method_Part1/tree6.png" description="Classification Model Building Workflow" %}
+* Replacement: a same data point can be selected multiple times
+* A <font color=red>bootstrap sample</font> of size m from the training data is
 
-{% include marginfigure.html id="Tree Based Method" url="machine-learning/5_Tree_Based_Method_Part1/tree7.png" description="Examples based on: <https://www.datacamp.com/community/tutorials/decision-trees-R> and <http://jcsites.juniata.edu/faculty/Rhodes/ml/classification.htm>
-" %}
+$$(x_i^*,y_i^*), i=1,...m$$
 
-* There are different algorithms to build a decision tree:
-  * Hunt’s Algorithm
-  * CART ID3
-  * C4.5 SLIQ
-  * SPRINT
-* I know the procedure is hard to understand, so let’s have a look at an example.
+* where each $$(x_i^*,y_i^*)$$ are drawn from uniformly at random from $$(x_1,y_1),...(x_n,y_n)$$, <font color=red>with replacement</font>
 
-## Decision Tree: An Example
-* This example “magically” chooses a good one. We will come back to this “magic”.
-![](tree9.png)
+* This corresponds exactly to m independent draws from $$\hat{F}$$. Hence it approximates what we would see if we could sample more data from the true $$F$$. We often consider $$m=n$$, which is like sampling an entirely new training set.
 
-## <font color=red>Important</font> Things of Decision Trees
-* How should training records be split?
-  * Method for specifying test condition
-   * depending on attribute types (split data based on features)
-  * Measure for evaluating the goodness of a test condition (test if a feature should be used for splitting )
-* How should the splitting procedure stop?
- * Stop splitting if all the records belong to the same class or have identical attribute values
- * Early termination (Or overfitting issues)
-* Methods for Expressing Test Conditions
- * Attribute type:nominal, ordinal, continuous
- * Split: binary, multi-way
- 
- 
-||[Index](../../../)||| [Prev](../)|||[Next](tree2)|||
+Based on: <https://www.stat.cmu.edu/~ryantibs/datamining/lectures/24-bag.pdf>
+
+## Bagging
+
+{% include marginfigure.html id="Tree Based Method" url="machine-learning/5_Tree_Based_Method_Part2/bagging.png" description="Figure Credit: <https://analyticsindiamag.com/primer-ensemble-learning-bagging-boosting/>" %}
+
+* Bagging is used when the goal is to <font color=red>reduce the variance</font> of a decision tree classifier. Here the objective is to create several subsets of data from training sample chosen randomly with replacement. Each collection of subset data is used to train their decision trees. 
+* <font color=red>White Board demo steps</font> 
+
+* The number of samples in each bag is be less than training dateset and a common ratio is 60%.
+* Possible methods to combine results:
+  * Classification: majority vote
+  * Regression: mean value
+
+* Note: bagging a good classifier can improve predictive accuracy, but bagging a bad one can seriously degrade predictive accuracy
+* Advantages:
+  * Reduces over-fitting of the model.
+  * Handles higher dimensionality data very well.
+* Disadvantages:
+  * Loss of interpretability: final model is a combination of multiple models
+  * Computational complexity: multiply the work of classification/regression
+
+* Based on: <https://analyticsindiamag.com/primer-ensemble-learning-bagging-boosting/> and <https://www.youtube.com/watch?v=2Mg8QD0F1dQ>
+
+## Sample Code: Regression Tree
+
+* RandomForestClassifier
+* Plt.errorbar: this function can be used to show confidence or precision in a set of measurements or calculated values.
+
+## Group Activity 9
+* Train a random forest classifier
+* Find out which features are more important
+
+||[Index](../../../)||| [Prev](../)|||[Next](part2-2)|||

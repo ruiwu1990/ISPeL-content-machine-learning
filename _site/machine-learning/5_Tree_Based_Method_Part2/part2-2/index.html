@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Tree Based Method</title>
+  <meta name="description" content="ISPeL is an interactive system for personalization of learning. It uses topic-based authoring.">
+
+  <!---   <link rel="stylesheet" href="/ISPeL-content-machine-learning/css/tufte.css" --->
+  <link rel="stylesheet" href="../../../css/tufte.css">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75587219-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+
+  <link rel="canonical" href="http://localhost:7000/ISPeL-content-machine-learning/machine-learning/5_Tree_Based_Method_Part2/part2-2/">
+  <link rel="alternate" type="application/rss+xml" title="ISPeL-content-machine-learning" href="http://localhost:7000/ISPeL-content-machine-learning/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+
+
+<header>
+    <nav class="group">
+    <a href="../../../">Machine Learning</a>
+    <a href="http://ispel.cs.ecu.edu/" _target="blank">ISPeL</a>
+    <a href="http://seng5005.cs.ecu.edu/" _target="blank">Fall 2020</a>
+    <a href="https://github.com/vngudivada/ISPeL-content-machine-learning.git" _target="blank">GitHub</a>
+    </nav>
+</header>
+
+    <article class="group">
+      
+
+<h1>Tree based method</h1>
+<p class="subtitle"></p>
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+        e: "\\epsilon",
+        xti: "x^{(i)}",
+        yti: "y^{(i)}",
+        bfy: "{\\bf y}",
+        bfx: "{\\bf x}",
+        bfg: "{\\bf g}",
+        bfbeta: "{\\bf \\beta}",
+        tp: "\\tilde p",
+        pt: "p_\\theta",
+        E: "{\\mathbb{E}}",
+        Ind: "{\\mathbb{I}}",
+        KL: "{\\mathbb{KL}}",
+        Re: "{\\mathbb{R}}",
+        Dc: "{\\mathcal{D}}",
+        Tc: "{\\mathcal{T}}",
+        Xc: "{\\mathcal{X}}",
+        note: ["\\textcolor{blue}{[NOTE: #1]}",1]
+      }
+    }
+  });
+</script>
+
+
+<h2 id="boosting-ada-boost">Boosting: Ada Boost</h2>
+
+<ul>
+  <li>Boosting is used to create a collection of predictors. In this technique, learners are learned sequentially with early learners fitting simple models to the data and then analyzing data for errors. Consecutive trees (<font color="red">random sample</font>) are fit and at every step, the goal is to improve the accuracy from the prior tree.</li>
+  <li>
+    <font color="red">White Board demo steps</font>
+  </li>
+  <li>Each training data point can have different weights. Weights are based on model errors.</li>
+  <li>Possible methods to combine results:
+    <ul>
+      <li>Classification: majority vote</li>
+      <li>Regression: mean value</li>
+    </ul>
+  </li>
+  <li>
+    <p>Based on: <a href="https://analyticsindiamag.com/primer-ensemble-learning-bagging-boosting/">https://analyticsindiamag.com/primer-ensemble-learning-bagging-boosting/</a> and <a href="https://www.youtube.com/watch?v=GM3CDQfQ4sw">https://www.youtube.com/watch?v=GM3CDQfQ4sw</a></p>
+  </li>
+  <li>Advantages:
+    <ul>
+      <li>Supports different loss function</li>
+    </ul>
+  </li>
+  <li>Disadvantages:
+    <ul>
+      <li>Prone to over-fitting</li>
+      <li>Loss of interpretability: final model is a combination of multiple models</li>
+      <li>Computational complexity: multiply the work of classification/regression</li>
+    </ul>
+  </li>
+  <li>Training loss. This is the function that is optimized on the training data. For example, in a neural network binary classifier, this is usually the binary cross <font color="red">entropy</font>. For the random forest classifier, this is the <font color="red">Gini</font> impurity. The training loss is often called the “objective function” as well.</li>
+  <li>Validation loss. This is the function that we use to evaluate the performance of our trained model on <font color="red">unseen</font> data. This is often not the same as the training loss. For example, in the case of a classifier, this is often the area under the curve of the receiver operating characteristic (<font color="red">ROC</font>) — though this is never directly optimized, because it is not differentiable. This is often called the “performance or evaluation metric”.</li>
+</ul>
+
+<p><label for="Tree Based Method" class="margin-toggle">⊕</label>
+<input type="checkbox" id="Tree Based Method" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/5_Tree_Based_Method_Part2/part2-2/boosting.png" alt="Figure Credit: &lt;https://analyticsindiamag.com/primer-ensemble-learning-bagging-boosting/&gt;" /><br />
+    Figure Credit: <a href="https://analyticsindiamag.com/primer-ensemble-learning-bagging-boosting/">https://analyticsindiamag.com/primer-ensemble-learning-bagging-boosting/</a>
+</span></p>
+
+<ul>
+  <li>Based on: <a href="https://analyticsindiamag.com/primer-ensemble-learning-bagging-boosting/">https://analyticsindiamag.com/primer-ensemble-learning-bagging-boosting/</a> and <a href="https://www.youtube.com/watch?v=2Mg8QD0F1dQ">https://www.youtube.com/watch?v=2Mg8QD0F1dQ</a></li>
+</ul>
+
+<h2 id="boosting-gradient-descent">Boosting: gradient descent</h2>
+
+<p><label for="Tree Based Method" class="margin-toggle">⊕</label>
+<input type="checkbox" id="Tree Based Method" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/5_Tree_Based_Method_Part2/part2-2/boosting2.png" alt="Figure Credit: &lt;https://ml-cheatsheet.readthedocs.io/en/latest/gradient_descent.html&gt;" /><br />
+    Figure Credit: <a href="https://ml-cheatsheet.readthedocs.io/en/latest/gradient_descent.html">https://ml-cheatsheet.readthedocs.io/en/latest/gradient_descent.html</a>
+</span></p>
+
+<ul>
+  <li>Gradient descent is a first-order iterative optimization algorithm for finding the minimum of a function (wiki).</li>
+  <li>You can convert a maximum problem into a minimum one:
+    <ul>
+      <li>Find max(y) =&gt; find min(-y)</li>
+    </ul>
+  </li>
+  <li>When the function is convex, all local minima are also global minima, so in this case gradient descent can converge to the global solution.</li>
+</ul>
+
+<h2 id="ensemble">Ensemble</h2>
+
+<p><label for="Tree Based Method" class="margin-toggle">⊕</label>
+<input type="checkbox" id="Tree Based Method" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/5_Tree_Based_Method_Part2/part2-2/boosting3.png" alt="Figure Credit: &lt;https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d&gt;" /><br />
+    Figure Credit: <a href="https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d">https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d</a>
+</span></p>
+
+<p><label for="Tree Based Method" class="margin-toggle">⊕</label>
+<input type="checkbox" id="Tree Based Method" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/5_Tree_Based_Method_Part2/part2-2/ensemble.png" alt="Figure Credit: &lt;https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d&gt;" /><br />
+    Figure Credit: <a href="https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d">https://medium.com/mlreview/gradient-boosting-from-scratch-1e317ae4587d</a>
+</span></p>
+
+<ul>
+  <li>Two things in general:
+    <ul>
+      <li>Ensemble learning method is <font color="red">not only for trees</font>. You can ensemble different types of models, such as SVM and neural network.</li>
+      <li>You can add a group of models each time instead of a single model. This is called <font color="red">shrinkage</font> a form of regularization for the model building process.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="homework-6-group-homework">Homework 6: Group Homework</h2>
+<ul>
+  <li>Work on the jupyter notebook at: <a href="https://github.com/ruiwu1990/CSCI_4120/blob/master/Decision_tree/HW6.ipynb">https://github.com/ruiwu1990/CSCI_4120/blob/master/Decision_tree/HW6.ipynb</a></li>
+  <li>You are required to classify breast cancer data using RandomForestClassifier.
+    <ul>
+      <li>Complete TODO sections.</li>
+    </ul>
+  </li>
+  <li>Build a classification model and Tune hyperparameters (e.g. criterion, n_estimators …).</li>
+  <li>Your accuracy should be more than 0.92 and (Accuracy/number of features) should be more than 0.45.</li>
+  <li>README.MD file
+    <ul>
+      <li>Team member names and email addresses</li>
+      <li>Hyperparameters used.</li>
+      <li>Accuracy and (accuracy/number of features)</li>
+    </ul>
+  </li>
+  <li>Due…</li>
+</ul>
+
+<h2 id="boosting-sample-code">Boosting: Sample Code</h2>
+<ul>
+  <li>GradientBoostingClassifier</li>
+  <li>Using learning rate to control overfitting issue</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><a href="../../../">Index</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../">Prev</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+
+    </article>
+    <footer>
+<hr class="slender">
+<div class="credits">
+This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll" target="_blank">Tufte theme</a>. &copy; 2020
+</div>
+</footer>
+  </body>
+</html>
