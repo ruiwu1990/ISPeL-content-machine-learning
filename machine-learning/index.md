@@ -15,12 +15,14 @@ A learner can proceed as they are inclined within the module to create their own
 
 Machine Learning available topics: 
 
-1. [1_intro_part2](1_intro_part2/)
-2. [2_KNN_vs_K_Means](2_KNN_vs_K_Means/)
-3. [3_Linear_regression](3_Linear_regression/)
-4. [5_Tree_Based_Method](5_Tree_Based_Method_Part1/)
+1. [Intro_part2](1_intro_part2/)
+2. [KNN_vs_K_Means](2_KNN_vs_K_Means/)
+3. [Linear_regression](3_Linear_regression/)
+4. [Tree_Based_Method](5_Tree_Based_Method_Part1/)
 5. [Tree_Based_Method_Part2](5_Tree_Based_Method_Part2/)
-5. [SVM](6_SVM)
+6. [SVM](6_SVM)
+7. [PCA](PCA)
+8. [GA](GA)
 
 ## 
 
