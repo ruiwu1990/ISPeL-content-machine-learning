@@ -36,9 +36,9 @@ Based on: <https://www.stat.cmu.edu/~ryantibs/datamining/lectures/24-bag.pdf>
 
 ## Bagging
 
-{% include marginfigure.html id="Tree Based Method" url="machine-learning/5_Tree_Based_Method_Part2/bagging.png" description="Figure Credit: <https://analyticsindiamag.com/primer-ensemble-learning-bagging-boosting/>" %}
+{% include marginfigure.html id="Tree Based Method" url="machine-learning/5_Tree_Based_Method_Part2/bagging.png" description="<a name='figure1'>Figure 1</a> Diagram to show the basic funtionality of bagging and its goal. Figure Credit: <https://analyticsindiamag.com/primer-ensemble-learning-bagging-boosting/>" %}
 
-* Bagging is used when the goal is to <font color=red>reduce the variance</font> of a decision tree classifier. Here the objective is to create several subsets of data from training sample chosen randomly with replacement. Each collection of subset data is used to train their decision trees. 
+* Bagging is used when the goal is to <font color=red>reduce the variance</font> of a decision tree classifier. Here the objective is to create several subsets of data from training sample chosen randomly with replacement. Each collection of subset data is used to train their decision trees. [Figure 1](#figure1)
 * <font color=red>White Board demo steps</font> 
 
 * The number of samples in each bag is be less than training dateset and a common ratio is 60%.

@@ -19,7 +19,7 @@ Machine Learning available topics:
 2. [2_KNN_vs_K_Means](2_KNN_vs_K_Means/)
 3. [3_Linear_regression](3_Linear_regression/)
 4. [5_Tree_Based_Method](5_Tree_Based_Method_Part1/)
-5. [Tree_Based_Method](5_Tree_Based_Method_Part2/)
+5. [Tree_Based_Method_Part2](5_Tree_Based_Method_Part2/)
 5. [SVM](6_SVM)
 
 ## 
