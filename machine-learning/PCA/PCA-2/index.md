@@ -5,7 +5,7 @@ title: PCA
 
 * Similarly, if your scree plot is like this, you can have 2D graph to represent 4D data: [Figure](#figure1)
 
-{% include marginfigure.html id="PCA" url="machine-learning/PCA/PCA-2/pca20.png" description="<a name='figure1'>Figure 1</a>" %}
+{% include marginfigure.html id="PCA" url="machine-learning/PCA/PCA-2/pca20.png" description="<a name='figure1'>Figure 1</a> 2D graph to represent 4D data" %}
 
 
 * What about this one [Figure](#figure3)? Can you use 2D graph to represent 4D? Why?

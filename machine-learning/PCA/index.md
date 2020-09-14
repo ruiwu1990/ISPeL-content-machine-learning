@@ -19,13 +19,13 @@ title: PCA
 
 * Based on: <https://towardsdatascience.com/a-one-stop-shop-for-principal-component-analysis-5582fb7e0a9c>
 
-{% include marginfigure.html id="PCA" url="machine-learning/PCA/pca-1.png" description="<a name='figure1'>figure 1</a>What is dimensionality reduction? 3D world -> 2D movie" %}
+{% include marginfigure.html id="PCA" url="machine-learning/PCA/pca-1.png" description="<a name='figure1'>Figure 1</a>What is dimensionality reduction? 3D world -> 2D movie" %}
 
 * Let’s learn how to PCA to do dimensionality reduction.
 * What is dimensionality reduction? 3D world -> 2D movie [Figure](#figure1)
 * Based on: <https://www.youtube.com/watch?v=FgakZw6K1QQ>
 
-{% include marginfigure.html id="PCA" url="machine-learning/PCA/pca-2.png" description="<a name='figure2'>figure 2</a>When shifting, the highest data point is still the highest" %}
+{% include marginfigure.html id="PCA" url="machine-learning/PCA/pca-2.png" description="<a name='figure2'>Figure 2</a>When shifting, the highest data point is still the highest" %}
 
 * Shifting: subtract all points with the new origin point. 
 * Shifting will not change the relation between your data points. E.g., highest data point is still the highest. [Figure](#figure2)
@@ -37,32 +37,32 @@ title: PCA
   * Maximize the distances between green cross and origin
 * The final line is called Principle Component 1 (PC1) [Figure](#figure3)
 
-{% include marginfigure.html id="PCA" url="machine-learning/PCA/pca-3.png" description="<a name='figure3'>figure 3</a>The final line is called Principle Component 1 (PC1)" %}
+{% include marginfigure.html id="PCA" url="machine-learning/PCA/pca-3.png" description="<a name='figure3'>Figure 3</a>The final line is called Principle Component 1 (PC1)" %}
 
 * If our fitted line slop is 0.25, it means every 4-unit growth along x-axis will have 1 unity increasement along y-axis, i.e. gene one plays a <font color=red>more important</font> role to describe data.
 
-![](pca7.png)
+<center><img src="pca7.png" width="65%"/></center>
 
 * If we want to use a vector to represent the slop 0.25, it will be the red one (4.12) in the following image:
 
-![](pca8.png)
+<center><img src="pca8.png" width="65%"/></center>
 
 * If we want to scale the red vector into length one (unit factor), it will be like the following:
 
-![](pca9.png)
+<center><img src="pca9.png" width="65%"/></center>
 
 * The slop is not changed after this step. The unit factor is called “singular vector” or “Eigenvector” for PC1. Contains 0.242 gene 2 and 0.97 gene 1.
 
-{% include marginfigure.html id="PCA" url="machine-learning/PCA/pca10.png" description="<a name='figure4'>figure 4</a> PC2 is much easier to get. Just a perpendicular line through origin" %}
+{% include marginfigure.html id="PCA" url="machine-learning/PCA/pca10.png" description="<a name='figure4'>Figure 4</a> PC2 is much easier to get. Just a perpendicular line through origin" %}
 
 * PC2 is much easier to get. Just a perpendicular line through origin [Figure](#figure4)
 
 
 * Similarly, we can calculate the PC2 eigenvector, which contains -0.242 gene 1 and 0.97 gene 2:
 
-![](pca11.png)
+<center><img src="pca10.png" width="65%"/></center>
 
-{% include marginfigure.html id="PCA" url="machine-learning/PCA/pca-6.png" description="<a name='figure5'>figure 5</a> We need to rotate PC1 (red line) and PC2 (blue line)." %}
+{% include marginfigure.html id="PCA" url="machine-learning/PCA/pca-6.png" description="<a name='figure5'>Figure 5</a> We need to rotate PC1 (red line) and PC2 (blue line)." %}
 
 * After we have PC1 and PC2, we can use PC1 and PC2 to have a new coordinate system to redefine our data. We need to rotate PC1 (red line) and PC2 (blue line). [Figure](#figure5)
 
