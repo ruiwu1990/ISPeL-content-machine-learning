@@ -118,7 +118,7 @@ Figure Credit: <a href="https://blogs.oracle.com/bigdata/k-means-clustering-mach
 
 <h3 id="group-activity">Group Activity</h3>
 <ul>
-  <li>Group Activity 3: <a href="https://github.com/ruiwu1990/CSCI_4120/tree/master/K-Means">https://github.com/ruiwu1990/CSCI_4120/tree/master/K-Means</a></li>
+  <li>Group Activity 3: <a href="https://github.com/ruiwu1990/CSCI_4120/blob/master/K-Means/Group%20Activity%203.ipynb">https://github.com/ruiwu1990/CSCI_4120/blob/master/K-Means/Group%20Activity%203.ipynb</a></li>
   <li>Finish to do section, you will have the K-means implementation from scratch.</li>
   <li>Seaborn is a Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics.</li>
   <li>pairwise_distances_argmin: Compute minimum distances between one point and a set of points, similar to finding neighbors function from KNN</li>
@@ -140,6 +140,102 @@ Figure Credit: <a href="https://blogs.oracle.com/bigdata/k-means-clustering-mach
   <li>K-means is time consuming. Need to calculate distances between new centroid in every loop.</li>
   <li>K-means method may not find out the global best solution. It sometimes returns local optimum.</li>
   <li>K-means is limited to linear cluster boundaries.</li>
+</ul>
+
+<h3 id="classification-definition-of-terms">Classification Definition of Terms</h3>
+<ul>
+  <li>Based on: <a href="https://www.geeksforgeeks.org/confusion-matrix-machine-learning/">https://www.geeksforgeeks.org/confusion-matrix-machine-learning/</a></li>
+  <li><mark>Question: how to judge if a classification results are good or not.</mark></li>
+  <li>Need to learn the following concepts and then we can answer the question:
+    <ul>
+      <li>Positive (P) : Observation is positive (for example: is an apple).</li>
+      <li>Negative (N) : Observation is not positive (for example: is not an apple).</li>
+      <li>True Positive (TP) : Observation is positive, and is predicted to be positive.</li>
+      <li>False Negative (FN) : Observation is positive, but is predicted negative.</li>
+      <li>True Negative (TN) : Observation is negative, and is predicted to be negative.</li>
+      <li>False Positive (FP) : Observation is negative, but is predicted positive.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="confusion-matrix">Confusion Matrix</h3>
+<ul>
+  <li>Used for classification results.</li>
+  <li>A confusion matrix is a summary of prediction results on a classification problem.</li>
+  <li>The number of correct and incorrect predictions are summarized with count values and broken down by each class. This is the key to the confusion matrix.</li>
+  <li>The confusion matrix shows the ways in which your classification model is confused when it makes predictions.</li>
+  <li>It gives us insight not only into the errors being made by a classifier but more importantly the types (to be learned) of errors that are being made.</li>
+  <li>An example of 2-class classification problem (image below)
+    <ul>
+      <li>Class 1 : Positive</li>
+      <li>Class 2 : Negative</li>
+      <li><img src="km5.png" alt="" /></li>
+    </ul>
+  </li>
+  <li>Figure credit: <a href="https://www.geeksforgeeks.org/confusion-matrix-machine-learning">https://www.geeksforgeeks.org/confusion-matrix-machine-learning</a></li>
+</ul>
+
+<h3 id="k-means-advanced-examples">K-Means: Advanced Examples</h3>
+<ul>
+  <li>Sample Code: <a href="https://github.com/ruiwu1990/CSCI_4120/blob/master/K-Means/05.11-K-Means.ipynb">https://github.com/ruiwu1990/CSCI_4120/blob/master/K-Means/05.11-K-Means.ipynb</a></li>
+  <li>Example 1 Handwriting digit recognition:
+    <ul>
+      <li>8*8 data matrix to represent a digit handwriting image</li>
+      <li>Each image is a data point and the centroid of each cluster is also an image</li>
+      <li>Matplotlib imshow: render a 2D regular image</li>
+      <li>np.zero_like(clusters): create a matrix with all zeros, the shape is the same as the “clusters” matrix.</li>
+      <li>TSNE: a method to reduce dimension, it models each high-dimensional object by a two- or three-dimensional point in such a way that similar objects are modeled by nearby points and dissimilar objects are modeled by distant points with high probability.</li>
+    </ul>
+  </li>
+  <li>Example 2 Color Compression
+    <ul>
+      <li>numpy.random.permutation: Randomly permute a sequence, or return a permuted range; same numbers but different orders</li>
+      <li>Matrix.T: .T is to transpose a numpy matrix</li>
+      <li>MiniBatchKMeans: calculate distances between the centroid and only a random sample of observations as opposed to all observations. Faster but may perform not as good as traditional K-Means.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="k-means-how-to-find-a-good-k">K-Means: how to find a good K</h3>
+<ul>
+  <li>How to judge if a K-means algorithm is good?
+    <ul>
+      <li>First you need a measure: one of the most popular one is named “distortion” or “SSE” based on sum of squared errors (SSE), (datapoint - centroid)^2.</li>
+      <li>Compare distortion with K. The best K is at the rapid change point, creating elbow shape.</li>
+      <li>This method is usually called “elbow” method because the shape is like an elbow.</li>
+      <li><mark>Question: why larger K, less distortion?</mark></li>
+      <li><img src="km6.png" alt="" /></li>
+      <li>Figure credit: <a href="https://bl.ocks.org/rpgove/0060ff3b656618e9136b">https://bl.ocks.org/rpgove/0060ff3b656618e9136b</a></li>
+      <li><img src="km7.png" alt="" /></li>
+      <li>Figure credit: <a href="https://www.dreamstime.com/elbow-joint-vector-illustrated-diagram-medical-scheme-educational-sports-injury-information-elbow-joint-vector-illustrated-diagram-image108866773">https://www.dreamstime.com/elbow-joint-vector-illustrated-diagram-medical-scheme-educational-sports-injury-information-elbow-joint-vector-illustrated-diagram-image108866773</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="group-homework-2-find-an-appropriate-k-for-k-means">Group Homework 2: Find an Appropriate K for K-means</h3>
+<ul>
+  <li>Goal: learn how to find a good K using Elbow Method library</li>
+  <li>You need to use the command “python3 hw2.py” to check the outputs</li>
+  <li>Complete todo section in HW2: <a href="https://github.com/ruiwu1990/CSCI_4120/tree/master/HW_elbow_kmeans">https://github.com/ruiwu1990/CSCI_4120/tree/master/HW_elbow_kmeans</a></li>
+  <li>Use KElbowVisualizer to decide K for K-means
+    <ul>
+      <li>Install:</li>
+      <li>pip3 install yellowbrick</li>
+      <li>Read document about the function: <a href="https://www.scikit-yb.org/en/latest/api/cluster/elbow.html">https://www.scikit-yb.org/en/latest/api/cluster/elbow.html</a></li>
+    </ul>
+  </li>
+  <li>Draw a Confusion Matrix</li>
+  <li>README.MD file
+    <ul>
+      <li>Team member names and email addresses</li>
+      <li>Quick Start</li>
+      <li>K*K matrix, K is decided in by KElbowVisualizer</li>
+      <li>Which K works the best</li>
+      <li>The best K accuracy</li>
+      <li>Insert a confusion matrix for the best K</li>
+    </ul>
+  </li>
+  <li><mark>Due September 28</mark>.</li>
 </ul>
 
 <table>
