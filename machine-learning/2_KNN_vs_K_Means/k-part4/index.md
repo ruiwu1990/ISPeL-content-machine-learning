@@ -103,6 +103,7 @@ Example is based on: https://www.youtube.com/watch?v=4b5d3muPQmA
 	- Figure credit: <https://bl.ocks.org/rpgove/0060ff3b656618e9136b>
 	- ![](km7.png)
 	- Figure credit: <https://www.dreamstime.com/elbow-joint-vector-illustrated-diagram-medical-scheme-educational-sports-injury-information-elbow-joint-vector-illustrated-diagram-image108866773>
+	- Group Activity 4: <https://github.com/ruiwu1990/CSCI_4120/blob/master/K-Means/Group%20Activity%204.ipynb>
 
 ### Group Homework 2: Find an Appropriate K for K-means
 - Goal: learn how to find a good K using Elbow Method library
