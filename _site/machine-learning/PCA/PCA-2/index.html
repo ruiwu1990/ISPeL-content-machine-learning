@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>PCA</title>
+  <meta name="description" content="ISPeL is an interactive system for personalization of learning. It uses topic-based authoring.">
+
+  <!---   <link rel="stylesheet" href="/ISPeL-content-machine-learning/css/tufte.css" --->
+  <link rel="stylesheet" href="../../../css/tufte.css">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not--><link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'><!-- Load up MathJax script if needed ... specify in /_data/options.yml file--><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75587219-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+
+  <link rel="canonical" href="http://localhost:7000/ISPeL-content-machine-learning/machine-learning/PCA/PCA-2/">
+  <link rel="alternate" type="application/rss+xml" title="ISPeL-content-machine-learning" href="http://localhost:7000/ISPeL-content-machine-learning/feed.xml" />
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+
+
+<header>
+    <nav class="group">
+    <a href="../../../">Machine Learning</a>
+    <a href="http://ispel.cs.ecu.edu/" _target="blank">ISPeL</a>
+    <a href="http://seng5005.cs.ecu.edu/" _target="blank">Fall 2020</a>
+    <a href="https://github.com/vngudivada/ISPeL-content-machine-learning.git" _target="blank">GitHub</a>
+    </nav>
+</header>
+
+    <article class="group">
+      
+
+<h1>Pca</h1>
+<p class="subtitle"></p>
+
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    TeX: {
+      Macros: {
+        e: "\\epsilon",
+        xti: "x^{(i)}",
+        yti: "y^{(i)}",
+        bfy: "{\\bf y}",
+        bfx: "{\\bf x}",
+        bfg: "{\\bf g}",
+        bfbeta: "{\\bf \\beta}",
+        tp: "\\tilde p",
+        pt: "p_\\theta",
+        E: "{\\mathbb{E}}",
+        Ind: "{\\mathbb{I}}",
+        KL: "{\\mathbb{KL}}",
+        Re: "{\\mathbb{R}}",
+        Dc: "{\\mathcal{D}}",
+        Tc: "{\\mathcal{T}}",
+        Xc: "{\\mathcal{X}}",
+        note: ["\\textcolor{blue}{[NOTE: #1]}",1]
+      }
+    }
+  });
+</script>
+
+
+<ul>
+  <li>Similarly, if your scree plot is like this, you can have 2D graph to represent 4D data: <a href="#figure1">Figure</a></li>
+</ul>
+
+<p><label for="PCA" class="margin-toggle">⊕</label>
+<input type="checkbox" id="PCA" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/PCA/PCA-2/pca20.png" alt="&lt;a name='figure1'&gt;Figure 1&lt;/a&gt; 2D graph to represent 4D data" /><br />
+    <a name="figure1">Figure 1</a> 2D graph to represent 4D data
+</span></p>
+
+<ul>
+  <li>What about this one <a href="#figure3">Figure</a>? Can you use 2D graph to represent 4D? Why?</li>
+</ul>
+
+<p><label for="PCA" class="margin-toggle">⊕</label>
+<input type="checkbox" id="PCA" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/PCA/PCA-2/pca21.png" alt="&lt;a name='figure2'&gt;Figure 2&lt;/a&gt;" /><br />
+    <a name="figure2">Figure 2</a>
+</span></p>
+
+<h2 id="svmmore-than-two-classes">SVM—More than two classes</h2>
+<ul>
+  <li>I forgot to mention this in our last class…</li>
+  <li>One-Versus-One Classification:</li>
+  <li>Suppose that we would like to perform classification using SVMs, and there are K &gt; 2 classes. A one-versus-one or all-pairs approach constructs K(K − 1)/2 SVMs, each of which compares a pair of classes.</li>
+  <li>One-Versus-All Classification</li>
+</ul>
+
+<h2 id="svmfacial-recognition">SVM—facial recognition</h2>
+
+<ul>
+  <li>Only two students have watched the video… So let’s briefly walk through the code.
+    <ul>
+      <li>Whitening: preprocessing step. The goal of whitening is to make the input <font color="red">less redundant</font>; more <font color="red">formally</font>. This can help to make (i) the features less correlated with each other, and (ii) the features all have close variance.</li>
+    </ul>
+  </li>
+  <li>Also, something about HW4. If you find the three methods have similar results…</li>
+</ul>
+
+<h2 id="pca-sample-code">PCA Sample Code</h2>
+
+<ul>
+  <li>axis(‘equal’) changes limits of x or y axis so that equal increments of x and y have the same length; a circle is circular.</li>
+  <li>axis(‘scaled’) achieves the same result by changing the dimensions of the plot box instead of the axis data limits.</li>
+</ul>
+
+<p><img src="pca22.png" alt="" /></p>
+
+<h2 id="pca-handwriting-digit">PCA Handwriting Digit</h2>
+<ul>
+  <li>Two possible ways to do dimensionality reduction:
+    <ul>
+      <li>Method 1: Choose from 64 features, only select 8 important cells (features). Similar to: you are required to select n letters (a, b, c…) from alphabet table to write an article</li>
+      <li>Method 2: PCA, create 8 principle components. Each component contains some information of 64 features. Similar to: you are required to select n words from frequently used words table to write an article.</li>
+    </ul>
+  </li>
+  <li>Np.cumsum: return the cumulative sum of the elements along a given axis.</li>
+  <li>Filtering noise:
+    <ul>
+      <li>The principle component with large amount of information (higher variation) will not be affected by noise.</li>
+      <li>Np.random.normal: generate noise data based on normal distribution.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="group-activity-8-pca">Group Activity 8: PCA</h2>
+
+<p><label for="PCA" class="margin-toggle">⊕</label>
+<input type="checkbox" id="PCA" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/PCA/PCA-2/pca-1.png" alt="&lt;a name='figure3'&gt;Figure 3&lt;/a&gt; Group Activity 3D data representation " /><br />
+    <a name="figure3">Figure 3</a> Group Activity 3D data representation 
+</span></p>
+
+<ul>
+  <li>PCA can improve machine learning model performance. Even without reduce dimensionality.</li>
+  <li>Why the performance is improved? <a href="#figure3">Figure</a>
+    <ul>
+      <li>Still the 3D data.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="homework-5-group-homework">Homework 5: Group Homework</h2>
+<ul>
+  <li>Work on the jupyter notebook at: <a href="https://github.com/ruiwu1990/CSCI_4120/blob/master/SVM/HW5.ipynb">https://github.com/ruiwu1990/CSCI_4120/blob/master/SVM/HW5.ipynb</a></li>
+  <li>You are required to classify digits with <font color="red">SVM</font> models.</li>
+  <li>Compare performance of <font color="red">linear</font>, <font color="red">radial</font>, and <font color="red">polynomial</font> kernels (classification score).
+    <ul>
+      <li>Tune kernel parameters using <font color="red">RandomizedSearchCV</font> method.</li>
+    </ul>
+  </li>
+  <li>Use PCA to reduce data dimensionality (<font color="red">80%</font> information remain).</li>
+  <li>README.MD file
+    <ul>
+      <li>Team member names and email addresses</li>
+      <li>Parameters selected for linear, radial, polynomial kernels.</li>
+      <li>Results comparison between linear, radial, polynomial kernels</li>
+    </ul>
+  </li>
+  <li>Due…</li>
+</ul>
+
+<h2 id="plan">Plan</h2>
+<ul>
+  <li>6 classes:
+    <ul>
+      <li>2 classes: Tree-based methods</li>
+      <li>2 classes: genetic algorithm</li>
+      <li>1 class: group activity, process a data file together</li>
+      <li>1 class: review</li>
+    </ul>
+  </li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td><a href="../../../">Index</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../">Prev</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+    </article>
+    <footer>
+<hr class="slender">
+<div class="credits">
+This work is supported by the <a href="https://www.nsf.gov/" target="_blank">NSF</a> IUSE/PFE:RED award No. <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1730568" target="_blank">1730568</a>. Site created with <a href="//jekyllrb.com" target="_blank">Jekyll</a> using the <a href="//github.com/clayh53/tufte-jekyll" target="_blank">Tufte theme</a>. &copy; 2020
+</div>
+</footer>
+  </body>
+</html>

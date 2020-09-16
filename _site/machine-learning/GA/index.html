@@ -73,22 +73,199 @@
 </script>
 
 
+<h2 id="traveling-salesperson-problem">Traveling Salesperson Problem</h2>
+<ul>
+  <li>Deliver ECU T-shirts to 7 stores in Greenville.</li>
+  <li>Brute force time complexity: N!, N is the number of vertices.</li>
+  <li>Genetic Algorithm (GA)</li>
+  <li>GA: Inspired by genetic evolution process:
+    <ul>
+      <li>Chromosome (population)</li>
+      <li>Crossover</li>
+      <li>Mutation</li>
+      <li>Survival of fittest</li>
+    </ul>
+  </li>
+  <li>Advantage: no need to know the best way to solve the problem, try different possible solutions until results converge</li>
+  <li>Key <font color="red">evaluate solutions</font> and <font color="red">generate different solutions</font></li>
+</ul>
+
+<h2 id="high-level-ga">High Level GA</h2>
+
+<p><label for="PCA" class="margin-toggle">⊕</label>
+<input type="checkbox" id="PCA" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/GA/ga1.jpg" alt="&lt;a name='figure1'&gt;Figure 1&lt;/a&gt; High Level GA and Chromosomal Mutations" /><br />
+    <a name="figure1">Figure 1</a> High Level GA and Chromosomal Mutations
+</span></p>
+
+<ul>
+  <li>Materials Credit: <a href="https://www.youtube.com/watch?v=3GAfjE_ChRI">https://www.youtube.com/watch?v=3GAfjE_ChRI</a></li>
+  <li><a href="#figure1">Figure</a></li>
+  <li>Chromosomal Mutations <a href="#figure2">Figure</a></li>
+</ul>
+
+<p><label for="PCA" class="margin-toggle">⊕</label>
+<input type="checkbox" id="PCA" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/GA/ga2.png" alt="&lt;a name='figure2'&gt;Figure 2&lt;/a&gt; Chromosomal Mutations" /><br />
+    <a name="figure2">Figure 2</a> Chromosomal Mutations
+</span></p>
+
+<ul>
+  <li>Crossover example: Sex-determination system <a href="#figure3">Figure</a>
+    <ul>
+      <li>XY and XX</li>
+      <li>Female XX; Male XY</li>
+    </ul>
+  </li>
+</ul>
+
+<p><label for="PCA" class="margin-toggle">⊕</label>
+<input type="checkbox" id="PCA" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/GA/ga3.png" alt="&lt;a name='figure3'&gt;Figure 3&lt;/a&gt; Crossover example: Sex-determination system XY and XX Female XX; Male XY" /><br />
+    <a name="figure3">Figure 3</a> Crossover example: Sex-determination system XY and XX Female XX; Male XY
+</span></p>
+
+<ul>
+  <li>Natural Selection</li>
+  <li>Chromosome includes information and rules can filter unfitted chromosomes.</li>
+  <li><a href="#figure4">Figure</a></li>
+</ul>
+
+<p><label for="PCA" class="margin-toggle">⊕</label>
+<input type="checkbox" id="PCA" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/GA/ga5.png" alt="&lt;a name='figure4'&gt;Figure 4&lt;/a&gt; Figure Credit: &lt;https://www.ck12.org/biology/natural-selection/lesson/Natural-Selection-and-Populations-Advanced-BIO-ADV/&gt;" /><br />
+    <a name="figure4">Figure 4</a> Figure Credit: <a href="https://www.ck12.org/biology/natural-selection/lesson/Natural-Selection-and-Populations-Advanced-BIO-ADV/">https://www.ck12.org/biology/natural-selection/lesson/Natural-Selection-and-Populations-Advanced-BIO-ADV/</a>
+</span></p>
+
+<h2 id="traveling-salesperson-problem-1">Traveling Salesperson Problem</h2>
+<ul>
+  <li>Let’s come back to the TSP problem.</li>
+  <li>If we can encode a TSP solution (maybe not a good one) into a chromosome and define rules to filter unfitted chromosomes, we may generate better results.</li>
+</ul>
+
+<h2 id="ga-workflow">GA Workflow</h2>
+
+<ul>
+  <li>Steps:</li>
+</ul>
+
+<p><img src="ga6.png" alt="" /></p>
+
+<h2 id="traveling-salesperson-problem-2">Traveling Salesperson Problem</h2>
+
+<p><label for="PCA" class="margin-toggle">⊕</label>
+<input type="checkbox" id="PCA" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/GA/ga7.png" alt="&lt;a name='figure5'&gt;Figure 5&lt;/a&gt; Traveling Salesperson Problem" /><br />
+    <a name="figure5">Figure 5</a> Traveling Salesperson Problem
+</span></p>
+
+<ul>
+  <li>How to define a path using Chromosome idea?</li>
+  <li>Similarly, each TSP solution should contain all the vertices exact once (path not a circuit). <a href="#figure5">Figure</a></li>
+</ul>
+
+<h2 id="crossover-method-1">Crossover: Method 1</h2>
+
+<p><label for="PCA" class="margin-toggle">⊕</label>
+<input type="checkbox" id="PCA" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/GA/ga8.png" alt="&lt;a name='figure6'&gt;Figure 6&lt;/a&gt; Crossover: Method 1" /><br />
+    <a name="figure6">Figure 6</a> Crossover: Method 1
+</span></p>
+
+<ul>
+  <li>How to generate new chromosomes: Crossover and Mutation.</li>
+  <li>Crossover 1: Select last N numbers from P2, and take them out from P1</li>
+  <li>Each solution needs to include all the vertices based on TSP. <a href="#figure6">Figure</a></li>
+</ul>
+
+<h2 id="crossover-method-2">Crossover: Method 2</h2>
+
+<p><label for="PCA" class="margin-toggle">⊕</label>
+<input type="checkbox" id="PCA" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/GA/ga12.png" alt="&lt;a name='figure7'&gt;Figure 7&lt;/a&gt; Crossover: Method 2" /><br />
+    <a name="figure7">Figure 7</a> Crossover: Method 2
+</span></p>
+
+<ul>
+  <li>Crossover 2: Select last N numbers from P1, and take them out from P2 <a href="#figure7">Figure</a></li>
+</ul>
+
+<h2 id="mutation-method-1">Mutation: Method 1</h2>
+
+<p><label for="PCA" class="margin-toggle">⊕</label>
+<input type="checkbox" id="PCA" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/GA/ga9.png" alt="&lt;a name='figure8'&gt;Figure 8&lt;/a&gt; Mutation: Method 1" /><br />
+    <a name="figure8">Figure 8</a> Mutation: Method 1
+</span></p>
+
+<ul>
+  <li>Mutation 1: change order <a href="#figure8">Figure</a></li>
+</ul>
+
+<h2 id="mutation-method-2">Mutation: Method 2</h2>
+
+<p><label for="PCA" class="margin-toggle">⊕</label>
+<input type="checkbox" id="PCA" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/GA/ga10.png" alt="&lt;a name='figure9'&gt;Figure 9&lt;/a&gt; Mutation: Method 2" /><br />
+    <a name="figure9">Figure 9</a> Mutation: Method 2
+</span></p>
+
+<ul>
+  <li>Mutation 2: change position <a href="#figure9">Figure</a></li>
+</ul>
+
+<h2 id="ga-workflow-1">GA Workflow</h2>
+<ul>
+  <li>
+    <font color="red">Board</font>
+  </li>
+</ul>
+
+<p><img src="ga6.png" alt="" /></p>
+
+<h2 id="when-to-stop">When to stop?</h2>
+<ul>
+  <li>When your results converge.</li>
+</ul>
+
+<p><img src="ga11.png" alt="" /></p>
+
+<h2 id="ga-limitations">GA limitations</h2>
+<ul>
+  <li>It is hard to implement a real time GA application.
+    <ul>
+      <li>How to solve this issue?</li>
+    </ul>
+  </li>
+  <li>GA may not find out the global optimal solution.
+    <ul>
+      <li>How to solve this issue?</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="15-minutes-ssoi">15 minutes: SSOI</h2>
+
+<h2 id="boosting-sample-code">Boosting: Sample Code</h2>
+<ul>
+  <li>GradientBoostingClassifier</li>
+  <li>Using learning rate to control overfitting issue</li>
+</ul>
+
 <table>
   <tbody>
     <tr>
       <td> </td>
-      <td><a href="../../../">Index</a></td>
+      <td><a href="../../">Index</a></td>
       <td> </td>
       <td> </td>
       <td><a href="../">Prev</a></td>
       <td> </td>
       <td> </td>
-      <td><a href="GA-2">Next</a></td>
-      <td> </td>
-      <td> </td>
     </tr>
   </tbody>
 </table>
+
 
 
     </article>

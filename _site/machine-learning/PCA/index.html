@@ -73,11 +73,177 @@
 </script>
 
 
+<h2 id="principal-component-analysis">Principal Component Analysis</h2>
+
+<ul>
+  <li>We have learned some machine learning models. But those may not be enough for a practical problem.</li>
+  <li>If you want to predict 2019 US GDP and you have tons of features available online, such as unemployment rate, inflation rate and so on.</li>
+  <li>Should you use as many features as possible?</li>
+  <li>How to select or generate the useful features?</li>
+  <li>Check this three questions
+    <ul>
+      <li>Do you want to reduce the number of variables, but aren’t able to identify variables to completely remove from consideration?</li>
+      <li>Do you want to ensure your variables are independent of one another?</li>
+      <li>Are you comfortable making your independent variables less interpretable?</li>
+    </ul>
+  </li>
+  <li>
+    <p>If your answers are “yes” for all these three question, use PCA to reduce the data dimensionality.</p>
+  </li>
+  <li>Based on: <a href="https://towardsdatascience.com/a-one-stop-shop-for-principal-component-analysis-5582fb7e0a9c">https://towardsdatascience.com/a-one-stop-shop-for-principal-component-analysis-5582fb7e0a9c</a></li>
+</ul>
+
+<p><label for="PCA" class="margin-toggle">⊕</label>
+<input type="checkbox" id="PCA" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/PCA/pca-1.png" alt="&lt;a name='figure1'&gt;Figure 1&lt;/a&gt;What is dimensionality reduction? 3D world -&gt; 2D movie" /><br />
+    <a name="figure1">Figure 1</a>What is dimensionality reduction? 3D world -&gt; 2D movie
+</span></p>
+
+<ul>
+  <li>Let’s learn how to PCA to do dimensionality reduction.</li>
+  <li>What is dimensionality reduction? 3D world -&gt; 2D movie <a href="#figure1">Figure</a></li>
+  <li>Based on: <a href="https://www.youtube.com/watch?v=FgakZw6K1QQ">https://www.youtube.com/watch?v=FgakZw6K1QQ</a></li>
+</ul>
+
+<p><label for="PCA" class="margin-toggle">⊕</label>
+<input type="checkbox" id="PCA" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/PCA/pca-2.png" alt="&lt;a name='figure2'&gt;Figure 2&lt;/a&gt;When shifting, the highest data point is still the highest" /><br />
+    <a name="figure2">Figure 2</a>When shifting, the highest data point is still the highest
+</span></p>
+
+<ul>
+  <li>Shifting: subtract all points with the new origin point.</li>
+  <li>
+    <p>Shifting will not change the relation between your data points. E.g., highest data point is still the highest. <a href="#figure2">Figure</a></p>
+  </li>
+  <li>Two methods to fit the red dot line:
+    <ul>
+      <li>Minimize RSS (i.e. black dot arrow line), similar to linear regression</li>
+      <li>Maximize the distances between green cross and origin</li>
+    </ul>
+  </li>
+  <li>The final line is called Principle Component 1 (PC1) <a href="#figure3">Figure</a></li>
+</ul>
+
+<p><label for="PCA" class="margin-toggle">⊕</label>
+<input type="checkbox" id="PCA" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/PCA/pca-3.png" alt="&lt;a name='figure3'&gt;Figure 3&lt;/a&gt;The final line is called Principle Component 1 (PC1)" /><br />
+    <a name="figure3">Figure 3</a>The final line is called Principle Component 1 (PC1)
+</span></p>
+
+<ul>
+  <li>If our fitted line slop is 0.25, it means every 4-unit growth along x-axis will have 1 unity increasement along y-axis, i.e. gene one plays a <font color="red">more important</font> role to describe data.</li>
+</ul>
+
+<center><img src="pca7.png" width="65%" /></center>
+
+<ul>
+  <li>If we want to use a vector to represent the slop 0.25, it will be the red one (4.12) in the following image:</li>
+</ul>
+
+<center><img src="pca8.png" width="65%" /></center>
+
+<ul>
+  <li>If we want to scale the red vector into length one (unit factor), it will be like the following:</li>
+</ul>
+
+<center><img src="pca9.png" width="65%" /></center>
+
+<ul>
+  <li>The slop is not changed after this step. The unit factor is called “singular vector” or “Eigenvector” for PC1. Contains 0.242 gene 2 and 0.97 gene 1.</li>
+</ul>
+
+<p><label for="PCA" class="margin-toggle">⊕</label>
+<input type="checkbox" id="PCA" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/PCA/pca10.png" alt="&lt;a name='figure4'&gt;Figure 4&lt;/a&gt; PC2 is much easier to get. Just a perpendicular line through origin" /><br />
+    <a name="figure4">Figure 4</a> PC2 is much easier to get. Just a perpendicular line through origin
+</span></p>
+
+<ul>
+  <li>
+    <p>PC2 is much easier to get. Just a perpendicular line through origin <a href="#figure4">Figure</a></p>
+  </li>
+  <li>
+    <p>Similarly, we can calculate the PC2 eigenvector, which contains -0.242 gene 1 and 0.97 gene 2:</p>
+  </li>
+</ul>
+
+<center><img src="pca10.png" width="65%" /></center>
+
+<p><label for="PCA" class="margin-toggle">⊕</label>
+<input type="checkbox" id="PCA" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/PCA/pca-6.png" alt="&lt;a name='figure5'&gt;Figure 5&lt;/a&gt; We need to rotate PC1 (red line) and PC2 (blue line)." /><br />
+    <a name="figure5">Figure 5</a> We need to rotate PC1 (red line) and PC2 (blue line).
+</span></p>
+
+<ul>
+  <li>
+    <p>After we have PC1 and PC2, we can use PC1 and PC2 to have a new coordinate system to redefine our data. We need to rotate PC1 (red line) and PC2 (blue line). <a href="#figure5">Figure</a></p>
+  </li>
+  <li>
+    <p>Now we have our PCA graph done using Singular Value Decomposition (SVD)</p>
+  </li>
+</ul>
+
+<p><img src="pca12.png" alt="" /></p>
+
+<ul>
+  <li>Eigenvalue (squared sum distances) calculations: PC1 eigenvalues sum of \(xi^2\). PC2 eigenvalues sum of \(yi^2\). <a href="#figure6">Figure</a></li>
+</ul>
+
+<p><label for="PCA" class="margin-toggle">⊕</label>
+<input type="checkbox" id="PCA" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/PCA/pca13.png" alt="&lt;a name='figure6'&gt;Figure 6&lt;/a&gt; Eigenvalue (squared sum distances) calculations: PC1 eigenvalues sum of $$xi^2$$. PC2 eigenvalues sum of $$yi^2$$" /><br />
+    <a name="figure6">Figure 6</a> Eigenvalue (squared sum distances) calculations: PC1 eigenvalues sum of \(xi^2\). PC2 eigenvalues sum of \(yi^2\)
+</span></p>
+
+<ul>
+  <li>Then we need to calculate variations for both PC1 and PC2</li>
+</ul>
+
+\[\frac{SS(distance for PC1)}{n-1} = Variation for PC1\]
+
+\[\frac{SS(distance for PC2)}{n-1} = Variation for PC2\]
+
+<ul>
+  <li>Eigenvalue (squared sum distances) comparison: Scree plot left bar chart (PC1 variation vs PC2 variation) <a href="#figure7">Figure</a></li>
+</ul>
+
+<p><label for="PCA" class="margin-toggle">⊕</label>
+<input type="checkbox" id="PCA" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/PCA/pca14.png" alt="&lt;a name='figure7'&gt;Figure 7&lt;/a&gt; Scree plot left bar chart (PC1 variation vs PC2 variation)" /><br />
+    <a name="figure7">Figure 7</a> Scree plot left bar chart (PC1 variation vs PC2 variation)
+</span></p>
+
+<ul>
+  <li>OK, let’s come back to dimensionality reduction. If we have three dimensions and want to show data in 2D: <a href="#figure8">Figure</a></li>
+</ul>
+
+<p><label for="PCA" class="margin-toggle">⊕</label>
+<input type="checkbox" id="PCA" class="margin-toggle" />
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/PCA/pca15.png" alt="&lt;a name='figure8'&gt;Figure 8&lt;/a&gt; dimensionality reduction shown as 2D data" /><br />
+    <a name="figure8">Figure 8</a> dimensionality reduction shown as 2D data
+</span></p>
+
+<ul>
+  <li>First, draw the Scree plot.
+Based on the plot, PC1 and PC2 are important. So we will ignore PC3.</li>
+</ul>
+
+<p><img src="pca-4.png" alt="" /></p>
+
+<ul>
+  <li>Last step, we place our sample data points into PC1 and PC2 coordinate system based on their projection points (green cross) on PC1 axis and PC2 axis.</li>
+</ul>
+
+<p><img src="pca-5.png" alt="" /></p>
+
 <table>
   <tbody>
     <tr>
       <td> </td>
-      <td><a href="../../../">Index</a></td>
+      <td> </td>
+      <td><a href="../../">Index</a></td>
       <td> </td>
       <td> </td>
       <td><a href="../">Prev</a></td>
@@ -89,6 +255,7 @@
     </tr>
   </tbody>
 </table>
+
 
 
     </article>
