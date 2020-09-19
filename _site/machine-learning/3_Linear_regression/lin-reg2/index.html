@@ -81,10 +81,10 @@
       <li>Negative Correlation: variables change in opposite directions.</li>
     </ul>
   </li>
-  <li>Pearson’s Correlation vs Spearman’s Correlation
+  <li><mark>Pearson’s Correlation vs Spearman’s Correlation</mark>
     <ul>
-      <li>The Pearson correlation coefficient (named for Karl Pearson) can be used to summarize the strength of the linear relationship between two data samples.</li>
-      <li>Spearman’s correlation coefficient (named for Charles Spearman) can be used to summarize the strength between the two data samples, if two variables may be related by a nonlinear relationship or two variables being considered may have a non-Gaussian distribution.</li>
+      <li>The Pearson correlation coefficient (named for Karl Pearson) can be used to summarize the strength of the <mark>linear relationship</mark> between two data samples.</li>
+      <li>Spearman’s correlation coefficient (named for Charles Spearman) can be used to summarize the strength between the two data samples, if two variables may be related by a <mark>nonlinear relationship</mark> or two variables being considered may have a <mark>non-Gaussian distribution</mark>.</li>
     </ul>
   </li>
 </ul>
@@ -92,14 +92,16 @@
 <h3 id="covariance-vs-correlation">Covariance vs Correlation</h3>
 <ul>
   <li>Covariance is nothing but a measure of correlation. On the contrary, correlation refers to the scaled form of covariance.</li>
-  <li>The value of correlation takes place between -1 and +1. Conversely, the value of covariance lies between -∞ and +∞.</li>
-  <li>Covariance is affected by the change in scale, i.e. if all the value of one variable is multiplied by a constant and all the value of another variable are multiplied, by a similar or different constant, then the covariance is changed. As against this, correlation is not influenced by the change in scale.</li>
-  <li>Correlation is dimensionless, i.e. it is a unit-free measure of the relationship between variables. Unlike covariance, where the value is obtained by the product of the units of the two variables.</li>
+  <li>The value of correlation takes place between <mark>-1 and +1</mark>. Conversely, the value of covariance lies between <mark>-∞ and +∞</mark>.</li>
+  <li>Covariance is affected by the change in <mark>scale</mark>, i.e. if all the value of one variable is multiplied by a constant and all the value of another variable are multiplied, by a similar or different constant, then the covariance is changed. As against this, correlation is not influenced by the change in scale.</li>
+  <li>Correlation is <mark>dimensionless</mark>, i.e. it is a unit-free measure of the relationship between variables. Unlike covariance, where the value is obtained by the product of the units of the two variables.</li>
 </ul>
 
-\[cov_{xy} =  \sigma _{xy} = E[X- \mu _Y)]\]
+\[cov_{xy} =  \sigma _{xy} = E[(X- \mu_X) (Y- \mu _Y)]\]
 
-\[corr_{xy} =   \rho  _{xy} = E[X- \mu _Y)]/( \sigma _X \sigma _Y)\]
+\[corr_{xy} =   \rho  _{xy} = E[(X- \mu_X) (Y- \mu _Y)]/( \sigma _X \sigma _Y)\]
+
+<p>\(\mu_{X}\) represents the mean value.</p>
 
 <p><img src="lin 2.png" alt="" /></p>
 
@@ -107,24 +109,22 @@
 <ul>
   <li>group Homework</li>
   <li>Complete “regression to the Mean” Exercise 1 and 2</li>
-  <li>Try to use python 2, or the sample code with have weird issues.</li>
   <li>README.MD
     <ul>
       <li>Team member names and email addresses</li>
       <li>2 result graphs from exercise 1 and 2</li>
     </ul>
   </li>
+  <li>Due <mark>Oct. 9</mark></li>
 </ul>
 
 <h3 id="correlation-sample-code">Correlation Sample Code</h3>
 <ul>
+  <li>Sample Code:<a href="https://github.com/ruiwu1990/CSCI_4120/blob/master/Linear_regression/Correlation_sample_code.ipynb">https://github.com/ruiwu1990/CSCI_4120/blob/master/Linear_regression/Correlation_sample_code.ipynb</a></li>
   <li>Correlation_sample_code</li>
   <li>Plt.title: use pad to define padding away from your figure</li>
   <li>Df.corr can calculate correlation matrix between all columns</li>
-  <li>
-    <p>Matshow can show correlation value comparison within a matrix.</p>
-  </li>
-  <li>Sample Code:<a href="https://colab.research.google.com/github/ruiwu1990/CSCI_4120/blob/master/Linear_regression/Correlation_sample_code.ipynb">https://colab.research.google.com/github/ruiwu1990/CSCI_4120/blob/master/Linear_regression/Correlation_sample_code.ipynb</a></li>
+  <li>Matshow can show correlation value comparison within a matrix.</li>
 </ul>
 
 <table>
