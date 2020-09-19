@@ -6,6 +6,8 @@ title: Linear Regression
 ## What about non-linear relationships?
 - Trick: transform data according to basis functions
 - Polynomial basis function: 
+$$y = a_0 + a_1x_{1}^2 +a_2x_{2}^2+a_3x_{3}^2+...$$
+
 - Gaussian basis function: a sum of Gaussian bases. Does not directly supported by sklearn but we will write one by ourselves.
 
 ![](nonlin.png)
@@ -13,7 +15,7 @@ title: Linear Regression
 $$y = a_0 + a_1x_1 +a_2x_2+a_3x_3+...$$
 
 ## Linear Regression Sample Code
-- Linear-Regression
+- Linear-Regression: <https://github.com/ruiwu1990/CSCI_4120/blob/master/Linear_regression/Linear-Regression.ipynb>
 - x[:, np.newaxis] => make it as <font color=red>column vector</font> by inserting an axis along second dimension
 - np.linspace(0, 10, 1000): generate 1000 numbers between 0 and 10
 - numpy.random.rand(n,m): randomly generate numbers between <font color=red>[0,1)</font> to fill n*m matrix

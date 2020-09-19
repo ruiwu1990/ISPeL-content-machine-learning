@@ -85,14 +85,14 @@
 <p>A <font color="green">balanced design</font>:</p>
 <ul>
   <li>Each coefficient can be estimated and tested separately.</li>
-  <li>Interpretations such as <font color="green">"a unit change in $X_j$ is associated with a $$\beta_j$$ change in Y, while all other variables stay fixed"</font>, are possible.</li>
+  <li>Interpretations such as <font color="green">"a unit change in $$X_j$$ is associated with a $$\beta_j$$ change in Y, while all other variables stay fixed"</font>, are possible.</li>
+  <li>In other words, Y should be <font color="red">highly correlated</font> with predictors (X), but predictors (X) should be <font color="red">uncorrelated</font>.</li>
 </ul>
 
 <h2 id="correlations-amongst-predictors-cause-problems"><span style="background-color: #FFFF00">Correlations amongst predictors</span> cause problems:</h2>
 <ul>
   <li>The variance of all coefficients tends to increase, sometimes dramatically</li>
   <li>Interpretations become hazardous - when $X_j$ changes, everthing else changes.</li>
-  <li>In other words, Y should be <font color="red">highly correlated</font> with predictors (X), but predictors (X) should be <font color="red">uncorrelated</font>.</li>
   <li>Statistical explanation–mutual information: <a href="https://www.youtube.com/watch?v=U9h1xkNELvY">https://www.youtube.com/watch?v=U9h1xkNELvY</a></li>
 </ul>
 
@@ -100,7 +100,7 @@
 
 <h2 id="estimation-and-prediction-for-multiple-regression">Estimation and Prediction for Multiple Regression</h2>
 <ul>
-  <li>Given estimates $\hat{\beta_0},\hat{\beta_1},…\hat{\beta_p}$, we can make predictions using the formula</li>
+  <li>Given estimates \(\hat{\beta_0},\hat{\beta_1},...\hat{\beta_p}\), we can make predictions using the formula</li>
 </ul>
 
 \[\hat{y}=\hat{\beta_0}+\hat{\beta_1}{x_1}+\hat{\beta_2}{x_2}+...+\hat{\beta_p}{x_p}\]
@@ -109,7 +109,7 @@
   <li>We estimate \({\beta_0},{\beta_1},...{\beta_p}\) as the values that minimize the sum of squared residuals</li>
 </ul>
 
-\[RSS =  \Sigma _{i=1}^n(y_1-\hat{y}_i)^2\]
+\[RSS =  \Sigma _{i=1}^n(y_i-\hat{y}_i)^2\]
 
 \[=\Sigma _{i=1}^n(y_i-\hat{\beta_0}-\hat{\beta_1}{x_{i1}}-\hat{\beta_2}{x_{i2}}-...-\hat{\beta_p}{x_{ip}})^2\]
 
