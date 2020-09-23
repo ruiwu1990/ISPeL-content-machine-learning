@@ -19,7 +19,7 @@ A <font color=green>balanced design</font>:
 
 ## <span style="background-color: #FFFF00">Correlations amongst predictors</span> cause problems:
 - The variance of all coefficients tends to increase, sometimes dramatically
-- Interpretations become hazardous - when $X_j$ changes, everthing else changes.
+- Interpretations become hazardous - when $$X_j$$ changes, everthing else changes.
 - Statistical explanation--mutual information: <https://www.youtube.com/watch?v=U9h1xkNELvY>
 
 $$Y=\beta_0+\beta_1X_{1}+\beta_2X_{2}+...+\beta_pX_{p}+ \epsilon,$$

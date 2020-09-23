@@ -6,13 +6,13 @@ title: Linear Regression
 ## What about non-linear relationships?
 - Trick: transform data according to basis functions
 - Polynomial basis function: 
-$$y = a_0 + a_1x_{1}^2 +a_2x_{2}^2+a_3x_{3}^2+...$$
+$$y = a_0 + a_1x_{1} +a_2x_{2}^2+a_3x_{3}^3+...$$
 
-- Gaussian basis function: a sum of Gaussian bases. Does not directly supported by sklearn but we will write one by ourselves.
+- Gaussian basis function: a sum of Gaussian bases (figure below, each term can be a gaussian wave). Does not directly supported by sklearn but we will write one by ourselves.
 
 ![](nonlin.png)
 
-$$y = a_0 + a_1x_1 +a_2x_2+a_3x_3+...$$
+
 
 ## Linear Regression Sample Code
 - Linear-Regression: <https://github.com/ruiwu1990/CSCI_4120/blob/master/Linear_regression/Linear-Regression.ipynb>
@@ -29,6 +29,7 @@ $$y = a_0 + a_1x_1 +a_2x_2+a_3x_3+...$$
 - Underfitting occurs when a statistical model cannot adequately capture the underlying structure of the data. An underfitted model is a model where some parameters or terms that would appear in a correctly specified model are missing. (wiki)
 
 ![](linreg3.png)
+First Figure  <mark>underfitting</mark>, second figure <mark>overfitting</mark>.
 Source: Ding, D., Zhang, M., Pan, X., Yang, M. and He, X., 2019. Modeling Extreme Events in Time Series Prediction. KDD (knowledge discovery and data mining) 2019.
 
 ## Overfitting
@@ -47,4 +48,6 @@ $$\Theta _0+ \Theta _1x + \Theta _2x^2+ \Theta _3x^3+ \Theta _4x^4$$
   * Objective function = min(RSS + 1000* ϴ3 + 1000* ϴ4)
   * Therefore, if ϴ3 or ϴ4 is too big, it will be penalized=> ϴ3 ≈ 0, ϴ4 ≈ 0
 
+## reading after the class
+<https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/>
 ||| [Index](../../)||| [Prev](../mlr/)||| [Next](../regularization/)|||

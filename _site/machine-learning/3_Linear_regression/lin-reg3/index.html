@@ -78,14 +78,12 @@
   <li>Trick: transform data according to basis functions</li>
   <li>
     <p>Polynomial basis function: 
-\(y = a_0 + a_1x_{1}^2 +a_2x_{2}^2+a_3x_{3}^2+...\)</p>
+\(y = a_0 + a_1x_{1} +a_2x_{2}^2+a_3x_{3}^3+...\)</p>
   </li>
-  <li>Gaussian basis function: a sum of Gaussian bases. Does not directly supported by sklearn but we will write one by ourselves.</li>
+  <li>Gaussian basis function: a sum of Gaussian bases (figure below, each term can be a gaussian wave). Does not directly supported by sklearn but we will write one by ourselves.</li>
 </ul>
 
 <p><img src="nonlin.png" alt="" /></p>
-
-\[y = a_0 + a_1x_1 +a_2x_2+a_3x_3+...\]
 
 <h2 id="linear-regression-sample-code">Linear Regression Sample Code</h2>
 <ul>
@@ -106,6 +104,7 @@
 </ul>
 
 <p><img src="linreg3.png" alt="" />
+First Figure  <mark>underfitting</mark>, second figure <mark>overfitting</mark>.
 Source: Ding, D., Zhang, M., Pan, X., Yang, M. and He, X., 2019. Modeling Extreme Events in Time Series Prediction. KDD (knowledge discovery and data mining) 2019.</p>
 
 <h2 id="overfitting">Overfitting</h2>
@@ -132,23 +131,9 @@ Source: Ding, D., Zhang, M., Pan, X., Yang, M. and He, X., 2019. Modeling Extrem
   </li>
 </ul>
 
-<table>
-  <tbody>
-    <tr>
-      <td> </td>
-      <td> </td>
-      <td><a href="../../">Index</a></td>
-      <td> </td>
-      <td> </td>
-      <td><a href="../mlr/">Prev</a></td>
-      <td> </td>
-      <td> </td>
-      <td><a href="../regularization/">Next</a></td>
-      <td> </td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
+<h2 id="reading-after-the-class">reading after the class</h2>
+<p><a href="https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/">https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/</a>
+||| <a href="../../">Index</a>||| <a href="../mlr/">Prev</a>||| <a href="../regularization/">Next</a>|||</p>
 
 
     </article>
