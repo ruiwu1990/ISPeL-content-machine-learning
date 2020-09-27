@@ -22,7 +22,7 @@ Zero bias, high variance:   140, 160, 145, 155, 160, 165, 140, 135, 138, 162
 
 low bias, high variance:    142, 161, 149, 156, 160, 165, 145, 137, 139, 161.0 
 
-bias, low variance:         148, 152, 151, 149, 151, 153, 149, 147, 149, 151
+0 bias, low variance:         148, 152, 151, 149, 151, 153, 149, 147, 149, 151
 
 low bias, low variance:      150, 153, 151, 148, 152, 152, 153, 151, 149, 150
 
@@ -37,5 +37,6 @@ low bias, low variance:      150, 153, 151, 148, 152, 152, 153, 151, 149, 1
 ![](bv2.png)
 
 - Figure Credit: <https://medium.com/ml-research-lab/ensemble-learning-relation-with-bias-and-variance-431cdc0a3fc9>
+- <mark> Question: how to estimate the performance of a model?</mark>
 
 |||[Index](../../../)||| [Prev](../regularization/)||| [Next](../metrics-for-evaluation/)

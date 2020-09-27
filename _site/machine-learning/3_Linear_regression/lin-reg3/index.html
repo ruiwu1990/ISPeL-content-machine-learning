@@ -92,24 +92,27 @@
   <li>np.linspace(0, 10, 1000): generate 1000 numbers between 0 and 10</li>
   <li>numpy.random.rand(n,m): randomly generate numbers between <font color="red">[0,1)</font> to fill n*m matrix</li>
   <li>How you define a function’s coefficient: y = 0.5 + np.dot(X, [1.5, -2., 1.]) =&gt; [1.5, -2., 1.] is the coefficient for x1, x2, and x3.</li>
-  <li>fit_transform: Generate polynomial and interaction features: [a, b], the degree-2 polynomial features are [\(1, a, b, a^2, ab, b^2\)].</li>
+  <li>fit_transform: Generate polynomial and interaction features: [a, b], the degree-2 polynomial features are [\(1, a, b, a^2, ab, b^2\)]. Your \(Y\) may not have direct linear relation with [\(a, b\)] but may have linear relation with the terms [\(a^2, ab, b^2\)].</li>
   <li>N degree polynomial means the highest degree of term x.</li>
   <li>make_pipeline: Construct a Pipeline from the given estimators. In the example, we define the <font color="red">basis function</font> and <font color="red">regression method</font>.</li>
 </ul>
 
 <h2 id="overfitting-vs-underfitting">Overfitting vs Underfitting</h2>
 <ul>
-  <li>Overfitting is the production of an analysis that corresponds too closely or exactly to a particular set of data (training) and may therefore fail to fit additional data or predict future observations (testing) reliably. (wiki)</li>
-  <li>Underfitting occurs when a statistical model cannot adequately capture the underlying structure of the data. An underfitted model is a model where some parameters or terms that would appear in a correctly specified model are missing. (wiki)</li>
+  <li>Overfitting is the production of an analysis that corresponds <mark>too closely or exactly</mark> to a particular set of data (training) and may therefore fail to fit <mark>additional data or predict future observations</mark> (testing) reliably. (wiki)</li>
+  <li>Underfitting occurs when a statistical model <mark>cannot adequately</mark> capture the underlying structure of the data. An underfitted model is a model where some parameters or terms that would appear in a correctly specified model are missing. (wiki)</li>
 </ul>
 
-<p><img src="linreg3.png" alt="" />
-First Figure  <mark>underfitting</mark>, second figure <mark>overfitting</mark>.
-Source: Ding, D., Zhang, M., Pan, X., Yang, M. and He, X., 2019. Modeling Extreme Events in Time Series Prediction. KDD (knowledge discovery and data mining) 2019.</p>
+<p><img src="linreg3.png" alt="" /></p>
+<ul>
+  <li>First Figure  <mark>underfitting</mark>, second figure <mark>overfitting</mark>.</li>
+  <li>Source: Ding, D., Zhang, M., Pan, X., Yang, M. and He, X., 2019. Modeling Extreme Events in Time Series Prediction. KDD (knowledge discovery and data mining) 2019.</li>
+</ul>
 
 <h2 id="overfitting">Overfitting</h2>
 <ul>
   <li>Overfitting issue: a model works very well for <font color="red">training data</font></li>
+  <li><mark>Question:</mark> which of the following is overfitting?</li>
 </ul>
 
 <p><img src="overfitting1.png" alt="" /></p>
@@ -122,7 +125,7 @@ Source: Ding, D., Zhang, M., Pan, X., Yang, M. and He, X., 2019. Modeling Extrem
   <li>
     <p>Figure credit: https://www.youtube.com/watch?v=KvtGD37Rm5I</p>
   </li>
-  <li>Objective function: In order to find the optimal solution, we need some way of measuring the quality of any solution.</li>
+  <li><mark>Objective function</mark>: In order to find the optimal solution, we need some way of measuring the quality of any solution.</li>
   <li>Possible solutions: besides minimize RSS score, we should also penalize ϴ3 and ϴ4.
     <ul>
       <li>Objective function = min(RSS + 1000* ϴ3 + 1000* ϴ4)</li>
@@ -132,8 +135,28 @@ Source: Ding, D., Zhang, M., Pan, X., Yang, M. and He, X., 2019. Modeling Extrem
 </ul>
 
 <h2 id="reading-after-the-class">reading after the class</h2>
-<p><a href="https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/">https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/</a>
-||| <a href="../../">Index</a>||| <a href="../mlr/">Prev</a>||| <a href="../regularization/">Next</a>|||</p>
+<ul>
+  <li><a href="https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/">https://machinelearningmastery.com/learning-curves-for-diagnosing-machine-learning-model-performance/</a></li>
+  <li>Loss is the penalty for a bad prediction. That is, loss is a number indicating how bad the model’s prediction is.</li>
+</ul>
+
+<table>
+  <tbody>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td><a href="../../">Index</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../mlr/">Prev</a></td>
+      <td> </td>
+      <td> </td>
+      <td><a href="../regularization/">Next</a></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
 
 
     </article>

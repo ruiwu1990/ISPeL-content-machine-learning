@@ -124,17 +124,15 @@
   <li>
     <p>Based on: <a href="https://towardsdatascience.com/metrics-to-evaluate-your-machine-learning-algorithm-f10ba6e38234">https://towardsdatascience.com/metrics-to-evaluate-your-machine-learning-algorithm-f10ba6e38234</a></p>
   </li>
+  <li>FPR and TPR both have values in the range [0, 1]. FPR and TPR bot hare computed at threshold values such as (0.00, 0.02, 0.04, …., 1.00) and a graph is drawn. Area Under Curve (<font color="red">AUC</font>) is the area under the curve of plot FPR vs TPR at different points in <font color="red">[0, 1]</font>.</li>
   <li>
-    <p>FPR and TPR both have values in the range [0, 1]. FPR and TPR bot hare computed at threshold values such as (0.00, 0.02, 0.04, …., 1.00) and a graph is drawn. Area Under Curve (<font color="red">AUC</font>) is the area under the curve of plot FPR vs TPR at different points in <font color="red">[0, 1]</font>.
-<img src="ROC.png" alt="" /></p>
+    <p><img src="ROC.png" alt="" /></p>
   </li>
   <li>
     <p>Figure Credit: <a href="https://towardsdatascience.com/metrics-to-evaluate-your-machine-learning-algorithm-f10ba6e38234">https://towardsdatascience.com/metrics-to-evaluate-your-machine-learning-algorithm-f10ba6e38234</a></p>
   </li>
-  <li>
-    <p>The <font color="red">greater</font> the value of AUC, the <font color="red">better</font> is the performance of our model.
-Each curve is for one class. You may have multiple curves.</p>
-  </li>
+  <li>The <font color="red">greater</font> the value of AUC, the <font color="red">better</font> is the performance of our model.
+Each curve is for one class. You may have multiple curves.</li>
 </ul>
 
 <h2 id="roc-example">ROC Example</h2>
@@ -142,7 +140,7 @@ Each curve is for one class. You may have multiple curves.</p>
 <ul>
   <li>A macro-average will compute the metric independently for each class and then take the average (hence treating all classes equally)</li>
   <li>A micro-average will aggregate the contributions of all classes to compute the average metric.</li>
-  <li>In a multi-class classification setup, micro-average is preferable if you suspect there might be class imbalance (i.e you may have many more examples of one class than of other classes).</li>
+  <li>In a multi-class classification setup, micro-average is preferable if you suspect there might be class <mark>imbalance</mark> (i.e you may have many more examples of one class than of other classes).</li>
   <li>More details at: <a href="https://datascience.stackexchange.com/questions/15989/micro-average-vs-macro-average-performance-in-a-multiclass-classification-settin">https://datascience.stackexchange.com/questions/15989/micro-average-vs-macro-average-performance-in-a-multiclass-classification-settin</a></li>
 </ul>
 
@@ -160,7 +158,7 @@ Each curve is for one class. You may have multiple curves.</p>
       <li>Legend position: lower right</li>
     </ul>
   </li>
-  <li>Source Code:<a href="https://colab.research.google.com/github/ruiwu1990/CSCI_4120/blob/master/Evaluation/ROC.ipynb">https://colab.research.google.com/github/ruiwu1990/CSCI_4120/blob/master/Evaluation/ROC.ipynb</a></li>
+  <li>Source Code:<a href="https://github.com/ruiwu1990/CSCI_4120/blob/master/Evaluation/ROC.ipynb">https://github.com/ruiwu1990/CSCI_4120/blob/master/Evaluation/ROC.ipynb</a></li>
 </ul>
 
 <table>
