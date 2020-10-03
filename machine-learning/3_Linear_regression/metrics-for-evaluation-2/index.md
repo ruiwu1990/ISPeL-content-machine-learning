@@ -6,11 +6,11 @@ title: Metrics for Evaluation
 ## $$R^2$$ value
 
 - In statistics, the <font color=red>coefficient of determination</font>, denoted R2 or r2 and pronounced "R squared", is the proportion of the variance in the dependent variable that is predictable from the independent variable(s). For <font color=red>regression</font> for most cases.
-- SStot is the total sum of squares:
+- SStot is the total sum of squares (difference between ground truth and average value):
 
 $$SS_{tot}= \Sigma _i(y_i-\overline{y})^2$$
 
-- SSres is the sum of squares of residuals:
+- SSres is the sum of squares of residuals (difference between ground truth and prediction):
 
 $$SS_{res}= \Sigma _i(y_i-f_i)^2= \Sigma _ie_i^2$$
 
@@ -20,7 +20,7 @@ $$\overline{y}=\frac{1}{n} \Sigma _{i=1}^ny_i$$
 
 $$R^2 \equiv 1-\frac{SS_{res}}{SS_{tot}}$$
 
-- $$R^2$$ is used to measure how close the data are to the fitted regression line. Value [0,1], closer 1 means <font color=red>better</font>. $$R^2$$ = 1 indicates that the model explains all the variability of the response data around its mean.
+- $$R^2$$ is used to measure how close the data are to the fitted regression line. Theoretically, Value [0,1] (Google r^2 range), closer 1 means <font color=red>better</font>. $$R^2$$ = 1 indicates that the model explains all the variability of the response data around its mean. Functions from some libraries can return a negative value. It means the prediction is very bad (<https://stackoverflow.com/questions/23036866/scikit-learn-is-returning-coefficient-of-determination-r2-values-less-than-1>).
 
 ## RMSE, MSE and MAE
 
