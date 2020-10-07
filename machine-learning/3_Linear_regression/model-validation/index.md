@@ -47,7 +47,8 @@ Source Code: <https://github.com/ruiwu1990/CSCI_4120/blob/master/Evaluation/Mode
 - You need to tune alpha for “Lasso” and “Ridge.” To do it, you should use “RandomizedSearchCV” (<https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html>)
 - README.MD file
   * Team member names and email addresses
-  * All three models’ cross validation scores and alpha value (if applied)
+  * All two models’ cross validation scores and alpha value (if applied)
   * Which model performs the best
+- Due <mark>Oct. 19</mark>
   
 ||| [Index](../../)||| [Prev](../metrics-for-evaluation-2/)|||
