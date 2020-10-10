@@ -26,7 +26,7 @@ $$R^2 \equiv 1-\frac{SS_{res}}{SS_{tot}}$$
 
 - Mean Absolute Error (MAE): measure of how far the predictions were from the actual output.
 
-$$MeanSquaredError = \frac{1}{N} \Sigma _{j=1}^N|y_i-\hat{y}_i|$$
+$$MeanAbsoluteError = \frac{1}{N} \Sigma _{j=1}^N|y_i-\hat{y}_i|$$
 
 - Root Mean Squared Error (RMSE): <font color=red>non-negative</font>, and a value of 0 (almost never achieved in practice) would indicate a perfect fit to the data.
 

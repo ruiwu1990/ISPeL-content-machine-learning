@@ -81,19 +81,19 @@
     <p>Example is from: <a href="https://www.xoriant.com/blog/product-engineering/decision-trees-machine-learning-algorithm.html">https://www.xoriant.com/blog/product-engineering/decision-trees-machine-learning-algorithm.html</a></p>
   </li>
   <li>Compare performance of different columns</li>
-  <li>Performance is calculated using Entropy (purity) and Information Gain (IG) (i.e. parents - children)</li>
+  <li>Performance is calculated using Entropy (impurity) and Information Gain (IG) (i.e. parents - children)</li>
   <li>Higher IG means better</li>
   <li>P(x) is the probability (proportion) of event x</li>
   <li>H(S) entropy for what we want to classify (i.e. parent)</li>
 </ul>
 
-\[H(S) =  \Sigma_{x \epsilon X}p(x)log_2 \frac{1}{p(x)}\]
+\[H(S) =  \sum_{x \epsilon X}p(x)log_2 \frac{1}{p(x)}\]
 
-\[IG(S,A)=H(S) -  \Sigma _{i=0}^np(x)*H(x)\]
+\[IG(S,A)=H(S) -  \sum_{i=0}^np(x)*H(x)\]
 
-\[Entropy(S) =  \Sigma_{x \epsilon X}p(x)log_2 \frac{1}{p(x)}\]
+\[Entropy(S) =  \sum{x \epsilon X}p(x)log_2 \frac{1}{p(x)}\]
 
-<p>\(Entropy(S) = - ( \frac{9}{14})log_2( \frac{9}{14}-( \frac{5}{14})log_2(\frac{5}{14})=0.940\)</p>
+<p>\(Entropy(S) = - ( \frac{9}{14})log_2( \frac{9}{14}) -( \frac{5}{14})log_2(\frac{5}{14})=0.940\)</p>
 <ul>
   <li>Play Golf: 5 “no”, 9 “yes”</li>
 </ul>
@@ -103,52 +103,66 @@
   <li>H(S) = 0.94</li>
 </ul>
 
-\[IG(S,Wind)=H(S) -  \Sigma _{i=0}^np(x)*H(x)\]
+\[IG(S,Wind)=H(S) -  \sum_{i=0}^np(x)*H(x)\]
 
 \[P(S_{weak})=\frac{Number of WeaK}{Total}\]
 
 \[P(S_{strong})=\frac{Number of Strong}{Total}\]
 
-\[Entropy(S_{weak}) = - ( \frac{6}{8})log_2( \frac{6}{8}-( \frac{2}{8})log_2(\frac{2}{8})= 0.811\]
+\[Entropy(S_{weak}) = - ( \frac{6}{8})log_2( \frac{6}{8})-( \frac{2}{8})log_2(\frac{2}{8})= 0.811\]
 
-\[Entropy(S_{strong}) = - ( \frac{3}{6})log_2( \frac{3}{6}-( \frac{3}{6})log_2(\frac{3}{6})=1.000\]
+\[Entropy(S_{strong}) = - ( \frac{3}{6})log_2( \frac{3}{6})-( \frac{3}{6})log_2(\frac{3}{6})=1.000\]
 
-\[IG(S,Wind)=H(S) -  \Sigma _{i=0}^np(x)*H(x)\]
+\[IG(S,Wind)=H(S) -  \sum_{i=0}^np(x)*H(x)\]
 
 \[IG(S,Wind)=H(S)-P(S_{weak})*H(S_{weak})-P(S_{strong})*H(S_{strong})\]
 
 \[= 0.940-(\frac{8}{14})(0.811)-(\frac{6}{14})(1.00) = 0.048\]
 
+<ul>
+  <li>Similarly, we can calculate IG(S, Outlook)=0.246; IG(S, Temperature)=0.029; IG(S, Humidity)=0.151;</li>
+  <li><mark>Question: Which feature should we choose first to split our data?? </mark></li>
+</ul>
+
 <h2 id="decision-tree">Decision Tree</h2>
 <ul>
   <li>Choose column “Outlook”</li>
+  <li>Our first part of the tree will be like this:</li>
+  <li><img src="dtree2.png" alt="" /></li>
   <li>“Sunny” branch</li>
   <li>Keep divide data for each branch</li>
 </ul>
 
 <p><img src="dtree1.png" alt="" /></p>
 
-<p>\(IG(S,Outlook) = 0.246\)
-\(IG(S,Temperature) = 0.029\)
-\(IG(S,Humidity) = 0.151\)
-\(IG(S,Wind) = 0.048 (Previous example)\)</p>
+<!-- $$IG(S,Outlook) = 0.246$$
+$$IG(S,Temperature) = 0.029$$
+$$IG(S,Humidity) = 0.151$$
+$$IG(S,Wind) = 0.048 (Previous example)$$ -->
 
-<p><label for="Tree Based Method" class="margin-toggle">⊕</label>
-<input type="checkbox" id="Tree Based Method" class="margin-toggle" />
-<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/5_Tree_Based_Method_Part1/tree4/dtree2.png" alt="" /><br /></span></p>
-
-<p>&lt;/span&gt;</p>
-
-<p>\(H(S_{sunny})=(\frac{3}{5})log_2(\frac{3}{5})-(\frac{2}{5})log_2(\frac{2}{5}) = 0.96\)
-\(IG(S_{sunny},Humidity) = 0.96\)
-\(IG(S_{sunny},Temperature) = 0.57\)
-\(IG(S_{sunny},Wind) = 0.019\)</p>
+<!-- <label for="Tree Based Method" class="margin-toggle">&#8853;</label>
+<input type="checkbox" id="Tree Based Method" class="margin-toggle">
+<span class="marginnote"><img class="fullwidth" src="/ISPeL-content-machine-learning/machine-learning/5_Tree_Based_Method_Part1/tree4/dtree2.png" alt="" /><br>
+    
+</span> -->
 
 <ul>
+  <li>
+\[H(S_{sunny})=(\frac{3}{5})log_2(\frac{3}{5})-(\frac{2}{5})log_2(\frac{2}{5}) = 0.96\]
+  </li>
+  <li>
+\[IG(S_{sunny},Humidity) = 0.96\]
+  </li>
+  <li>
+\[IG(S_{sunny},Temperature) = 0.57\]
+  </li>
+  <li>
+\[IG(S_{sunny},Wind) = 0.019\]
+  </li>
+  <li><mark>Question: Which feature should we choose next to split our data?? </mark></li>
   <li>Final decision tree</li>
+  <li><img src="dtree3.png" alt="" /></li>
 </ul>
-
-<p><img src="dtree3.png" alt="" /></p>
 
 <h2 id="lets-build-a-decision-tree">Let’s build a decision tree</h2>
 <ul>
@@ -173,7 +187,7 @@
 
 <h2 id="decision-tree-sample-code">Decision Tree: Sample Code</h2>
 <ul>
-  <li>Let’s have a look at: tree_based_method</li>
+  <li>Let’s have a look at: tree_based_method <a href="https://github.com/ruiwu1990/CSCI_4120/blob/master/Decision_tree/tree_based_method.ipynb">https://github.com/ruiwu1990/CSCI_4120/blob/master/Decision_tree/tree_based_method.ipynb</a></li>
   <li>We can control overfitting issue with max_depth, max_leaf_nodes</li>
 </ul>
 
@@ -185,9 +199,6 @@
       <td> </td>
       <td> </td>
       <td><a href="../">Prev</a></td>
-      <td> </td>
-      <td> </td>
-      <td><a href="../tree4">Next</a></td>
       <td> </td>
       <td> </td>
     </tr>

@@ -18,9 +18,9 @@ title: Tree Based Method
 
 * Tree is used to separate data based on rules.
 
-{% include marginfigure.html id="Tree Based Method" url="machine-learning/5_Tree_Based_Method_Part1/tree4.png" description="" %}
+<!-- {% include marginfigure.html id="Tree Based Method" url="machine-learning/5_Tree_Based_Method_Part1/tree4.png" description="" %} -->
 
-{% include marginfigure.html id="Tree Based Method" url="machine-learning/5_Tree_Based_Method_Part1/tree5.png" description="Rule example: years < 4.5; hits >117.5 and years >= 4.5" %}
+<!-- {% include marginfigure.html id="Tree Based Method" url="machine-learning/5_Tree_Based_Method_Part1/tree5.png" description="Rule example: years < 4.5; hits >117.5 and years >= 4.5" %} -->
 
 {% include marginfigure.html id="Tree Based Method" url="machine-learning/5_Tree_Based_Method_Part1/tree6.png" description="Classification Model Building Workflow" %}
 
@@ -40,15 +40,15 @@ title: Tree Based Method
 
 ## <font color=red>Important</font> Things of Decision Trees
 * How should training records be split?
-  * Method for specifying test condition
-   * depending on attribute types (split data based on features)
-  * Measure for evaluating the goodness of a test condition (test if a feature should be used for splitting )
+	* Method for specifying test condition
+	* depending on attribute types (split data based on features)
+	* Measure for evaluating the goodness of a test condition (test if a feature should be used for splitting )
 * How should the splitting procedure stop?
- * Stop splitting if all the records belong to the same class or have identical attribute values
- * Early termination (Or overfitting issues)
+	* Stop splitting if all the records belong to the same class or have identical attribute values
+	* Early termination (Or overfitting issues)
 * Methods for Expressing Test Conditions
- * Attribute type:nominal, ordinal, continuous
- * Split: binary, multi-way
+	* Attribute type:nominal, ordinal, continuous
+	* Split: binary, multi-way
  
  
-||[Index](../../../)||| [Prev](../)|||[Next](tree2)|||
+||[Index](../../)||| [Prev](../)|||[Next](tree2)|||
