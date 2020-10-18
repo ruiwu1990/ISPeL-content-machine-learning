@@ -6,7 +6,7 @@ title: Tree Based Method
 ## Ensembling
 
 * We have learned how to build a decision tree. Now, let’s learn how to build a forest: Ensemble method
-* Ensemble methods combine several decision trees classifiers to produce better predictive performance than a single decision tree classifier. The main principle (assumption) behind the ensemble model is that a group of weak learners come together to form a strong learner, thus increasing the accuracy of the model.
+* Ensemble methods combine several decision trees to produce better predictive performance than a single decision tree. The main principle (assumption) behind the ensemble model is that <mark>a group of weak learners come together to form a strong learner</mark>, thus increasing the accuracy of the model.
 * Two popular methods: Bagging and Boosting
 
 * Based on: <https://analyticsindiamag.com/primer-ensemble-learning-bagging-boosting/>
@@ -14,14 +14,9 @@ title: Tree Based Method
 ## Bootstrap Sample
 
 * But wait a second, we need to learn what is “bootstrap sample” first.
-* The <font color=red>bootstrap</font> is a fundamental resampling tool in statistics. The basic idea underlying the bootstrap is what we can estimate the true F by the so-called <font color=red>emperical distribution</font> $$\hat{F}$$
+* The <font color=red>bootstrap</font> is a fundamental resampling tool in statistics. The basic idea underlying the bootstrap is what we can estimate the true distrubtion by the so-called <font color=red>emperical distribution</font> $$\hat{F}$$
 
-* Given the training data $$(x_i,y_i)$$, i=1,...n, the empirical distribution function $$\hat{F}$$ is simply
-
-$$P_{\hat{F}}((X,Y)=(x,y)) =(\frac{1}{n} if (x,y) = (x_i, y_i) for some i$$
-$$0 otherwise$$ 
-
-* This is just a discrete probability distribution, putting equal weight (1/n) on each of the observed training points
+* A good tutorial about emperical distribution: <https://www.statlect.com/asymptotic-theory/empirical-distribution>
 
 * Replacement: a same data point can be selected multiple times
 * A <font color=red>bootstrap sample</font> of size m from the training data is
@@ -30,7 +25,7 @@ $$(x_i^*,y_i^*), i=1,...m$$
 
 * where each $$(x_i^*,y_i^*)$$ are drawn from uniformly at random from $$(x_1,y_1),...(x_n,y_n)$$, <font color=red>with replacement</font>
 
-* This corresponds exactly to m independent draws from $$\hat{F}$$. Hence it approximates what we would see if we could sample more data from the true $$F$$. We often consider $$m=n$$, which is like sampling an entirely new training set.
+* This corresponds exactly to m independent draws from $$\hat{F}$$. Hence it approximates what we would see if we could sample more data from the true data distribution. We often consider $$m=0.6*n$$.
 
 Based on: <https://www.stat.cmu.edu/~ryantibs/datamining/lectures/24-bag.pdf>
 
@@ -65,4 +60,4 @@ Based on: <https://www.stat.cmu.edu/~ryantibs/datamining/lectures/24-bag.pdf>
 * Train a random forest classifier
 * Find out which features are more important
 
-||[Index](../../../)||| [Prev](../)|||[Next](part2-2)|||
+||[Index](../../)||| [Prev](../)|||[Next](part2-2)|||

@@ -35,6 +35,7 @@ title: Tree Based Method
 
 {% include marginfigure.html id="Tree Based Method" url="machine-learning/5_Tree_Based_Method_Part2/part2-2/boosting2.png" description="<a name='figure2'>Figure 2</a> When the function is convex, all local minima are also global minima, so in this case gradient descent can converge to the global solution. Figure Credit: <https://ml-cheatsheet.readthedocs.io/en/latest/gradient_descent.html>" %}
 
+* scikit has a model called GBR <https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html>
 * Gradient descent is a first-order iterative optimization algorithm for finding the minimum of a function (wiki). [Figure 2](#figure2)
 * You can convert a maximum problem into a minimum one:
   * Find max(y) => find min(-y)
@@ -54,13 +55,17 @@ title: Tree Based Method
 * Work on the jupyter notebook at: <https://github.com/ruiwu1990/CSCI_4120/blob/master/Decision_tree/HW6.ipynb>
 * You are required to classify breast cancer data using RandomForestClassifier.
   * Complete TODO sections.
-* Build a classification model and Tune hyperparameters (e.g. criterion, n_estimators …).
-* Your accuracy should be more than 0.92 and (Accuracy/number of features) should be more than 0.45.
+  * Select some features (X), hint: based on the connections with Y
+  * 5 fold cross validation, 30% for testing
+  * Tune parameters for RandomForestClassifier (e.g. criterion, n_estimators …).
+  * Calculate Average accuracy score
+  * Calculate Average (accuracy score/number of features)
+* Your accuracy score should be more than 0.92 and (Accuracy/number of features) should be more than 0.45.
 * README.MD file
   * Team member names and email addresses
   * Hyperparameters used.
   * Accuracy and (accuracy/number of features)
-* Due...
+* Due <mark>Nov. 6</mark>
 
 ## Boosting: Sample Code
 * GradientBoostingClassifier

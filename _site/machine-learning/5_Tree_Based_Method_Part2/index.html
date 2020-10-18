@@ -77,7 +77,7 @@
 
 <ul>
   <li>We have learned how to build a decision tree. Now, let’s learn how to build a forest: Ensemble method</li>
-  <li>Ensemble methods combine several decision trees classifiers to produce better predictive performance than a single decision tree classifier. The main principle (assumption) behind the ensemble model is that a group of weak learners come together to form a strong learner, thus increasing the accuracy of the model.</li>
+  <li>Ensemble methods combine several decision trees to produce better predictive performance than a single decision tree. The main principle (assumption) behind the ensemble model is that <mark>a group of weak learners come together to form a strong learner</mark>, thus increasing the accuracy of the model.</li>
   <li>
     <p>Two popular methods: Bagging and Boosting</p>
   </li>
@@ -89,17 +89,10 @@
 <ul>
   <li>But wait a second, we need to learn what is “bootstrap sample” first.</li>
   <li>
-    <p>The <font color="red">bootstrap</font> is a fundamental resampling tool in statistics. The basic idea underlying the bootstrap is what we can estimate the true F by the so-called <font color="red">emperical distribution</font> \(\hat{F}\)</p>
+    <p>The <font color="red">bootstrap</font> is a fundamental resampling tool in statistics. The basic idea underlying the bootstrap is what we can estimate the true distrubtion by the so-called <font color="red">emperical distribution</font> \(\hat{F}\)</p>
   </li>
-  <li>Given the training data \((x_i,y_i)\), i=1,…n, the empirical distribution function \(\hat{F}\) is simply</li>
-</ul>
-
-<p>\(P_{\hat{F}}((X,Y)=(x,y)) =(\frac{1}{n} if (x,y) = (x_i, y_i) for some i\)
-\(0 otherwise\)</p>
-
-<ul>
   <li>
-    <p>This is just a discrete probability distribution, putting equal weight (1/n) on each of the observed training points</p>
+    <p>A good tutorial about emperical distribution: <a href="https://www.statlect.com/asymptotic-theory/empirical-distribution">https://www.statlect.com/asymptotic-theory/empirical-distribution</a></p>
   </li>
   <li>Replacement: a same data point can be selected multiple times</li>
   <li>A <font color="red">bootstrap sample</font> of size m from the training data is</li>
@@ -112,7 +105,7 @@
     <p>where each \((x_i^*,y_i^*)\) are drawn from uniformly at random from \((x_1,y_1),...(x_n,y_n)\), <font color="red">with replacement</font></p>
   </li>
   <li>
-    <p>This corresponds exactly to m independent draws from \(\hat{F}\). Hence it approximates what we would see if we could sample more data from the true \(F\). We often consider \(m=n\), which is like sampling an entirely new training set.</p>
+    <p>This corresponds exactly to m independent draws from \(\hat{F}\). Hence it approximates what we would see if we could sample more data from the true data distribution. We often consider \(m=0.6*n\).</p>
   </li>
 </ul>
 
@@ -171,7 +164,7 @@
   <tbody>
     <tr>
       <td> </td>
-      <td><a href="../../../">Index</a></td>
+      <td><a href="../../">Index</a></td>
       <td> </td>
       <td> </td>
       <td><a href="../">Prev</a></td>
