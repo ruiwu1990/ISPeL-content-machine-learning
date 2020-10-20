@@ -22,7 +22,7 @@ $$\beta _0+ \beta _1X_1+\beta_2X_2+...+ \beta _pX_p<0$$
 
 * then X lies on the other side of the hyperplane.
 * We can think of the hyperplane as dividing p-dimensional space into <font color=red>two halves</font>.
-* Questions: we can use hyperplane for regression, classification, or clustering?
+* <mark>Questions: we can use hyperplane for regression, classification, or clustering?</mark>
 
 {% include marginfigure.html id="SVM" url="machine-learning/6_SVM/hyper.png" description="Here is <a name='figure1'>figure 1</a>" %}
 
@@ -70,13 +70,12 @@ $$y_1...,y_n \epsilon {-1,1}$$
 * Output: β0, β1, …, βp
 * Based on maximal margin classifier idea, we can turn this into an optimization question:
 
-maximize M
-
-$$\beta _0,\beta_1,...,\beta_p,M$$
+* Goal: maximize margin M and the following conditions should be fulfilled:
 
 subject to
 
-$$\Sigma _{j=1}^p\beta_j^2=1, y_i(\beta_0+\beta_1x_{i1}+\beta_2x_{i2}+...+\beta_px_{ip}) \geq M \forall i=1,...,n.$$
+- $$\sum_{j=1}^p\beta_j^2=1$$
+- $$y_i(\beta_0+\beta_1x_{i1}+\beta_2x_{i2}+...+\beta_px_{ip}) \geq M \forall, i=1,...,n.$$
 
 * One can show that with this constraint the perpendicular distance from the ith observation to the hyperplane is given by $$y_i(\beta_0+\beta_1x_{i1}+\beta_2x_{i2}+...+\beta_px_{p})$$
 
