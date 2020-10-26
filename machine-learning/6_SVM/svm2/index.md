@@ -23,13 +23,11 @@ title: SVM
 ### Figure 1
 * Left: A support vector classifier was fit to a small data set. The hyperplane is shown as a solid line and the margins are shown as dashed lines. Purple observations: Observations 3,4,5 and 6 are on the correct side of the margin, observation 2 is on the margin, and observation 1 is on the wrong side of the margin. Blue observations: Observations 7 and 10 are on the correct side of the margin, observation 9 is on the margin, and observation 8 is on the wrong side of the margin. No observations are on the wrong side of the hyperplane. Right: Same as left panel with two additional points, 11 and 12. These two observations are on the wrong side of the hyperplane and the wrong side of the
 
-* Similar to Maximal Margin Classifier, this is also an optimization problem:  
-
-$$\beta_0,\beta_1,...\beta_p,\epsilon_1,...,\epsilon_n,M$$
+* Similar to Maximal Margin Classifier, this is also an optimization problem: Goal--Maximize $$M$$
 
 $$\sum_{j=1}^p \beta^2_j =1,$$
 
-$$y_i(\beta_0 + \beta_1x_i1 + \beta_2x_i2 + ... + \beta_px_ip) \geq M(1 - \epsilon_i),$$
+$$y_i(\beta_0 + \beta_1x_{i1} + \beta_2x_{i2} + ... + \beta_px_{ip}) \geq M(1 - \epsilon_i),$$
 
 $$\epsilon_i  \geq 0,  \sum_{i=1}^n\epsilon_i  \leq C$$  
 
@@ -42,11 +40,10 @@ $$\epsilon_i  \geq 0,  \sum_{i=1}^n\epsilon_i  \leq C$$
 $$y_i(\beta_0 + \beta_1x_i1 + \beta_2x_i2 + ... + \beta_px_ip) \geq M(1 - \epsilon_i),$$
 
 ## Support Vector Classifiers – C
-* Question: which one has a larger C value for the same dataset?
-* Figure 3.
+* <mark>Question: For figure 3, which one has a larger C value for the same dataset?</mark>
 * If C is large, then there will be low variance (i.e. predication is stable, since many observations are support vectors), but potentially high bias.
 * If C is small, then there will be fewer support vectors and hence the resulting classifier will have low bias but high variance.
-* How to choose a good “C”?  Cross-validation. C controls the bias-variance trade-off of the statistical learning technique.
+* How to choose a good “C”?->Cross-validation. C controls the bias-variance trade-off of the statistical learning technique.
 
 $$\epsilon_i  \geq 0,  \sum_{i=1}^n\epsilon_i  \leq C$$
 

@@ -19,15 +19,20 @@ title: SVM
 {% include marginfigure.html id="SVM" url="machine-learning/6_SVM/svm3/kernel2.png" description="Figure 3:From left to right: d = 1; d = 3; d = 5. The higher d means higher dimensional hyperplane (non-linear), a more flexible (curvy) decision boundary. Figure credit: https://yunhaocsblog.wordpress.com/2014/07/27/the-effects-of-hyperparameters-in-svm/" %}
 
 
-- this is an optimization problem for quadratic relation:
-
-maximize M
+## Support Vector Machine: Quadratic
+- this is an optimization problem for quadratic relation: Goal--maximize M
 
 $$\beta_0,\beta_{11},\beta_{12}....,\beta_{p1},\beta_{p2}, \epsilon _1,..., \epsilon_n,M$$
 
 subject to
 
-$$y_i(\beta_0+ \Sigma_{j=1}^p\beta_{j1}x_{ij}+\Sigma_{j=1}^p\beta_{j2}x_{ij}^2) \geq M(1- \epsilon _i),  \Sigma _{i=1}^n \epsilon _i \leq C, \epsilon _i \geq 0, \Sigma _{j=1}^p \Sigma _{k=1}^2\beta_{jk}^2=1.$$
+$$y_i(\beta_0+ \Sigma_{j=1}^p\beta_{j1}x_{ij}+\Sigma_{j=1}^p\beta_{j2}x_{ij}^2) \geq M(1- \epsilon _i)$$
+
+$$\Sigma _{i=1}^n \epsilon _i \leq C$$
+
+$$\epsilon _i \geq 0$$
+
+$$\Sigma _{j=1}^p \Sigma _{k=1}^2\beta_{jk}^2=1.$$
 
 * If you want to know why and how to turn the problem into math above: <https://www.youtube.com/watch?v=_PwhiWxHK8o>
 
@@ -42,7 +47,7 @@ $$\big\{x,x_{i\prime} \big\}= \Sigma_{j=1}^px_{ij}x_{i\prime}j$$
 
 * where there are n parameters αi, i = 1, . . . , n, one per training observation.
 * This means if you have 10,000 training data records, you will have 10,000 α. In fact, most α will be 0.
-* To estimate the parameters α1, . . . , αn and β0, all we need are the <font color=red>n(n − 1)/2</font> inner products <xi, xi’>  between all pairs of training observations.
+* To estimate the parameters α1, . . . , αn and β0, all we need are the <font color=red>n(n − 1)/2</font> inner products {xi, xi’}  between all pairs of training observations.
 * Support vectors are the data points that lie closest to the decision surface.
 * It sounds scary but αi is not 0 only for the <font color=red>support vectors (points on the margin)</font>
 

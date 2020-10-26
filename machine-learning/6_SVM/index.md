@@ -59,7 +59,7 @@ $$\beta _0+ \beta _1X_1+\beta_2X_2+...+ \beta _pX_p=0$$
 
 ## Maximal Margin Classifier: How
 
-{% include marginfigure.html id="SVM" url="machine-learning/6_SVM/hyper6.png" description="Non-separable Case - Sometimes, it is not possible to be perfect.How to define a hyperplane for this case?" %}
+
 
 * Inputs:
 
