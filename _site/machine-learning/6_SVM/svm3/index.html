@@ -165,7 +165,7 @@
   <li>Inner Kernel:</li>
 </ul>
 
-\[K(x_i,x_{i\prime})\Sigma _{j=1}^p x_{ij}x_{i\prime}j\]
+\[K(x_i,x_{i\prime}) = \Sigma _{j=1}^p x_{ij}x_{i\prime}j\]
 
 <ul>
   <li>The <font color="red">linear kernel</font> essentially quantifies the similarity of a pair of observations using Pearson (standard) correlation.</li>
@@ -176,7 +176,7 @@
   <li>Let’s have a closer look at polynomial kernel first:</li>
 </ul>
 
-\[K(x_i,x_{i\prime})\Sigma _{j=1}^p x_{ij}x_{i\prime}j\]
+\[K(x_i,x_{i\prime}) = 1+(\Sigma _{j=1}^p x_{ij}x_{i\prime}j)^d\]
 
 <ul>
   <li>d is a positive integer. It essentially amounts to fitting a support vector classifier in a <font color="red">higher-dimensional</font> space involving polynomials of degree <font color="red">d</font>, rather than in the original feature space. Example Figure 2 and 3.</li>

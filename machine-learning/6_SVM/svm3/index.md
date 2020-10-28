@@ -63,7 +63,7 @@ $$f(x) = \beta _0+ \Sigma _{i\epsilon S} \alpha _i K(x,x_i)$$
 * S is the support vector collection. The xi, xi’ is called <font color=red>kernel</font> and can be written as K(xi, xi’).
 * Inner Kernel:
 
-$$K(x_i,x_{i\prime})\Sigma _{j=1}^p x_{ij}x_{i\prime}j$$
+$$K(x_i,x_{i\prime}) = \Sigma _{j=1}^p x_{ij}x_{i\prime}j$$
 
 * The <font color=red>linear kernel</font> essentially quantifies the similarity of a pair of observations using Pearson (standard) correlation.
 * Question: What is Pearson correlation?
@@ -71,7 +71,7 @@ $$K(x_i,x_{i\prime})\Sigma _{j=1}^p x_{ij}x_{i\prime}j$$
 * Besides linear kernel, there are some other popular kernels, e.g. <font color=red>polynomial</font> kernel and <font color=red>radial</font> kernel.
 * Let’s have a closer look at polynomial kernel first:
 
-$$K(x_i,x_{i\prime})\Sigma _{j=1}^p x_{ij}x_{i\prime}j$$
+$$K(x_i,x_{i\prime}) = 1+(\Sigma _{j=1}^p x_{ij}x_{i\prime}j)^d$$
 
 * d is a positive integer. It essentially amounts to fitting a support vector classifier in a <font color=red>higher-dimensional</font> space involving polynomials of degree <font color=red>d</font>, rather than in the original feature space. Example Figure 2 and 3.
 
