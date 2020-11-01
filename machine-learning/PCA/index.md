@@ -21,6 +21,7 @@ title: PCA
 
 {% include marginfigure.html id="PCA" url="machine-learning/PCA/pca-1.png" description="<a name='figure1'>Figure 1</a>What is dimensionality reduction? 3D world -> 2D movie" %}
 
+## PCA Dimensionality Reduction
 * Let’s learn how to PCA to do dimensionality reduction.
 * What is dimensionality reduction? 3D world -> 2D movie [Figure](#figure1)
 * Based on: <https://www.youtube.com/watch?v=FgakZw6K1QQ>
@@ -75,7 +76,7 @@ title: PCA
 
 {% include marginfigure.html id="PCA" url="machine-learning/PCA/pca13.png" description="<a name='figure6'>Figure 6</a> Eigenvalue (squared sum distances) calculations: PC1 eigenvalues sum of $$xi^2$$. PC2 eigenvalues sum of $$yi^2$$" %}
 
-* Then we need to calculate variations for both PC1 and PC2
+* Then we need to calculate variations for both PC1 and PC2 (SS -> sqrt(sum))
 
 $$\frac{SS(distance for PC1)}{n-1} = Variation for PC1$$
 
