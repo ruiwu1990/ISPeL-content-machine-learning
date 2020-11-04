@@ -13,21 +13,9 @@ title: PCA
 {% include marginfigure.html id="PCA" url="machine-learning/PCA/PCA-2/pca21.png" description="<a name='figure2'>Figure 2</a>" %}
 
 
-## SVM—More than two classes
-* I forgot to mention this in our last class…
-* One-Versus-One Classification:
-* Suppose that we would like to perform classification using SVMs, and there are K > 2 classes. A one-versus-one or all-pairs approach constructs K(K − 1)/2 SVMs, each of which compares a pair of classes.
-* One-Versus-All Classification
-
-## SVM—facial recognition
-
-* Only two students have watched the video… So let’s briefly walk through the code.
-  * Whitening: preprocessing step. The goal of whitening is to make the input <font color=red>less redundant</font>; more <font color=red>formally</font>. This can help to make (i) the features less correlated with each other, and (ii) the features all have close variance.
-
-* Also, something about HW4. If you find the three methods have similar results…
 
 ## PCA Sample Code
-
+* Sample Code: <https://github.com/ruiwu1990/CSCI_4120/blob/master/SVM/PCA.ipynb>
 * axis('equal') changes limits of x or y axis so that equal increments of x and y have the same length; a circle is circular.
 * axis('scaled') achieves the same result by changing the dimensions of the plot box instead of the axis data limits.
 
@@ -46,12 +34,13 @@ title: PCA
 
 {% include marginfigure.html id="PCA" url="machine-learning/PCA/PCA-2/pca-1.png" description="<a name='figure3'>Figure 3</a> Group Activity 3D data representation " %}
 
+* Code: <https://github.com/ruiwu1990/CSCI_4120/blob/master/SVM/Group%20Activity%208.ipynb>
 * PCA can improve machine learning model performance. Even without reduce dimensionality.
 * Why the performance is improved? [Figure](#figure3)
   * Still the 3D data. 
 
 
-## Homework 5: Group Homework
+## Homework 6: Group Homework
 * Work on the jupyter notebook at: <https://github.com/ruiwu1990/CSCI_4120/blob/master/SVM/HW5.ipynb>
 * You are required to classify digits with <font color=red>SVM</font> models.
 * Compare performance of <font color=red>linear</font>, <font color=red>radial</font>, and <font color=red>polynomial</font> kernels (classification score).

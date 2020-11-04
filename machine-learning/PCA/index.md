@@ -99,6 +99,7 @@ Based on the plot, PC1 and PC2 are important. So we will ignore PC3.
 
 ![](pca-5.png)
 
+
 |||[Index](../../)||| [Prev](../)|||[Next](PCA-2)|||
 
 
