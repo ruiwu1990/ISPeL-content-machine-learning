@@ -98,11 +98,10 @@ title: GA
 * GA may not find out the global optimal solution.
   * How to solve this issue?
   
-## 15 minutes: SSOI
+## SSOI and ISPeL survey
+* ISPeL survey: <https://uncg.qualtrics.com/jfe/form/SV_9TcU1F9z5DANPr7>, Due <mark>Nov. 15</mark>
+* SSOI available at Canvas.
 
-## Boosting: Sample Code
-* GradientBoostingClassifier
-* Using learning rate to control overfitting issue 
 
 
 ||[Index](../../)||| [Prev](../)|||

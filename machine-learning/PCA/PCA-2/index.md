@@ -43,21 +43,16 @@ title: PCA
 ## Homework 6: Group Homework
 * Work on the jupyter notebook at: <https://github.com/ruiwu1990/CSCI_4120/blob/master/SVM/HW5.ipynb>
 * You are required to classify digits with <font color=red>SVM</font> models.
-* Compare performance of <font color=red>linear</font>, <font color=red>radial</font>, and <font color=red>polynomial</font> kernels (classification score).
-  * Tune kernel parameters using <font color=red>RandomizedSearchCV</font> method.
 * Use PCA to reduce data dimensionality (<font color=red>80%</font> information remain).
+* Tune kernel parameters using <font color=red>RandomizedSearchCV</font> method.
+* Five fold cross validation
+* Compare performance of <font color=red>linear</font>, <font color=red>radial</font>, and <font color=red>polynomial</font> kernels (classification score).
 * README.MD file
   * Team member names and email addresses
   * Parameters selected for linear, radial, polynomial kernels.
   * Results comparison between linear, radial, polynomial kernels
-* Due...
+* Due <mark>Nov. 20</mark>
 
-## Plan
-* 6 classes:
-  * 2 classes: Tree-based methods
-  * 2 classes: genetic algorithm
-  * 1 class: group activity, process a data file together
-  * 1 class: review
   
 ||[Index](../../../)||| [Prev](../)|||
 
