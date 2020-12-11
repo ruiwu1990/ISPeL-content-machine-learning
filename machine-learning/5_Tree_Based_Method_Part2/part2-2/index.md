@@ -51,16 +51,16 @@ title: Tree Based Method
   * Ensemble learning method is <font color=red>not only for trees</font>. You can ensemble different types of models, such as SVM and neural network.
   * You can add a group of models each time instead of a single model. This is called <font color=red>shrinkage</font> a form of regularization for the model building process. [Figure 3](#figure3) and [Figure 4](#figure4)
 
-## Homework 6: Group Homework
+## Homework 5: Group Homework
 * Work on the jupyter notebook at: <https://github.com/ruiwu1990/CSCI_4120/blob/master/Decision_tree/HW6.ipynb>
 * You are required to classify breast cancer data using RandomForestClassifier.
   * Complete TODO sections.
   * Select some features (X), hint: based on the connections with Y
-  * 5 fold cross validation, 30% for testing
+  * 5 fold cross validation
   * Tune parameters for RandomForestClassifier (e.g. criterion, n_estimators …).
   * Calculate Average accuracy score
   * Calculate Average (accuracy score/number of features)
-* Your accuracy score should be more than 0.92 and (Accuracy/number of features) should be more than 0.45.
+* Your accuracy score should be more than 0.92 and (Accuracy/number of features) should be more than 0.40.
 * README.MD file
   * Team member names and email addresses
   * Hyperparameters used.
