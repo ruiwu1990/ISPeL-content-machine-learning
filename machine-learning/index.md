@@ -24,10 +24,12 @@ Machine Learning available topics:
 7. [PCA](PCA)
 8. [GA](GA)
 
-## 
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="script/ontology.js"></script>
 
-1. [Statistical learning](1_intro_part2/)
-2. [KNN VS K_Means](2_KNN_vs_K_Means/)
+<!-- <div id="ontology_div"></div> -->
+<!-- <div></div> -->
+<body></body>
 
 
 
