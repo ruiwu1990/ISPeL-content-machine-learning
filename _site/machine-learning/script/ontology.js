@@ -4,10 +4,11 @@ var h = 1500;
 // input topics as nodes
 // define links as edges, e.g. if you have 5 topics
 // then these topics index are 0, 1, 2, 3, 4
+var base_url = 'http://127.0.0.1:7000';
 var dataset = {
   nodes:[
       //intro
-      {name:"Intro"},
+      {name:"Intro", url:base_url+"/ISPeL-content-machine-learning/machine-learning/1_intro_part2/"},
       {name:"Supervised Learning"},
       {name:"Unsupervised Learning"},
       {name:"Examples"},
@@ -33,7 +34,7 @@ var dataset = {
       //Statistical Learning
       {name:"Statistical Learning"},
       {name:"Rf(x)"},
-      {name:"Curse of Dimensionality"},
+      {name:"Curse of Dimensionality", url:base_url+'/ISPeL-content-machine-learning/machine-learning/1_intro_part2/part2/#curse-of-dimensionality'},
       {name:"Bias Variance TradeOff"},
       {name:"Bias"},
       {name:"Overfitting"},
@@ -173,7 +174,7 @@ var force = d3.layout.force()
             .charge([-750])
             .start();
 
-var colors = d3.scale.category10();
+// var colors = d3.scale.category10();
 // var svg = d3.select("div#ontology_div")
 // var svg = d3.select("div")
 var svg = d3.select("body")
@@ -186,14 +187,24 @@ var edges = svg.selectAll("line")
         .append("line")
         .style("stroke", "#ccc")
         .style("stroke-width", 1);
+// var nodes = svg.selectAll("circle")
+//         .data(dataset.nodes)
+//         .enter()
+//         .append("circle")
+//         .attr("r", 10)
+//         .style("fill", function(d, i){
+//           return colors(i);
+//         })
+//         .call(force.drag);
+
+var color_original = '#4c72ff';
+var color_hover = '#93de94';
 var nodes = svg.selectAll("circle")
         .data(dataset.nodes)
         .enter()
         .append("circle")
         .attr("r", 10)
-        .style("fill", function(d, i){
-          return colors(i);
-        })
+        .style("fill", color_original)
         .call(force.drag);
         
 var label = svg.selectAll(".mytext")
@@ -207,6 +218,32 @@ var label = svg.selectAll(".mytext")
           .style("font-size", 12);
 
  
+nodes
+      .on('mouseover', function (d) {
+        // Highlight the nodes: every node is green except of him
+        nodes.style('fill', color_original)
+        d3.select(this).style('fill', color_hover)
+        // Highlight the connections
+        edges
+          .style('stroke', function (link_d) { return link_d.source === d.id || link_d.target === d.id ? '#69b3b2' : '#b8b8b8';})
+          .style('stroke-width', function (link_d) { return link_d.source === d.id || link_d.target === d.id ? 4 : 1;})
+      })
+      .on('mouseout', function (d) {
+        nodes.style('fill', color_original)
+        edges
+          .style('stroke', 'black')
+          .style('stroke-width', '1')
+      })
+      .on('click',function(d, i){
+        window.location.href = d.url;
+        // console.log(d.url);
+        // d3.select(this).attr('r', 25)
+        //         .style("fill","lightcoral")
+        //         .style("stroke","red");
+      });
+
+
+
 
 force.on("tick", function(){
   edges.attr("x1", function(d){ return d.source.x; })
