@@ -17,7 +17,7 @@ Machine Learning available topics:
 1. [Introduction](1_intro_part2/)
 - [Statistical Learning](1_intro_part2/#statistical-learning)
 - [Notation](1_intro_part2/#notation)
-- [How to implement f(X)](1_intro_part2/#how-to-implement-f(X)?)
+- [How to implement f(X)](1_intro_part2/#how-to-implement-f(x)-?)
 - [The regression function f(x)](1_intro_part2/part2/#the-regression-function-f(x))
 - [How to estimate f](1_intro_part2/part2/#how-to-estimate-f)
 - [Curse of Dimensionality](1_intro_part2/part2/#curse-of-dimensionality)

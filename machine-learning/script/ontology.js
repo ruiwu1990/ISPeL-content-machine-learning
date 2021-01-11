@@ -8,13 +8,13 @@ var base_url = 'http://127.0.0.1:7000';
 var dataset = {
   nodes:[
       //intro
-      {name:"Intro", url:base_url+"/ISPeL-content-machine-learning/machine-learning/1_intro_part2/"},
-      {name:"Supervised Learning"},
-      {name:"Unsupervised Learning"},
-      {name:"Examples"},
-      {name:"Data Types"},
-      {name:"Classification"},
-      {name:"Regression"},
+      {name:"Introduction", url:base_url+"/ISPeL-content-machine-learning/machine-learning/1_intro_part2/"},
+      {name:"Statistical Learning", url:base_url+"/ISPeL-content-machine-learning/machine-learning/1_intro_part2/#statistical-learning"},
+      {name:"Notation", url:base_url+"/ISPeL-content-machine-learning/machine-learning/1_intro_part2/#notation"},
+      {name:"How to implement f(X)", url:base_url+"/ISPeL-content-machine-learning/machine-learning/1_intro_part2/#how-to-implement-f(x)-?"},
+      {name:"The regression function f(x)", url:base_url+"/ISPeL-content-machine-learning/machine-learning/1_intro_part2/part2/#the-regression-function-f(x)"},
+      {name:"How to estimate f", url:base_url+"/ISPeL-content-machine-learning/machine-learning/1_intro_part2/part2/#how-to-estimate-f"},
+      {name:"Curse of Dimensionality", url:base_url+"/ISPeL-content-machine-learning/machine-learning/1_intro_part2/part2/#curse-of-dimensionality"},
       
       //K_Means
       {name:"K_Means"},
@@ -244,7 +244,6 @@ nodes
 
 
 
-
 force.on("tick", function(){
   edges.attr("x1", function(d){ return d.source.x; })
      .attr("y1", function(d){ return d.source.y; })
@@ -257,3 +256,5 @@ force.on("tick", function(){
 
   
 });
+
+
